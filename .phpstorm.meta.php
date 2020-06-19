@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-06-18 03:07:41.
+    * Generated on 2020-06-18 14:53:02.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -42,6 +42,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -200,6 +201,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -358,6 +360,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -516,6 +519,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -674,6 +678,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -832,6 +837,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -990,6 +996,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -1148,6 +1155,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
+        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
