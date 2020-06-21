@@ -33,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapLandlordRoutes();
 
         $this->mapTenantRoutes();
 
@@ -49,11 +49,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapWebRoutes()
+    protected function mapLandlordRoutes()
     {
         Route::domain(config('app.landlord_domain'))
             ->middleware('web')
-            ->group(base_path('routes/web.php'));
+            ->group(base_path('routes/landlord.php'));
     }
 
     /**
