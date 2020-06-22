@@ -7,7 +7,7 @@
 
     @include('landlord.landing.partials.pricing')
 
-    @include('landlord.landing.partials.faq')
+{{--    @include('landlord.landing.partials.faq')--}}
 
     @include('landlord.landing.partials.footer')
 @endsection

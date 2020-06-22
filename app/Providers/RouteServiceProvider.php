@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapLandlordRoutes();
 
-        $this->mapTenantRoutes();
+        $this->mapClientRoutes();
 
         $this->mapAuthRoutes();
 
@@ -76,10 +76,10 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/auth.php'));
     }
 
-    protected function mapTenantRoutes()
+    protected function mapClientRoutes()
     {
         Route::middleware(['web', 'tenant'])
-            ->group(base_path('routes/tenant.php'));
+            ->group(base_path('routes/client.php'));
     }
 
     protected function mapAdminRoutes()

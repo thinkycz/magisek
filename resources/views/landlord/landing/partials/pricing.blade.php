@@ -3,10 +3,10 @@
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none">
-                    Simple no-tricks pricing
+                    And how much will it cost?
                 </h2>
                 <p class="mt-4 text-xl leading-7 text-gray-600">
-                    If you're not satisfied, contact us within the first 14 days and we'll send you a full refund.
+                    We only have one plan. So that you don't have to choose.
                 </p>
             </div>
         </div>
@@ -18,14 +18,14 @@
                 <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                     <div class="bg-white px-6 py-8 lg:flex-shrink-1 lg:p-12">
                         <h3 class="text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl sm:leading-9">
-                            Lifetime Membership
+                            Pay What You Want
                         </h3>
                         <p class="mt-6 text-base leading-6 text-gray-500">
-                            Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.
+                            We think that ecommerce should be accessible to anyone. You can create your own store with all features enabled for as low as $2/month. And if you decide to pay more to support our team and further development, we'll be very happy!
                         </p>
                         <div class="mt-8">
                             <div class="flex items-center">
-                                <h4 class="flex-shrink-0 pr-4 bg-white text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600">
+                                <h4 class="flex-shrink-0 pr-4 bg-white text-sm leading-5 tracking-wider font-semibold uppercase text-purple-800">
                                     What's included
                                 </h4>
                                 <div class="flex-1 border-t-2 border-gray-200"></div>
@@ -38,7 +38,7 @@
                                         </svg>
                                     </div>
                                     <p class="ml-3 text-sm leading-5 text-gray-700">
-                                        Private forum access
+                                        Multilingual and multi-currency
                                     </p>
                                 </li>
                                 <li class="mt-5 flex items-start lg:col-span-1 lg:mt-0">
@@ -48,7 +48,7 @@
                                         </svg>
                                     </div>
                                     <p class="ml-3 text-sm leading-5 text-gray-700">
-                                        Member resources
+                                        European VAT ID verification
                                     </p>
                                 </li>
                                 <li class="mt-5 flex items-start lg:col-span-1 lg:mt-0">
@@ -58,7 +58,7 @@
                                         </svg>
                                     </div>
                                     <p class="ml-3 text-sm leading-5 text-gray-700">
-                                        Entry to annual conference
+                                        Product imports and exports
                                     </p>
                                 </li>
                                 <li class="mt-5 flex items-start lg:col-span-1 lg:mt-0">
@@ -68,7 +68,7 @@
                                         </svg>
                                     </div>
                                     <p class="ml-3 text-sm leading-5 text-gray-700">
-                                        Official member t-shirt
+                                        Community support
                                     </p>
                                 </li>
                             </ul>
@@ -76,14 +76,14 @@
                     </div>
                     <div class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
                         <p class="text-lg leading-6 font-medium text-gray-900">
-                            Pay once, own it forever
+                            For as low as
                         </p>
                         <div class="mt-4 flex items-center justify-center text-5xl leading-none font-extrabold text-gray-900">
               <span>
-                $349
+                $2
               </span>
                             <span class="ml-3 text-xl leading-7 font-medium text-gray-500">
-                USD
+                /month
               </span>
                         </div>
                         <p class="mt-4 text-sm leading-5">
@@ -94,17 +94,9 @@
                         <div class="mt-6">
                             <div class="rounded-md shadow">
                                 <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                                    Get Access
+                                    Create your store
                                 </a>
                             </div>
-                        </div>
-                        <div class="mt-4 text-sm leading-5">
-                            <a href="#" class="font-medium text-gray-900">
-                                Get a free sample
-                                <span class="font-normal text-gray-500">
-                  (20MB)
-                </span>
-                            </a>
                         </div>
                     </div>
                 </div>
