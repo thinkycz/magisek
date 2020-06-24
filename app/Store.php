@@ -14,7 +14,6 @@ class Store extends Tenant
     {
         static::creating(fn(Store $store) => $store->createDatabase());
         static::created(fn(Store $store) => $store->migrateDatabase());
-        static::deleting(fn(Store $store) => $store->dropDatabase());
     }
 
     public function createDatabase()
@@ -27,12 +26,7 @@ class Store extends Tenant
     {
         $this->makeCurrent();
 
-        Artisan::call('migrate', ['--database' => $this->tenantDatabaseConnectionName()]);
-    }
-
-    public function dropDatabase()
-    {
-        DB::connection($this->landlordDatabaseConnectionName())
-            ->statement("DROP DATABASE IF EXISTS {$this->getDatabaseName()}");
+        Artisan::call('migrate', ['--database' => $this->tenantDatabaseConnectionName(), '--path' => 'database/migrations']);
+        Artisan::call('db:seed', ['--database' => $this->tenantDatabaseConnectionName()]);
     }
 }

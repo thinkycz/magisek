@@ -101,10 +101,7 @@
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm leading-5 font-medium text-white">
-                                    Tom Cook
-                                </p>
-                                <p class="text-xs leading-4 font-medium text-gray-300 group-hover:text-gray-200 transition ease-in-out duration-150">
-                                    View profile
+                                    {{ auth()->user()->name }}
                                 </p>
                             </div>
                         </div>

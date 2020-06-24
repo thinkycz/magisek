@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\User::class)->create();
+        factory(\App\Models\User::class)->create(['email' => 'leo@nulisec.com']);
+
+        $this->call(CurrencySeeder::class);
     }
 }
