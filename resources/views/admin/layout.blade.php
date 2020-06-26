@@ -14,7 +14,7 @@
                     </div>
 
                     <nav class="mt-8 flex-1 px-2 bg-gray-800">
-                        <a href="#" class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.dashboard.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.dashboard') }}" class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.dashboard') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.home class="mr-3 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.home>
                             Dashboard
                         </a>
@@ -67,7 +67,7 @@
 
                         <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">Options</h2>
 
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.availabilities.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.check-circle class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.check-circle>
                             Availabilities
                         </a>

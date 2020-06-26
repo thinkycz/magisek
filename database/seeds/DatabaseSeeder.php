@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         factory(\App\Models\User::class)->create(['email' => 'leo@nulisec.com']);
 
+        $this->call(AvailabilitySeeder::class);
         $this->call(CurrencySeeder::class);
     }
 }
