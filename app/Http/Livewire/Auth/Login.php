@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -27,10 +26,10 @@ class Login extends Component
         if (!Auth::attempt($credentials, $this->remember)) {
             $this->addError('email', trans('auth.failed'));
 
-            return;
+            return null;
         }
 
-        return redirect()->route('home');
+        return redirect()->intended(route('home'));
     }
 
     public function render()

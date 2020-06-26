@@ -10,4 +10,6 @@ class Currency extends Model
     use HasTranslations;
 
     public $translatable = ['name'];
+
+    protected $guarded = [];
 }
