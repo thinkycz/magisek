@@ -79,7 +79,7 @@
                             <x-icons.currency-euro class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.currency-euro>
                             Currencies
                         </a>
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.property-types.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.property-types.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.property-types.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.flag class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.flag>
                             Property Types
                         </a>
