@@ -10,3 +10,4 @@ Route::resource('availabilities', \App\Http\Controllers\Admin\AvailabilityContro
 Route::resource('countries', \App\Http\Controllers\Admin\CountryController::class)->except('show');
 Route::resource('currencies', \App\Http\Controllers\Admin\CurrencyController::class)->except('show');
 Route::resource('property-types', \App\Http\Controllers\Admin\PropertyTypeController::class)->except('show');
+Route::resource('statuses', \App\Http\Controllers\Admin\StatusController::class)->except('show');

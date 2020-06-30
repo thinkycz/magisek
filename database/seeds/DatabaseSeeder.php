@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(CurrencySeeder::class);
         $this->call(PropertyTypeSeeder::class);
+        $this->call(StatusSeeder::class);
     }
 }
