@@ -87,7 +87,7 @@
                             <x-icons.cursor-click class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cursor-click>
                             Order Statuses
                         </a>
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.units.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.scale class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.scale>
                             Units
                         </a>

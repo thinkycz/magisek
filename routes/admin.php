@@ -11,3 +11,4 @@ Route::resource('countries', \App\Http\Controllers\Admin\CountryController::clas
 Route::resource('currencies', \App\Http\Controllers\Admin\CurrencyController::class)->except('show');
 Route::resource('property-types', \App\Http\Controllers\Admin\PropertyTypeController::class)->except('show');
 Route::resource('statuses', \App\Http\Controllers\Admin\StatusController::class)->except('show');
+Route::resource('units', \App\Http\Controllers\Admin\UnitController::class)->except('show');
