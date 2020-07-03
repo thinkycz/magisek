@@ -66,6 +66,54 @@ namespace App{
 
 namespace App\Models{
 /**
+ * App\Models\PaymentMethod
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod query()
+ */
+	class PaymentMethod extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\PropertyType
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType query()
+ */
+	class PropertyType extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Availability
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability query()
+ */
+	class Availability extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Country
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country query()
+ */
+	class Country extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\User
  *
  * @property int $id
@@ -95,6 +143,30 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Unit
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit query()
+ */
+	class Unit extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Status
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status query()
+ */
+	class Status extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Currency
  *
  * @property-read array $translations
@@ -103,5 +175,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Currency query()
  */
 	class Currency extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\DeliveryMethod
+ *
+ * @property-read array $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod query()
+ */
+	class DeliveryMethod extends \Eloquent {}
 }
 
