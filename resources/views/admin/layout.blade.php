@@ -56,11 +56,11 @@
                             <x-icons.chart-bar class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.chart-bar>
                             Price Levels
                         </a>
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.preferences.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.preferences.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.preferences.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.duplicate class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.duplicate>
                             Preferences
                         </a>
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.settings.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.settings.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.settings.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.cog class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cog>
                             Settings
                         </a>
