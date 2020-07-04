@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preference extends Model
 {
+    protected $guarded = [];
+
     public function preferable()
     {
         return $this->morphTo();
@@ -14,6 +16,11 @@ class Preference extends Model
     public function getValueAttribute()
     {
         return $this->preferable->name;
+    }
+
+    public function setValueAttribute($value)
+    {
+        return $this->attributes['preferable_id'] = $value;
     }
 
     public function getNameAttribute()

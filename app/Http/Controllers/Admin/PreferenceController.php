@@ -18,7 +18,8 @@ class PreferenceController extends Controller
     public function edit(Preference $preference)
     {
         return view('admin.preferences.edit', [
-            'preference' => $preference
+            'preference' => $preference,
+            'options'    => $preference->preferable_type::all()
         ]);
     }
 
@@ -32,7 +33,7 @@ class PreferenceController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-
+            'value' => 'required'
         ]);
     }
 }
