@@ -52,7 +52,7 @@
                             <x-icons.credit-card class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.credit-card>
                             Payment Methods
                         </a>
-                        <a href="#" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.price-levels.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                        <a href="{{ route('acp.price-levels.index') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.price-levels.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.chart-bar class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.chart-bar>
                             Price Levels
                         </a>
