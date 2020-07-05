@@ -4,29 +4,32 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Preferences
+                Settings
             </h2>
         </div>
     </div>
 
-    <x-form :method="$priceLevel->exists ? 'PUT' : 'POST'" :action="$priceLevel->exists ? route('acp.price-levels.update', $priceLevel) : route('acp.price-levels.store')">
+    <x-form method="PUT" :action="route('acp.settings.update', $setting)">
         <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6 mt-16">
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
                     <h3 class="text-lg font-medium leading-6 text-gray-900">
-                        Price Level
+                        {{ $setting->name }}
                     </h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500">
                         Please enter details.
                     </p>
                 </div>
-
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <x-input name="name" title="Name" :value="$priceLevel->name"></x-input>
-
-                    <x-checkbox name="has_quantity_discounts" title="Has quantity discounts" :value="$priceLevel->has_quantity_discounts" class="mt-6"></x-checkbox>
-
-                    <x-checkbox name="enabled" title="Enabled" :value="$priceLevel->enabled" class="mt-6"></x-checkbox>
+                    @foreach($schema['properties'] as $name => $property)
+                        @if($property['type'] === 'string')
+                            <x-input name="data[{{ $name }}]" title="settings.{{ $name }}" :value="$data[$name]" class="mb-6"></x-input>
+                        @elseif($property['type'] === 'boolean')
+                            <x-checkbox name="data[{{ $name }}]" title="settings.{{ $name }}" :value="$data[$name]" class="mb-6"></x-checkbox>
+                        @elseif($property['type'] === 'image')
+                            <x-file name="data[{{ $name }}]" title="settings.{{ $name }}" class="mb-6"></x-file>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

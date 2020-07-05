@@ -27,4 +27,19 @@ class Setting extends Model
     {
         return $this->data['value'] ?? __('settings.object');
     }
+
+    public function setDataAttribute($data)
+    {
+        foreach ($this->schema['properties'] as $name => $property) {
+            if ($property['type'] == 'image') {
+                dd($data[$name]);
+            } elseif ($property['type'] == 'number') {
+                $data[$name] = floatval($data[$name]);
+            } elseif ($property['type'] == 'string') {
+                $data[$name] = trim($data[$name]);
+            }
+        }
+
+        $this->attributes['data'] = json_encode($data);
+    }
 }

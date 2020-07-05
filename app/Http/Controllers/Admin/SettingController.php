@@ -18,7 +18,9 @@ class SettingController extends Controller
     public function edit(Setting $setting)
     {
         return view('admin.settings.edit', [
-            'setting' => $setting
+            'setting' => $setting,
+            'schema'  => $setting->schema,
+            'data'    => $setting->data
         ]);
     }
 
@@ -32,7 +34,7 @@ class SettingController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-
+            'data' => 'required|array'
         ]);
     }
 }
