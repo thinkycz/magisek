@@ -18,7 +18,7 @@ class DeliveryMethodController extends Controller
     public function create()
     {
         return view('admin.delivery-methods.edit', [
-            'deliveryMethods' => DeliveryMethod::make()
+            'deliveryMethod' => DeliveryMethod::make()
         ]);
     }
 

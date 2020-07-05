@@ -6,6 +6,12 @@ Route::redirect('/', '/acp/dashboard');
 
 Route::get('dashboard', \App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
 
+Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');
+
 Route::resource('delivery-methods', \App\Http\Controllers\Admin\DeliveryMethodController::class)->except('show');
 Route::resource('payment-methods', \App\Http\Controllers\Admin\PaymentMethodController::class)->except('show');
 Route::resource('price-levels', \App\Http\Controllers\Admin\PriceLevelController::class)->except('show');
