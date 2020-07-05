@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Setting extends Model
+class Setting extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+
     protected $guarded = [];
 
     protected $casts = [
@@ -32,7 +36,10 @@ class Setting extends Model
     {
         foreach ($this->schema['properties'] as $name => $property) {
             if ($property['type'] == 'image') {
-                dd($data[$name]);
+                if (isset($data[$name])) {
+                    $media = $this->addMedia($data[$name])->toMediaCollection($name);
+                    $data[$name] = $media->getUrl();
+                }
             } elseif ($property['type'] == 'number') {
                 $data[$name] = floatval($data[$name]);
             } elseif ($property['type'] == 'string') {
@@ -40,6 +47,6 @@ class Setting extends Model
             }
         }
 
-        $this->attributes['data'] = json_encode($data);
+        $this->attributes['data'] = json_encode(array_merge($this->data, $data));
     }
 }
