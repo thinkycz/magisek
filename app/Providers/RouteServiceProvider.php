@@ -73,12 +73,17 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapAuthRoutes()
     {
         Route::middleware('web', 'tenant')
-            ->group(base_path('routes/auth.php'));
+            ->namespace('App\\Http\\Controllers')
+            ->group(function () {
+                \Auth::routes(['verify' => true]);
+
+                Route::get('logout', 'Auth\LoginController@logout');
+            });
     }
 
     protected function mapClientRoutes()
     {
-        Route::middleware(['web', 'tenant'])
+        Route::middleware(['web', 'tenant', 'password.confirm'])
             ->group(base_path('routes/client.php'));
     }
 

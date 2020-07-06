@@ -1,4 +1,4 @@
-@props(['name' => '', 'title' => '', 'value' => ''])
+@props(['name' => '', 'title' => '', 'value' => '', 'type' => 'text'])
 
 <div {{ $attributes }}>
     <label for="{{ $name }}" class="block text-sm font-medium leading-5 text-gray-700">
@@ -6,7 +6,8 @@
     </label>
 
     <div class="mt-1 relative rounded-md shadow-sm">
-        <input id="{{ $name }}" name="{{ $name }}" class="form-input block w-full sm:text-sm sm:leading-5"
+        <input type="{{ $type }}" id="{{ $name }}" name="{{ $name }}"
+               class="form-input block w-full sm:text-sm sm:leading-5"
                value="{{ old($name, $value) }}"/>
     </div>
 
