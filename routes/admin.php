@@ -6,8 +6,8 @@ Route::redirect('/', '/acp/dashboard');
 
 Route::get('dashboard', \App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
 
-Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
-Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->except('show');
+Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->except('show');
 Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
 Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');

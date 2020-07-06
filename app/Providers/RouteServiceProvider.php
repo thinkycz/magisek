@@ -83,7 +83,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapClientRoutes()
     {
-        Route::middleware(['web', 'tenant', 'password.confirm'])
+        Route::middleware(['web', 'tenant'])
             ->group(base_path('routes/client.php'));
     }
 
