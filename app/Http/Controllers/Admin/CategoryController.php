@@ -53,7 +53,10 @@ class CategoryController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-
+            'name'      => 'required',
+            'position'  => 'required|numeric',
+            'parent_id' => 'sometimes|nullable|numeric|exists:categories,id',
+            'enabled'   => 'boolean'
         ]);
     }
 }

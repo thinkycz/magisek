@@ -16,6 +16,12 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->unsignedInteger('position')->default(0);
+            $table->boolean('enabled')->default(true);
+            $table->nestedSet();
         });
     }
 
