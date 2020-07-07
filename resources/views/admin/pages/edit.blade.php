@@ -33,7 +33,7 @@
                 <div class="mt-5 md:mt-0 md:col-span-2">
                     <x-input name="title" title="Title" :value="$page->title"></x-input>
 
-                    <x-textarea name="content" title="Content" :value="$page->content" class="mt-6"></x-textarea>
+                    <x-editor name="content" title="Content" :value="$page->content" class="mt-6"></x-editor>
                 </div>
             </div>
         </div>

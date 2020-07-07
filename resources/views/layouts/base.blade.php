@@ -22,6 +22,10 @@
 
         <!-- Alpine JS -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+
+        <!-- Froala Editor -->
+        <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
     </head>
 
     <body>
@@ -29,5 +33,6 @@
 
         <script src="{{ mix('js/app.js') }}"></script>
         @livewireScripts
+        @yield('scripts')
     </body>
 </html>
