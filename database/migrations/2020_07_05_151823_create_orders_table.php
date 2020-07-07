@@ -31,12 +31,12 @@ class CreateOrdersTable extends Migration
             $table->text('notes')->nullable();
             $table->text('customer_note')->nullable();
 
-            $table->unsignedInteger('user_id')->nullable();
-            $table->unsignedInteger('status_id')->nullable();
-            $table->unsignedInteger('shipping_detail_id')->nullable();
-            $table->unsignedInteger('billing_detail_id')->nullable();
-            $table->unsignedInteger('delivery_method_id')->nullable();
-            $table->unsignedInteger('payment_method_id')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('status_id')->nullable();
+            $table->foreignId('shipping_detail_id')->nullable();
+            $table->foreignId('billing_detail_id')->nullable();
+            $table->foreignId('delivery_method_id')->nullable();
+            $table->foreignId('payment_method_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('set null');

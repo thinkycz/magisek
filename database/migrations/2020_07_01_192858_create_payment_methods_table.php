@@ -23,7 +23,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->boolean('price_will_be_calculated')->default(false);
             $table->boolean('enabled')->default(true);
 
-            $table->unsignedBigInteger('delivery_method_id');
+            $table->foreignId('delivery_method_id');
             $table->foreign('delivery_method_id')->references('id')->on('delivery_methods')->onDelete('cascade');
         });
     }

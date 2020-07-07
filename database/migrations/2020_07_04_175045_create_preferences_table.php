@@ -18,7 +18,7 @@ class CreatePreferencesTable extends Migration
             $table->timestamps();
 
             $table->string('code');
-            $table->unsignedInteger('preferable_id')->nullable();
+            $table->foreignId('preferable_id')->nullable();
             $table->string('preferable_type');
         });
     }
