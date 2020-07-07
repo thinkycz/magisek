@@ -7,5 +7,12 @@
                 Products
             </h2>
         </div>
+
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <x-button :href="route('acp.products.edit', $product)" class="bg-indigo-600 hover:bg-indigo-500">
+                <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
+                Edit Product
+            </x-button>
+        </div>
     </div>
 @endsection

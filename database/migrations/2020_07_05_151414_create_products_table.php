@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->longText('details')->nullable();
 
-            $table->string('catalogue_number')->nullable();
+            $table->string('catalog')->nullable();
             $table->string('barcode')->nullable();
 
             $table->integer('quantity_in_stock')->default(0);

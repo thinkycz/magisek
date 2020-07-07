@@ -7,6 +7,13 @@
                 Products
             </h2>
         </div>
+
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <x-button :href="route('acp.products.create')" class="bg-indigo-600 hover:bg-indigo-500">
+                <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
+                Add Product
+            </x-button>
+        </div>
     </div>
 
     <div class="flex flex-col mt-16">
@@ -35,7 +42,7 @@
                                 <span class="text-sm leading-5 text-gray-900">{{ $product->name }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <span class="text-sm leading-5 text-gray-900">{{ $product->catalogue_number }}</span>
+                                <span class="text-sm leading-5 text-gray-900">{{ $product->catalog }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $product->barcode }}</span>

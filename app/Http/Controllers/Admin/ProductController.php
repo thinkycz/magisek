@@ -53,7 +53,12 @@ class ProductController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-
+            'name'        => 'required',
+            'catalog'     => 'required_without:barcode',
+            'barcode'     => 'required_without:catalog',
+            'description' => 'sometimes|nullable',
+            'details'     => 'sometimes|nullable',
+            'enabled'     => 'boolean'
         ]);
     }
 }
