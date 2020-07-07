@@ -15,32 +15,11 @@ class OrderController extends Controller
         ]);
     }
 
-    public function create()
+    public function show(Order $order)
     {
-        return view('admin.orders.edit', [
-            'orders' => Order::make()
-        ]);
-    }
-
-    public function store(Request $request)
-    {
-        Order::create($this->data($request));
-
-        return redirect()->route('acp.orders.index');
-    }
-
-    public function edit(Order $order)
-    {
-        return view('admin.orders.edit', [
+        return view('admin.orders.show', [
             'order' => $order
         ]);
-    }
-
-    public function update(Order $order, Request $request)
-    {
-        $order->update($this->data($request));
-
-        return redirect()->route('acp.orders.index');
     }
 
     public function destroy(Order $order)

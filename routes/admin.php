@@ -9,7 +9,7 @@ Route::get('dashboard', \App\Http\Controllers\Admin\DashboardController::class)-
 Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->except('show');
 Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->except('show');
 Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
-Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->only('index', 'show', 'destroy');
 Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');
 
 Route::resource('delivery-methods', \App\Http\Controllers\Admin\DeliveryMethodController::class)->except('show');
