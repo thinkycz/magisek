@@ -47,6 +47,8 @@ class Setting extends Model implements HasMedia
             }
         }
 
-        $this->attributes['data'] = json_encode(array_merge($this->data, $data));
+        $data = $this->data ? array_merge($this->data, $data) : $data;
+
+        $this->attributes['data'] = json_encode($data);
     }
 }
