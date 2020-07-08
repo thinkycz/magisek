@@ -15,7 +15,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        @livewireStyles
+
+        <!-- Livewire -->
+        <livewire:styles/>
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,8 +33,8 @@
     <body>
         @yield('body')
 
-        <script src="{{ mix('js/app.js') }}"></script>
-        @livewireScripts
         @yield('scripts')
+        <script src="{{ mix('js/app.js') }}"></script>
+        <livewire:scripts/>
     </body>
 </html>
