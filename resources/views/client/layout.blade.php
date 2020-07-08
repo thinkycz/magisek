@@ -5,16 +5,17 @@
 
     @include('client.partials.header')
 
-    <div class="container mx-auto py-6">
-        <div class="flex space-x-8">
-            <div class="w-64">
-                @include('client.partials.sidebar')
-            </div>
-            <div>
+    @section('container')
+        <div class="container mx-auto py-6">
+            <div class="flex space-x-8">
+                <div class="w-64 flex-shrink-0">
+                    @include('client.partials.sidebar')
+                </div>
+
                 @yield('content')
             </div>
         </div>
-    </div>
+    @show
 
     @include('client.partials.footer')
 @endsection
