@@ -4,17 +4,13 @@
 @section('content')
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <a href="{{ route('home') }}">
-                <x-logo class="w-auto h-16 mx-auto text-indigo-600"/>
-            </a>
-
-            <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+            <h2 class="text-3xl font-semibold text-center text-gray-900 leading-9">
                 Verify your email address
             </h2>
         </div>
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+            <div class="px-4 py-8 bg-white border-2 border-gray-100 sm:rounded-lg sm:px-10">
                 @if (session('resent'))
                     <div class="flex items-center px-4 py-3 mb-6 text-sm text-white bg-green-500 rounded shadow"
                          role="alert">
@@ -33,7 +29,7 @@
                     <p class="mb-4">Before proceeding, please check your email for a verification link. If you did not receive the email, click this button to request another.</p>
 
                     <x-form :action="route('verification.resend')">
-                        <x-button class="w-full sm:w-auto bg-indigo-500 text-indigo-100 px-6 py-2 rounded hover:bg-indigo-600 focus:outline-none cursor-pointer">Resend verification email</x-button>
+                        <x-button class="w-full sm:w-auto bg-teal-500 text-teal-100 px-6 py-2 rounded hover:bg-teal-600 focus:outline-none cursor-pointer">Resend verification email</x-button>
                     </x-form>
                 </div>
             </div>

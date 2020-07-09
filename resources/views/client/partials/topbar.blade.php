@@ -2,21 +2,30 @@
     <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <div class="space-x-4">
-                    <span class="text-xs text-gray-700 font-semibold">
-                        +420 702 096 113
-                    </span>
-                <span class="text-xs text-gray-700 font-semibold">
-                        team@nulisec.com
-                    </span>
+                <div class="inline text-xs text-gray-700 font-semibold">
+                    +420 730 969 399
+                </div>
+                <div class="inline text-xs text-gray-700 font-semibold">
+                    info@magisek.cz
+                </div>
             </div>
 
             <div class="space-x-4">
-                    <span class="text-xs text-gray-700 font-semibold">
-                        CZK
-                    </span>
-                <span class="text-xs text-gray-700 font-semibold">
-                        English
-                    </span>
+                @auth
+                    <a href="{{ route('profile.index') }}" class="text-xs text-gray-700 font-semibold hover:underline">
+                        My Profile ({{ auth()->user()->name }})
+                    </a>
+                    <a href="{{ route('logout') }}" class="text-xs text-gray-700 font-semibold hover:underline">
+                        Logout
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="text-xs text-gray-700 font-semibold hover:underline">
+                        Login
+                    </a>
+                    <a href="{{ route('register') }}" class="text-xs text-gray-700 font-semibold hover:underline">
+                        Register
+                    </a>
+                @endauth
             </div>
         </div>
     </div>
