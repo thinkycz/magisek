@@ -3,7 +3,7 @@
         @foreach($categories as $category)
             <li class="flex">
                 <a href="{{ route('categories.show', $category) }}"
-                   class="flex-1 px-4 py-2 bg-cool-gray-100 text-gray-800 font-semibold rounded text-xs uppercase hover:bg-cool-gray-200">
+                   class="flex-1 px-4 py-2 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold rounded text-xs uppercase hover:bg-cool-gray-300">
                     {{ $category->name }}
                 </a>
             </li>

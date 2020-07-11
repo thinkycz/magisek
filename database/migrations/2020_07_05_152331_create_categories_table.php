@@ -23,6 +23,15 @@ class CreateCategoriesTable extends Migration
             $table->boolean('enabled')->default(true);
             $table->nestedSet();
         });
+
+        Schema::create('category_product', function (Blueprint $table) {
+            $table->foreignId('category_id');
+            $table->foreignId('product_id');
+
+            $table->primary(['category_id', 'product_id']);
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**
@@ -32,6 +41,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('category_product');
         Schema::dropIfExists('categories');
     }
 }

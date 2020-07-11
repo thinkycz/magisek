@@ -32,4 +32,9 @@ class Category extends Model implements HasMedia
     {
         return 'slug';
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

@@ -8,7 +8,9 @@ class CategoryController
 {
     public function index()
     {
-        return view('client.categories.index');
+        return view('client.categories.index', [
+            'categories' => Category::withCount('products')->paginate()
+        ]);
     }
 
     public function show(Category $category)
