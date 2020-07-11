@@ -12,6 +12,8 @@ Route::get('checkout', \App\Http\Controllers\Client\CheckoutController::class)->
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', \App\Http\Controllers\Client\ProfileController::class)->name('profile.index');
+    Route::post('profile/update-account-settings', \App\Http\Controllers\Client\ProfileActions\UpdateAccountSettingsController::class)->name('profile.update-account-settings');
+
     Route::get('privacy', \App\Http\Controllers\Client\PrivacyController::class)->name('privacy.index');
     Route::get('orders', [\App\Http\Controllers\Client\OrderController::class, 'index'])->name('orders.index');
     Route::get('orders/{order}', [\App\Http\Controllers\Client\OrderController::class, 'show'])->name('orders.show');
