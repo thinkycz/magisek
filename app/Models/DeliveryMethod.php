@@ -12,4 +12,14 @@ class DeliveryMethod extends Model
     public $translatable = ['name'];
 
     protected $guarded = [];
+
+    public function paymentMethods()
+    {
+        return $this->hasMany(PaymentMethod::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

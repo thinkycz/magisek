@@ -23,4 +23,9 @@ class Status extends Model
             ->saveSlugsTo('code')
             ->doNotGenerateSlugsOnUpdate();
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

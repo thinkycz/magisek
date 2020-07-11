@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PriceLevel extends Model
+class PropertyValue extends Model
 {
     protected $guarded = [];
 
-    public function prices()
+    public function properties()
     {
-        return $this->hasMany(Price::class);
+        return $this->hasMany(Property::class);
     }
 }

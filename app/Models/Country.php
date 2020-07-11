@@ -12,4 +12,14 @@ class Country extends Model
     public $translatable = ['name'];
 
     protected $guarded = [];
+
+    public function shippingDetails()
+    {
+        return $this->hasMany(ShippingDetail::class);
+    }
+
+    public function billingDetails()
+    {
+        return $this->hasMany(BillingDetail::class);
+    }
 }

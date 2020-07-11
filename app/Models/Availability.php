@@ -12,4 +12,9 @@ class Availability extends Model
     public $translatable = ['name', 'description'];
 
     protected $guarded = [];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

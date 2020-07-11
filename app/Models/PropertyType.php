@@ -12,4 +12,9 @@ class PropertyType extends Model
     public $translatable = ['name'];
 
     protected $guarded = [];
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
 }
