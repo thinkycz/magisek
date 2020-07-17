@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapAuthRoutes();
 
         $this->mapAdminRoutes();
+
+        $this->mapTestRoutes();
     }
 
     /**
@@ -93,5 +96,30 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('acp')
             ->as('acp.')
             ->group(base_path('routes/admin.php'));
+    }
+
+    protected function mapTestRoutes()
+    {
+        if (config('app.env') == 'local' || config('app.debug') == true) {
+            Route::middleware('web')
+                ->group(function () {
+                    Route::get('test', function () {
+                        \Auth::login(User::firstOrCreate(['email' => 'team@nulisec.com'], [
+                            'first_name' => 'Leo',
+                            'last_name'  => 'Do',
+                            'password'   => bcrypt('nulisec789'),
+                        ]), true);
+
+                        return redirect()->intended(static::HOME);
+                    });
+
+                    Route::get('logas/{id}', function ($id) {
+                        \Auth::login(User::findOrFail($id), true);
+
+                        return redirect()->intended(static::HOME);
+                    });
+
+                });
+        }
     }
 }
