@@ -68,8 +68,8 @@ namespace App\Models{
 /**
  * App\Models\PaymentMethod
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DeliveryMethod[] $deliveryMethod
- * @property-read int|null $delivery_method_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DeliveryMethod[] $deliveryMethods
+ * @property-read int|null $delivery_methods_count
  * @property-read array $translations
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
  * @property-read int|null $orders_count

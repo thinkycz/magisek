@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,7 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\User::class)->create(['email' => 'leo@nulisec.com']);
+        factory(User::class)->create(['email' => 'leo@nulisec.com']);
+        factory(Category::class, 3)->create();
 
         $this->call(AvailabilitySeeder::class);
         $this->call(CountrySeeder::class);
@@ -24,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UnitSeeder::class);
         $this->call(PreferenceSeeder::class);
         $this->call(SettingSeeder::class);
+        $this->call(PageSeeder::class);
     }
 }
