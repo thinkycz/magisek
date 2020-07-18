@@ -68,7 +68,11 @@ namespace App\Models{
 /**
  * App\Models\PaymentMethod
  *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DeliveryMethod[] $deliveryMethod
+ * @property-read int|null $delivery_method_count
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PaymentMethod query()
@@ -78,9 +82,46 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\OrderedItem
+ *
+ * @property-read \App\Models\Order $order
+ * @property-read \App\Models\Product $product
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\OrderedItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\OrderedItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\OrderedItem query()
+ */
+	class OrderedItem extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Category
+ *
+ * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $children
+ * @property-read int|null $children_count
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @property-read \App\Models\Category $parent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
+ * @property-write mixed $parent_id
+ * @method static \Kalnoy\Nestedset\Collection|static[] all($columns = ['*'])
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category d()
+ * @method static \Kalnoy\Nestedset\Collection|static[] get($columns = ['*'])
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newModelQuery()
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newQuery()
+ * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category query()
+ */
+	class Category extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
+}
+
+namespace App\Models{
+/**
  * App\Models\PropertyType
  *
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Property[] $properties
+ * @property-read int|null $properties_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyType query()
@@ -90,9 +131,66 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Product
+ *
+ * @property-read \App\Models\Availability $availability
+ * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $categories
+ * @property-read int|null $categories_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
+ * @property-read int|null $ordered_items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
+ * @property-read int|null $prices_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Property[] $properties
+ * @property-read int|null $properties_count
+ * @property-read \App\Models\Unit $unit
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
+ */
+	class Product extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Order
+ *
+ * @property-read \App\Models\BillingDetail $billingDetail
+ * @property-read \App\Models\DeliveryMethod $deliveryMethod
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
+ * @property-read int|null $ordered_items_count
+ * @property-read \App\Models\PaymentMethod $paymentMethod
+ * @property-read \App\Models\ShippingDetail $shippingDetail
+ * @property-read \App\Models\Status $status
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Order query()
+ */
+	class Order extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Preference
+ *
+ * @property-read mixed $description
+ * @property-read mixed $name
+ * @property mixed $value
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $preferable
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Preference newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Preference newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Preference query()
+ */
+	class Preference extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Availability
  *
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Availability query()
@@ -104,7 +202,11 @@ namespace App\Models{
 /**
  * App\Models\Country
  *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BillingDetail[] $billingDetails
+ * @property-read int|null $billing_details_count
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShippingDetail[] $shippingDetails
+ * @property-read int|null $shipping_details_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country query()
@@ -124,8 +226,14 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BillingDetail[] $billingDetails
+ * @property-read int|null $billing_details_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShippingDetail[] $shippingDetails
+ * @property-read int|null $shipping_details_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
@@ -138,7 +246,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  */
-	class User extends \Eloquent {}
+	class User extends \Eloquent implements \Illuminate\Contracts\Auth\MustVerifyEmail {}
 }
 
 namespace App\Models{
@@ -146,6 +254,8 @@ namespace App\Models{
  * App\Models\Unit
  *
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit query()
@@ -155,14 +265,58 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Price
+ *
+ * @property-read \App\Models\PriceLevel $priceLevel
+ * @property-read \App\Models\Product $product
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Price query()
+ */
+	class Price extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Property
+ *
+ * @property-read \App\Models\Product $product
+ * @property-read \App\Models\PropertyType $propertyType
+ * @property-read \App\Models\PropertyValue $propertyValue
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Property newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Property newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Property query()
+ */
+	class Property extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Status
  *
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status query()
  */
 	class Status extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\BillingDetail
+ *
+ * @property-read \App\Models\Country $country
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BillingDetail newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BillingDetail newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BillingDetail query()
+ */
+	class BillingDetail extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -179,13 +333,85 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\PropertyValue
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Property[] $properties
+ * @property-read int|null $properties_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyValue newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyValue newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PropertyValue query()
+ */
+	class PropertyValue extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\DeliveryMethod
  *
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PaymentMethod[] $paymentMethods
+ * @property-read int|null $payment_methods_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DeliveryMethod query()
  */
 	class DeliveryMethod extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\ShippingDetail
+ *
+ * @property-read \App\Models\Country $country
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
+ * @property-read int|null $orders_count
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShippingDetail newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShippingDetail newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShippingDetail query()
+ */
+	class ShippingDetail extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\PriceLevel
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
+ * @property-read int|null $prices_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PriceLevel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PriceLevel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PriceLevel query()
+ */
+	class PriceLevel extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Page
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page query()
+ */
+	class Page extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Setting
+ *
+ * @property-read mixed $name
+ * @property-read mixed $value
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @property-write mixed $data
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting query()
+ */
+	class Setting extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 

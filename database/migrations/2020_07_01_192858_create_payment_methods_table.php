@@ -22,9 +22,15 @@ class CreatePaymentMethodsTable extends Migration
             $table->decimal('mov', 11, 2)->default(0)->nullable();
             $table->boolean('price_will_be_calculated')->default(false);
             $table->boolean('enabled')->default(true);
+        });
 
+        Schema::create('delivery_payment', function (Blueprint $table) {
             $table->foreignId('delivery_method_id');
-            $table->foreign('delivery_method_id')->references('id')->on('delivery_methods')->onDelete('cascade');
+            $table->foreignId('payment_method_id');
+
+            $table->primary(['delivery_method_id', 'payment_method_id']);
+            $table->foreign('delivery_method_id', 'delivery_id')->references('id')->on('delivery_methods')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('payment_method_id', 'payment_id')->references('id')->on('payment_methods')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -35,6 +41,7 @@ class CreatePaymentMethodsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('delivery_payment');
         Schema::dropIfExists('payment_methods');
     }
 }

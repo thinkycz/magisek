@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\DeliveryMethod;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 
@@ -18,13 +19,20 @@ class PaymentMethodController extends Controller
     public function create()
     {
         return view('admin.payment-methods.edit', [
-            'paymentMethod' => PaymentMethod::make()
+            'paymentMethod'   => PaymentMethod::make(),
+            'deliveryMethods' => DeliveryMethod::where('enabled', true)->get()
         ]);
     }
 
     public function store(Request $request)
     {
-        PaymentMethod::create($this->data($request));
+        $data = collect($this->data($request));
+
+        $paymentMethod = PaymentMethod::create($data->except('delivery_methods')->toArray());
+
+        $deliveries = collect($data['delivery_methods'])->filter(fn($delivery) => $delivery)->keys()->toArray();
+
+        $paymentMethod->deliveryMethods()->sync($deliveries);
 
         return redirect()->route('acp.payment-methods.index');
     }
@@ -32,13 +40,20 @@ class PaymentMethodController extends Controller
     public function edit(PaymentMethod $paymentMethod)
     {
         return view('admin.payment-methods.edit', [
-            'paymentMethod' => $paymentMethod
+            'paymentMethod'   => $paymentMethod,
+            'deliveryMethods' => DeliveryMethod::where('enabled', true)->get()
         ]);
     }
 
     public function update(PaymentMethod $paymentMethod, Request $request)
     {
-        $paymentMethod->update($this->data($request));
+        $data = collect($this->data($request));
+
+        $paymentMethod->update($data->except('delivery_methods')->toArray());
+
+        $deliveries = collect($data['delivery_methods'])->filter(fn($delivery) => $delivery)->keys()->toArray();
+
+        $paymentMethod->deliveryMethods()->sync($deliveries);
 
         return redirect()->route('acp.payment-methods.index');
     }
@@ -57,7 +72,8 @@ class PaymentMethodController extends Controller
             'price'                    => 'required|numeric',
             'mov'                      => 'required|numeric',
             'price_will_be_calculated' => 'boolean',
-            'enabled'                  => 'boolean'
+            'enabled'                  => 'boolean',
+            'delivery_methods'         => 'sometimes|nullable|array'
         ]);
     }
 }

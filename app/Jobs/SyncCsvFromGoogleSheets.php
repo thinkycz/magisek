@@ -73,8 +73,6 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
 
     protected function prepare()
     {
-        parent::prepare();
-
         $this->settings = $this->store->loadDataObject('google_spreadsheets');
         $this->endpoint = $this->buildEndpoint($this->settings->google_sheets_link);
     }

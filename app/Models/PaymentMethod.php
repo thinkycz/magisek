@@ -13,9 +13,9 @@ class PaymentMethod extends Model
 
     protected $guarded = [];
 
-    public function deliveryMethod()
+    public function deliveryMethods()
     {
-        return $this->belongsTo(DeliveryMethod::class);
+        return $this->belongsToMany(DeliveryMethod::class, 'delivery_payment');
     }
 
     public function orders()

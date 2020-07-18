@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\DeliveryMethod;
+use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 
 class DeliveryMethodController extends Controller
@@ -18,13 +19,20 @@ class DeliveryMethodController extends Controller
     public function create()
     {
         return view('admin.delivery-methods.edit', [
-            'deliveryMethod' => DeliveryMethod::make()
+            'deliveryMethod' => DeliveryMethod::make(),
+            'paymentMethods' => PaymentMethod::where('enabled', true)->get()
         ]);
     }
 
     public function store(Request $request)
     {
-        DeliveryMethod::create($this->data($request));
+        $data = collect($this->data($request));
+
+        $deliveryMethod = DeliveryMethod::create($data->except('payment_methods')->toArray());
+
+        $payments = collect($data['payment_methods'])->filter(fn($payment) => $payment)->keys()->toArray();
+
+        $deliveryMethod->paymentMethods()->sync($payments);
 
         return redirect()->route('acp.delivery-methods.index');
     }
@@ -32,13 +40,20 @@ class DeliveryMethodController extends Controller
     public function edit(DeliveryMethod $deliveryMethod)
     {
         return view('admin.delivery-methods.edit', [
-            'deliveryMethod' => $deliveryMethod
+            'deliveryMethod' => $deliveryMethod,
+            'paymentMethods' => PaymentMethod::where('enabled', true)->get()
         ]);
     }
 
     public function update(DeliveryMethod $deliveryMethod, Request $request)
     {
-        $deliveryMethod->update($this->data($request));
+        $data = collect($this->data($request));
+
+        $deliveryMethod->update($data->except('payment_methods')->toArray());
+
+        $payments = collect($data['payment_methods'])->filter(fn($payment) => $payment)->keys()->toArray();
+
+        $deliveryMethod->paymentMethods()->sync($payments);
 
         return redirect()->route('acp.delivery-methods.index');
     }
@@ -58,7 +73,8 @@ class DeliveryMethodController extends Controller
             'mov'                      => 'required|numeric',
             'needs_shipping_address'   => 'boolean',
             'price_will_be_calculated' => 'boolean',
-            'enabled'                  => 'boolean'
+            'enabled'                  => 'boolean',
+            'payment_methods'          => 'sometimes|nullable|array'
         ]);
     }
 }

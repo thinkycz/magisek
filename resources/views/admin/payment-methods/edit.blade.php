@@ -40,6 +40,18 @@
                     <x-checkbox name="price_will_be_calculated" title="Price will be calculated" :value="$paymentMethod->price_will_be_calculated" class="mt-6"></x-checkbox>
 
                     <x-checkbox name="enabled" title="Enabled" :value="$paymentMethod->enabled" class="mt-6"></x-checkbox>
+
+                    @if($deliveryMethods->isNotEmpty())
+                        <div class="block text-sm font-medium leading-5 text-gray-700 my-6">
+                            Delivery Methods
+                        </div>
+
+                        @foreach($deliveryMethods as $deliveryMethod)
+                            <x-checkbox name="delivery_methods[{{ $deliveryMethod->id }}]" :title="$deliveryMethod->name"
+                                        :value="$paymentMethod->deliveryMethods->contains($deliveryMethod)"
+                                        class="mb-6"></x-checkbox>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

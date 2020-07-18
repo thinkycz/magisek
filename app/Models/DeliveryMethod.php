@@ -15,7 +15,7 @@ class DeliveryMethod extends Model
 
     public function paymentMethods()
     {
-        return $this->hasMany(PaymentMethod::class);
+        return $this->belongsToMany(PaymentMethod::class, 'delivery_payment');
     }
 
     public function orders()

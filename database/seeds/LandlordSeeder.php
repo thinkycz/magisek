@@ -12,5 +12,13 @@ class LandlordSeeder extends Seeder
     public function run()
     {
         factory(\App\User::class)->create(['email' => 'leo@nulisec.com']);
+
+        DB::connection('landlord')->statement('DROP DATABASE IF EXISTS magisek');
+
+        \App\Store::create([
+            'name'     => 'Magisek',
+            'domain'   => 'magisek.test',
+            'database' => 'magisek'
+        ]);
     }
 }
