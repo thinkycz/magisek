@@ -12,16 +12,6 @@
         </dl>
     </div>
     <div class="p-4 bg-cool-gray-100">
-        <div x-data="{count: 1}" class="flex shadow">
-            <button class="flex-1 rounded-l text-white text-xs font-semibold flex items-center justify-center space-x-2 bg-teal-500 hover:bg-teal-600 focus:outline-none">
-                <x-icons.shopping-cart class="w-5 h-5"></x-icons.shopping-cart>
-                <span>Add to Basket</span>
-            </button>
-            <input type="text" class="text-center text-sm w-12 border focus:outline-none" :value="count">
-            <div class="flex flex-col border border-l-0 rounded-r">
-                <button class="px-2 text-xs border-b focus:outline-none" @click="count++">+</button>
-                <button class="px-2 text-xs focus:outline-none" @click="count--">-</button>
-            </div>
-        </div>
+        <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
     </div>
 </li>

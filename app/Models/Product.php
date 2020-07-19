@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Gloudemans\Shoppingcart\CanBeBought;
+use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Product extends Model
+class Product extends Model implements Buyable
 {
     use HasSlug;
+    use CanBeBought;
 
     protected $guarded = [];
 
@@ -101,5 +104,21 @@ class Product extends Model
     public function isInStock()
     {
         return $this->availability->allow_negative_quantity ? true : $this->quantity_in_stock >= $this->minimum_order_quantity;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getBuyableDescription($options = null)
+    {
+        return $this->name;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getBuyablePrice($options = null)
+    {
+        return $this->price ?? 5.5;
     }
 }
