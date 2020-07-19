@@ -7,11 +7,9 @@
         </h2>
 
         <ul class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            <livewire:product-card></livewire:product-card>
-            <livewire:product-card></livewire:product-card>
-            <livewire:product-card></livewire:product-card>
-            <livewire:product-card></livewire:product-card>
-            <livewire:product-card></livewire:product-card>
+            @foreach($products as $product)
+                <livewire:product-card :product="$product"></livewire:product-card>
+            @endforeach
         </ul>
     </div>
 @endsection

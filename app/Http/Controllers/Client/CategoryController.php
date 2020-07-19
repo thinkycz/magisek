@@ -16,7 +16,8 @@ class CategoryController
     public function show(Category $category)
     {
         return view('client.categories.show', [
-            'category' => $category
+            'category' => $category,
+            'products' => $category->products()->latest()->take(6)->get()
         ]);
     }
 }

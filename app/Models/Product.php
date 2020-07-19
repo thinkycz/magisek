@@ -53,4 +53,53 @@ class Product extends Model
     {
         return $this->hasMany(Property::class);
     }
+
+    public function getPrice(?PriceLevel $priceLevel = null)
+    {
+        $priceLevel = $priceLevel ?? currentUser()->priceLevel;
+
+        $price = $priceLevel ? $this->prices->where('price_level_id', $priceLevel->id)->first() : null;
+
+        return $price ? $price->convertToCurrency(currentCurrency()) : null;
+    }
+
+    public function getPriceAttribute()
+    {
+        return optional($this->getPrice())->price;
+    }
+
+    public function getFormattedPriceAttribute()
+    {
+        return showPriceWithCurrency($this->price, currentCurrency());
+    }
+
+    public function getPriceExclVatAttribute()
+    {
+        return getPriceExclVat($this->price, $this->vatrate, currentCurrency());
+    }
+
+    public function getFormattedPriceExclVatAttribute()
+    {
+        return showPriceWithCurrency($this->price_excl_vat, currentCurrency());
+    }
+
+    public function getPurchasableAttribute()
+    {
+        return $this->hasPrice() && $this->isAvailable() && $this->isInStock();
+    }
+
+    public function hasPrice(PriceLevel $priceLevel = null)
+    {
+        return $this->getPrice($priceLevel) ? true : false;
+    }
+
+    public function isAvailable()
+    {
+        return $this->availability->allow_orders;
+    }
+
+    public function isInStock()
+    {
+        return $this->availability->allow_negative_quantity ? true : $this->quantity_in_stock >= $this->minimum_order_quantity;
+    }
 }

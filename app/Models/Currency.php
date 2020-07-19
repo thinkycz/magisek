@@ -12,4 +12,15 @@ class Currency extends Model
     public $translatable = ['name'];
 
     protected $guarded = [];
+
+    public function displayPrice($price)
+    {
+        if ($this->symbol) {
+            $result = $this->symbol_is_before ? "{$this->symbol} {$price}" : "{$price} {$this->symbol}";
+        } else {
+            $result = "{$price} {$this->isocode}";
+        }
+
+        return $result;
+    }
 }
