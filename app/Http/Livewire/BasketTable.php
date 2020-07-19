@@ -2,20 +2,16 @@
 
 namespace App\Http\Livewire;
 
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
-class NavbarBasket extends Component
+class BasketTable extends Component
 {
-    /**
-     * @var string
-     */
+    protected $items;
+
     public $total;
 
-    /**
-     * @var float|int
-     */
-    public $count;
+    public $totalNet;
 
     protected $listeners = ['basketUpdated'];
 
@@ -26,12 +22,17 @@ class NavbarBasket extends Component
 
     public function basketUpdated()
     {
+        $this->items = Cart::content();
+
         $this->total = showPriceWithCurrency(Cart::total());
-        $this->count = Cart::count();
+
+        $this->totalNet = showPriceWithCurrency(Cart::subtotal());
     }
 
     public function render()
     {
-        return view('livewire.navbar-basket');
+        return view('livewire.basket-table', [
+            'items' => Cart::content(),
+        ]);
     }
 }

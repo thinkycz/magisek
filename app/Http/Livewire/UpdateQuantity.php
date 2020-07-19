@@ -2,33 +2,26 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Product;
-use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
-class AddToBasket extends Component
+class UpdateQuantity extends Component
 {
     /**
-     * @var Product
+     * @var integer
      */
-    public $product;
+    public $itemId;
 
     /**
      * @var integer
      */
     public $quantity;
 
-    /**
-     * @var boolean
-     */
-    public $purchased;
-
     protected $listeners = ['basketUpdated'];
 
-    public function mount(Product $product)
+    public function mount($itemId)
     {
-        $this->product = $product;
+        $this->itemId = $itemId;
 
         $this->basketUpdated();
     }
@@ -36,20 +29,11 @@ class AddToBasket extends Component
     public function basketUpdated()
     {
         $this->quantity = $this->cartItem ? $this->cartItem->qty : 1;
-
-        $this->purchased = $this->cartItem ? true : false;
     }
 
     public function render()
     {
-        return view('livewire.add-to-basket');
-    }
-
-    public function purchase()
-    {
-        Cart::add($this->product, 1)->setTaxRate($this->product->vatrate);
-
-        $this->emit('basketUpdated');
+        return view('livewire.update-quantity');
     }
 
     public function increment()
@@ -75,6 +59,6 @@ class AddToBasket extends Component
 
     public function getCartItemProperty()
     {
-        return Cart::search(fn(CartItem $cartItem) => $cartItem->id === $this->product->id)->first();
+        return Cart::content()->has($this->itemId) ? Cart::get($this->itemId) : null;
     }
 }
