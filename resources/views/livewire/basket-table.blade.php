@@ -86,7 +86,7 @@
                 </ul>
 
                 <div class="flex justify-end">
-                    <a href=""
+                    <a href="{{ route('checkout.index') }}"
                        class="flex-1 rounded h-12 text-white text-sm font-semibold flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600">
                         <x-icons.chevron-right class="w-5 h-5"></x-icons.chevron-right>
                         <span>Checkout</span>

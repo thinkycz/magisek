@@ -3,10 +3,10 @@
         <div class="flex justify-between items-center">
             <div class="space-x-4">
                 <div class="inline text-xs text-gray-700 font-semibold">
-                    +420 730 969 399
+                    {{ settingsRepository()->getCompanyPhoneNumber() }}
                 </div>
                 <div class="inline text-xs text-gray-700 font-semibold">
-                    info@magisek.cz
+                    {{ settingsRepository()->getCompanyEmail() }}
                 </div>
             </div>
 

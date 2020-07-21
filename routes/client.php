@@ -9,6 +9,7 @@ Route::get('products/{product}', \App\Http\Controllers\Client\ProductController:
 Route::get('pages/{page}', \App\Http\Controllers\Client\ProductController::class)->name('pages.show');
 Route::get('basket', \App\Http\Controllers\Client\BasketController::class)->name('basket.index');
 Route::get('checkout', \App\Http\Controllers\Client\CheckoutController::class)->name('checkout.index');
+Route::post('checkout/process-order', \App\Http\Controllers\Client\CheckoutActions\ProcessOrderController::class)->name('checkout.process-order');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', \App\Http\Controllers\Client\ProfileController::class)->name('profile.index');

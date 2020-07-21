@@ -51,4 +51,23 @@ class Setting extends Model implements HasMedia
 
         $this->attributes['data'] = json_encode($data);
     }
+
+    public static function loadConfiguration(string $code)
+    {
+        $setting = static::where('code', $code)->first();
+
+        return optional($setting)->data;
+    }
+
+    public static function saveConfiguration(string $code, array $data, string $namespace = '', string $type = 'string')
+    {
+        $schema = [
+            'type'       => 'object',
+            'properties' => collect($data)->keys()->mapWithKeys(function ($value) use ($type) {
+                return [$value => compact('type')];
+            }),
+        ];
+
+        return static::updateOrCreate(compact('namespace', 'code'), compact('schema', 'data'));
+    }
 }
