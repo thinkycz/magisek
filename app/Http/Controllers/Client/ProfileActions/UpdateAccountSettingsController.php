@@ -8,7 +8,11 @@ class UpdateAccountSettingsController
 {
     public function __invoke(Request $request)
     {
+        $data = collect($this->data($request))->filter(fn($item) => $item);
 
+        currentUser()->update($data->toArray());
+
+        return redirect()->back()->with('message', 'Updated');
     }
 
     protected function data(Request $request)
@@ -16,9 +20,9 @@ class UpdateAccountSettingsController
         return $request->validate([
             'first_name' => 'required',
             'last_name'  => 'required',
-            'email'      => 'required',
-            'phone'      => 'required',
-            'password'   => 'sometimes|confirmed',
+            'email'      => 'required|email|unique:users,email,' . currentUser()->id,
+            'phone'      => 'required|numeric',
+            'password'   => 'sometimes|nullable|min:8|confirmed',
         ]);
     }
 }

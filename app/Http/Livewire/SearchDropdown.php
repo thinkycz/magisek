@@ -11,8 +11,8 @@ class SearchDropdown extends Component
 
     public function render()
     {
-        $products = Product::take(4)->latest()->get();
-
-        return view('livewire.search-dropdown', compact('products'));
+        return view('livewire.search-dropdown', [
+            'products' => Product::take(4)->latest()->get()
+        ]);
     }
 }

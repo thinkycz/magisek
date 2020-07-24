@@ -33,6 +33,8 @@
     <body>
         @yield('body')
 
+        @include('layouts.partials.notifications')
+
         @yield('scripts')
         <script src="{{ mix('js/app.js') }}"></script>
         <livewire:scripts/>

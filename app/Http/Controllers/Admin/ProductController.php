@@ -15,6 +15,13 @@ class ProductController extends Controller
         ]);
     }
 
+    public function show(Product $product)
+    {
+        return view('admin.products.show', [
+            'product' => $product
+        ]);
+    }
+
     public function create()
     {
         return view('admin.products.edit', [
