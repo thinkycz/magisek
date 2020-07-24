@@ -8,7 +8,7 @@
 
         <div class="flex-1 space-y-4">
             <h2 class="text-2xl text-gray-700 font-semibold">
-                Syr Eidam
+                {{ $product->name }}
             </h2>
             <p class="text-2xl text-red-500">19.90 Kc</p>
             <p class=" text-gray-700 text-sm">
