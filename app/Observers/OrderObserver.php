@@ -16,6 +16,7 @@ class OrderObserver
         $order->setAttribute('variable_symbol', $this->variableSymbol());
         $order->setAttribute('tax_date', Carbon::now());
         $order->setAttribute('due_date', Carbon::now()->addDays(7));
+        $order->status()->associate(preferenceRepository()->getCreatedOrderStatus());
     }
 
     protected function datestamp()

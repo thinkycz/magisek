@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShippingDetail extends Model
 {
+    protected $guarded = [];
+
     public function country()
     {
         return $this->belongsTo(Country::class);

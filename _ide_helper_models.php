@@ -136,6 +136,11 @@ namespace App\Models{
  * @property-read \App\Models\Availability $availability
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $categories
  * @property-read int|null $categories_count
+ * @property-read mixed $formatted_price
+ * @property-read mixed $formatted_price_excl_vat
+ * @property-read mixed $price
+ * @property-read mixed $price_excl_vat
+ * @property-read mixed $purchasable
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
  * @property-read int|null $ordered_items_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
@@ -147,7 +152,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
  */
-	class Product extends \Eloquent {}
+	class Product extends \Eloquent implements \Gloudemans\Shoppingcart\Contracts\Buyable {}
 }
 
 namespace App\Models{

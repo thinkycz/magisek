@@ -10,7 +10,7 @@
                     class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                 <option value=""></option>
                 @foreach($countries as $country)
-                    <option value="{{ $country->id }}" {{ $country->id === old('name', $value) ? 'selected' : '' }}>{{ $country->name }}</option>
+                    <option value="{{ $country->id }}" {{ $country->id == old($name, $value) ? 'selected' : '' }}>{{ $country->name }}</option>
                 @endforeach
             </select>
         </div>

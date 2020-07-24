@@ -12,8 +12,8 @@ class CheckoutShippingBilling extends Component
 
     public function mount()
     {
-        $this->billingDifferent = false;
-        $this->businessPurchase = false;
+        $this->billingDifferent = !!old('billing_different');
+        $this->businessPurchase = !!old('business_purchase');
     }
 
     public function render()

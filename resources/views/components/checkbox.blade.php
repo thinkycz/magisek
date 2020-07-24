@@ -1,6 +1,6 @@
 @props(['name' => '', 'title' => '', 'value' => ''])
 
-<div {{ $attributes }}>
+<div {{ $attributes->except('wire:model') }}>
     <div class="flex items-start">
         <div class="absolute flex items-center h-5">
             <input type="hidden" name="{{ $name }}" value="0"/>
@@ -9,6 +9,7 @@
                    type="checkbox"
                    value="1"
                    {{ $value ? 'checked' : '' }}
+                   {{ $attributes->only('wire:model') }}
                    class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
         </div>
         <div class="pl-7 text-sm leading-5">

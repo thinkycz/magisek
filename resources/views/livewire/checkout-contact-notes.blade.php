@@ -4,32 +4,11 @@
             Contact and Notes
         </h3>
         <div class="mt-5 space-y-4">
-            <div>
-                <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
-                    Email</label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-            </div>
-            <div>
-                <label for="phone" class="block text-sm font-medium leading-5 text-gray-700">
-                    Phone</label>
-                <input id="phone"
-                       name="phone"
-                       class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-            </div>
-            <div class="mt-6">
-                <label for="notes" class="block text-sm leading-5 font-medium text-gray-700">
-                    Notes
-                </label>
-                <div class="rounded-md shadow-sm">
-                    <textarea id="notes" name="notes" rows="3" class="form-textarea mt-1 block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
-                </div>
-                <p class="mt-2 text-xs font-semibold text-gray-500">
-                    Anything you would like to add to the order.
-                </p>
-            </div>
+            <x-input type="email" name="email" title="Email"></x-input>
+
+            <x-input name="phone" title="Phone"></x-input>
+
+            <x-textarea name="customer_note" title="Notes" help="Anything you would like to add to the order."></x-textarea>
         </div>
     </div>
 </div>

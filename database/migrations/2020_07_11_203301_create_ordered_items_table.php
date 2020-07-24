@@ -18,16 +18,14 @@ class CreateOrderedItemsTable extends Migration
             $table->timestamps();
 
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->longText('details')->nullable();
             $table->string('type')->default('PRODUCT');
 
             $table->decimal('price', 11, 2);
             $table->unsignedDecimal('vatrate')->default(21.00);
-            $table->unsignedInteger('quantity_ordered')->default(0);
+            $table->unsignedInteger('quantity')->default(0);
 
             $table->string('barcode')->nullable();
-            $table->string('catalogue_number')->nullable();
+            $table->string('catalog')->nullable();
             $table->json('options')->nullable();
 
             $table->foreignId('order_id');

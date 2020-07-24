@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\Order;
+use App\Observers\OrderObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
@@ -29,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultView('pagination::default');
 
         Paginator::defaultSimpleView('pagination::simple-default');
+
+        Order::observe(OrderObserver::class);
 
         \View::composer('client.partials.sidebar', function (View $view) {
             $categories = Category::query()
