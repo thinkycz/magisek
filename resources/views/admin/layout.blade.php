@@ -10,7 +10,7 @@
             <div class="flex flex-col w-64 bg-gray-800">
                 <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
                     <div class="flex items-center flex-shrink-0 px-4">
-                        <x-logo class="w-auto h-8 mx-auto text-indigo-600" />
+                        <x-logo class="w-auto h-8 mx-auto text-teal-600" />
                     </div>
 
                     <nav class="mt-8 flex-1 px-2 bg-gray-800">

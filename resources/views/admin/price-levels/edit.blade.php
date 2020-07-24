@@ -41,7 +41,7 @@
         </div>
 
         <div class="flex justify-end mt-8">
-            <x-button class="bg-indigo-600 hover:bg-indigo-500">Save</x-button>
+            <x-button class="bg-teal-600 hover:bg-teal-500">Save</x-button>
         </div>
     </x-form>
 @endsection

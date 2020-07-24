@@ -10,7 +10,7 @@
                    value="1"
                    {{ $value ? 'checked' : '' }}
                    {{ $attributes->only('wire:model') }}
-                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                   class="form-checkbox h-4 w-4 text-teal-600 transition duration-150 ease-in-out">
         </div>
         <div class="pl-7 text-sm leading-5">
             <label for="{{ $name }}" class="font-medium text-gray-700">

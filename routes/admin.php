@@ -13,6 +13,9 @@ Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->o
 Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');
 
 Route::get('google-sheets', \App\Http\Controllers\Admin\GoogleSheetsController::class)->name('google-sheets.index');
+Route::get('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'index'])->name('google-sheets.configure');
+Route::post('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'store'])->name('google-sheets.store-configuration');
+Route::post('google-sheets/sync-now', \App\Http\Controllers\Admin\GoogleSheetsActions\SyncNowController::class)->name('google-sheets.sync-now');
 
 Route::resource('delivery-methods', \App\Http\Controllers\Admin\DeliveryMethodController::class)->except('show');
 Route::resource('payment-methods', \App\Http\Controllers\Admin\PaymentMethodController::class)->except('show');

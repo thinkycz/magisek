@@ -14,7 +14,7 @@
             <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                        <div class="flex-shrink-0 bg-teal-500 rounded-md p-3">
                             <x-icons.users class="h-6 w-6 text-white"></x-icons.users>
                         </div>
                         <div class="ml-5 w-0 flex-1">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
-                        <a href="{{ route('acp.users.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                        <a href="{{ route('acp.users.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
                             View all
                         </a>
                     </div>
@@ -42,7 +42,7 @@
             <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                        <div class="flex-shrink-0 bg-teal-500 rounded-md p-3">
                             <x-icons.view-grid class="h-6 w-6 text-white"></x-icons.view-grid>
                         </div>
                         <div class="ml-5 w-0 flex-1">
@@ -61,7 +61,7 @@
                 </div>
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
-                        <a href="{{ route('acp.products.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                        <a href="{{ route('acp.products.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
                             View all
                         </a>
                     </div>
@@ -70,7 +70,7 @@
             <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                        <div class="flex-shrink-0 bg-teal-500 rounded-md p-3">
                             <x-icons.shopping-cart class="h-6 w-6 text-white"></x-icons.shopping-cart>
                         </div>
                         <div class="ml-5 w-0 flex-1">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
-                        <a href="{{ route('acp.orders.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                        <a href="{{ route('acp.orders.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
                             View all
                         </a>
                     </div>
@@ -153,7 +153,7 @@
                             Owner
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit
+                            <a href="#" class="text-teal-600 hover:text-teal-900">Edit
                             </a>
                         </td>
                     </tr>
@@ -186,7 +186,7 @@
                             Owner
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit
+                            <a href="#" class="text-teal-600 hover:text-teal-900">Edit
                             </a>
                         </td>
                     </tr>
@@ -219,7 +219,7 @@
                             Owner
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit
+                            <a href="#" class="text-teal-600 hover:text-teal-900">Edit
                             </a>
                         </td>
                     </tr>
@@ -252,7 +252,7 @@
                             Owner
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit
+                            <a href="#" class="text-teal-600 hover:text-teal-900">Edit
                             </a>
                         </td>
                     </tr>
