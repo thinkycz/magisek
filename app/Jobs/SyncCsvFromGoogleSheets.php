@@ -3,14 +3,27 @@
 namespace App\Jobs;
 
 use App\Imports\ProductListCsvImport;
+use App\Models\Category;
+use App\Models\PriceLevel;
 use App\Models\Product;
+use App\Models\PropertyType;
+use App\Models\Setting;
+use App\Models\Unit;
+use App\Services\SyncStatus;
 use Closure;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Storage;
 
 class SyncCsvFromGoogleSheets implements ShouldQueue
 {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     /**
      * @var string
      */
@@ -19,7 +32,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     /**
      * @var string
      */
-    public static $statusCode = 'google_spreadsheets_status';
+    protected $statusCode = 'google_spreadsheets_status';
 
     /**
      * Max 60 minutes
@@ -41,40 +54,37 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     protected $data;
 
     /**
-     * @var object
+     * @var string
      */
-    protected $settings;
+    protected $identifier;
 
     /**
      * @var string
      */
     protected $endpoint;
 
+    /**
+     * @var array
+     */
     protected $properties = [
         'name',
         'description',
         'details',
-        'catalogue_number',
+        'catalog',
         'barcode',
-        'minimum_order_quantity',
+        'moq',
         'vatrate',
-        'base_units_in_product_unit',
         'photo'
-    ];
-
-    /**
-     * @var array
-     */
-    protected $numeric = [
-        'minimum_order_quantity',
-        'vatrate',
-        'base_units_in_product_unit'
     ];
 
     protected function prepare()
     {
-        $this->settings = $this->store->loadDataObject('google_spreadsheets');
-        $this->endpoint = $this->buildEndpoint($this->settings->google_sheets_link);
+        SyncStatus::log($this->statusCode, $this->job->getJobId());
+
+        $settings = Setting::loadConfiguration('google_sheets_importer');
+
+        $this->identifier = $settings['identifier'];
+        $this->endpoint = $this->buildEndpoint($settings['link']);
     }
 
     public function handle()
@@ -82,26 +92,19 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
         $this->prepare();
 
         (new ProductListCsvImport(Closure::fromCallable([$this, 'handleProduct'])))->import($this->getFile());
-
-        $this->logJobSucceeded();
-    }
-
-    public function failed(\Exception $exception)
-    {
-        $this->logJobFailed($exception);
     }
 
     protected function handleProduct(Collection $data)
     {
         $this->data = $data;
 
-        if (!$this->getFromData($this->settings->product_identifier)) {
+        if (!$this->getFromData($this->identifier)) {
             return null;
         }
 
         /** @var Product $product */
-        $product = $this->store->products()->updateOrCreate(
-            [$this->settings->product_identifier => $this->getFromData($this->settings->product_identifier)],
+        $product = Product::updateOrCreate(
+            [$this->identifier => $this->getFromData($this->identifier)],
             $this->getFromData($this->properties)
         );
 
@@ -110,8 +113,8 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
             ->handleProductPrices($product)
             ->handleProductProperties($product)
             ->handleProductOptions($product)
-            ->handleProductUnit($product)
-            ->handleQuantityDiscounts($product)
+//            ->handleProductUnit($product)
+//            ->handleQuantityDiscounts($product)
             ->handleProductPhoto($product);
 
         return $product->save();
@@ -119,7 +122,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
 
     protected function getFile()
     {
-        $path = "google_sheets/{$this->store->id}";
+        $path = "google_sheets/" . currentStore()->id;
         $file = file_get_contents($this->endpoint);
         $name = 'endpoint.csv';
 
@@ -149,7 +152,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
                     return !empty($name);
                 })
                 ->map(function ($name) {
-                    return $this->store->categories()->firstOrCreate(compact('name'))->id;
+                    return Category::firstOrCreate(compact('name'))->id;
                 })
                 ->unique();
 
@@ -180,7 +183,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
         $prices = $this->getMatchingData('price');
         $oldPrices = $this->getMatchingData('old_price');
 
-        $this->store->priceLevels->each(function (PriceLevel $priceLevel) use ($prices, $oldPrices, $product) {
+        PriceLevel::where('enabled', true)->each(function (PriceLevel $priceLevel) use ($prices, $oldPrices, $product) {
             $product->setPrice($priceLevel->id, $prices->get($priceLevel->import_code), $oldPrices->get($priceLevel->import_code));
         });
 
@@ -225,7 +228,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     protected function handleProductUnit(Product $product)
     {
         if ($unit = $this->getFromData('unit')) {
-            $unit = Unit::whereLike('name_v', $unit)->first() ?: preferenceRepository()->getDefaultQuantitativeUnit();
+            $unit = Unit::whereLike('name', $unit)->first() ?: preferenceRepository()->getDefaultQuantitativeUnit();
             $product->unit()->associate($unit);
         }
 
@@ -267,7 +270,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
      * @param $properties
      * @return array|mixed
      */
-    protected function getFromData(array $properties)
+    protected function getFromData($properties)
     {
         $result = collect($properties)
             ->mapWithKeys(function ($property) {
@@ -291,10 +294,10 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
                 return [trim($key) => trim($value)];
             })
             ->filter(function ($value, $key) use ($pattern) {
-                return starts_with($key, $pattern) || empty($pattern);
+                return Str::startsWith($key, $pattern) || empty($pattern);
             })
             ->mapWithKeys(function ($value, $key) use ($pattern) {
-                return [ltrim(str_after($key, $pattern), '.') => trim($value)];
+                return [ltrim(Str::after($key, $pattern), '.') => trim($value)];
             });
     }
 }

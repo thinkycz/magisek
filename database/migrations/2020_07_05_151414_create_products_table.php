@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('barcode')->nullable();
 
             $table->integer('quantity_in_stock')->default(0);
-            $table->integer('minimum_order_quantity')->default(1);
+            $table->integer('moq')->default(1);
             $table->unsignedDecimal('vatrate')->default(21.00);
             $table->boolean('enabled')->default(true);
             $table->boolean('multiply_of_moq_only')->default(false);

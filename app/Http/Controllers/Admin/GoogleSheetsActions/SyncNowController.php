@@ -11,7 +11,9 @@ class SyncNowController extends Controller
 {
     public function __invoke()
     {
-        Validator::make(Setting::loadConfiguration('google_sheets_importer') ?? [], [
+        $settings = Setting::loadConfiguration('google_sheets_importer') ?? [];
+
+        Validator::make($settings, [
             'link'       => 'required',
             'identifier' => 'required',
         ])->validate();

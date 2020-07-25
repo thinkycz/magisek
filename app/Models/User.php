@@ -40,4 +40,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return "{$this->first_name} {$this->last_name}";
     }
+
+    /**
+     * @return static
+     */
+    public static function current()
+    {
+        return auth()->user();
+    }
 }

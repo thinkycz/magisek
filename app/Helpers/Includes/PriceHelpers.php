@@ -88,3 +88,26 @@ if (!function_exists('formatPrice')) {
         return $result;
     }
 }
+
+/*
+ * @return float
+ */
+if (!function_exists('normalizeNumber')) {
+    function normalizeNumber($val)
+    {
+        $val = str_replace(',', '.', $val);
+        $val = preg_replace('/\.(?=.*\.)/', '', $val);
+
+        return floatval($val);
+    }
+}
+
+/**
+ * @return array
+ */
+if (!function_exists('iterable')) {
+    function iterable($object)
+    {
+        return is_array($object) ? $object : [$object];
+    }
+}

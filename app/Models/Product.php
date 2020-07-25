@@ -5,13 +5,16 @@ namespace App\Models;
 use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Product extends Model implements Buyable
+class Product extends Model implements Buyable, HasMedia
 {
     use HasSlug;
     use CanBeBought;
+    use InteractsWithMedia;
 
     protected $guarded = [];
 
@@ -106,19 +109,32 @@ class Product extends Model implements Buyable
         return $this->availability->allow_negative_quantity ? true : $this->quantity_in_stock >= $this->minimum_order_quantity;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getBuyableDescription($options = null)
     {
         return $this->name;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getBuyablePrice($options = null)
     {
         return $this->price ?? 5.5;
+    }
+
+    public function setPrice($price_level_id, $price = null, $old_price = null)
+    {
+        if (!$price_level_id) return null;
+
+        if (!$price) return $this->prices()->where('price_level_id', $price_level_id)->delete();
+
+        return $this->prices()->updateOrCreate(compact('price_level_id'), [
+            'price'     => normalizeNumber($price),
+            'old_price' => normalizeNumber($old_price) > normalizeNumber($price) ? normalizeNumber($old_price) : null
+        ]);
+    }
+
+    public function addProperty($value, $property_type_id, $is_option = false)
+    {
+        $property_value_id = PropertyValue::firstOrCreate(compact('value'))->id;
+
+        $this->properties()->firstOrCreate(compact('property_type_id', 'property_value_id'), compact('is_option'));
     }
 }

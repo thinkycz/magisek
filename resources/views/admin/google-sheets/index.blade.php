@@ -39,7 +39,7 @@
                     Poslední aktualizace
                 </dt>
                 <dd class="mt-1 text-xs font-semibold leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                    4.11.2019 03:00
+                    {{ $status->lastUpdate() }}
                 </dd>
             </div>
             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 items-center">
@@ -47,7 +47,7 @@
                     Trvání
                 </dt>
                 <dd class="mt-1 text-xs font-semibold leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                    1 sekunda
+                    {{ $status->duration() }}
                 </dd>
             </div>
             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 items-center">
@@ -55,7 +55,7 @@
                     Stav
                 </dt>
                 <dd class="mt-1 text-xs font-semibold leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                    Úspěch
+                    {{ $status->status() }}
                 </dd>
             </div>
         </dl>

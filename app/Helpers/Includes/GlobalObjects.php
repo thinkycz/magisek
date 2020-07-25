@@ -1,28 +1,34 @@
 <?php
 
-use App\Models\Currency;
-use App\Models\User;
-use Illuminate\Support\Facades\Session;
-
 if (!function_exists('currentUser')) {
     /**
      * @param bool $optional
-     * @return User
+     * @return \App\Models\User
      */
     function currentUser($optional = true)
     {
-        return $optional ? optional(auth()->user()) : auth()->user();
+        return $optional ? optional(\App\Models\User::current()) : \App\Models\User::current();
+    }
+}
+
+if (!function_exists('currentStore')) {
+    /**
+     * @return \App\Store
+     */
+    function currentStore()
+    {
+        return \App\Store::current();
     }
 }
 
 if (!function_exists('currentCurrency')) {
     /**
-     * @return Currency
+     * @return \App\Models\Currency
      */
     function currentCurrency()
     {
-        if ($currency = Session::has('currency')) {
-            return Session::get('currency');
+        if ($currency = \Session::has('currency')) {
+            return \Session::get('currency');
         }
 
         if ($currency = currentUser()->currency) {
