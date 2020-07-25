@@ -36,7 +36,7 @@
                     @foreach($pages as $page)
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <span class="text-sm leading-5 text-gray-900">{{ $page->title }}</span>
+                                <a href="{{ route('pages.show', $page) }}" class="text-sm leading-5 text-blue-700 hover:text-blue-600 hover:underline font-semibold" target="_blank">{{ $page->title }}</a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $page->slug }}</span>
