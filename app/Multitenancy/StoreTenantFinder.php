@@ -17,6 +17,11 @@ class StoreTenantFinder extends TenantFinder
     {
         $host = $request->getHost();
 
+        config([
+            "app.url" => $request->getSchemeAndHttpHost(),
+            "filesystems.disks.public.url" => $request->getSchemeAndHttpHost() . '/storage'
+        ]);
+
         if (Str::endsWith($host, '.' . config('app.landlord_domain'))) {
             $subdomain = Str::before($host, '.' . config('app.landlord_domain'));
 

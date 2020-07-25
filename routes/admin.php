@@ -8,9 +8,11 @@ Route::get('dashboard', \App\Http\Controllers\Admin\DashboardController::class)-
 
 Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->except('show');
 Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->except('show');
-Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->only('index', 'show', 'destroy');
 Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');
+
+Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+Route::post('products/{product}/upload-photo', \App\Http\Controllers\Admin\ProductActions\UploadPhotoController::class)->name('products.upload-photo');
 
 Route::get('google-sheets', \App\Http\Controllers\Admin\GoogleSheetsController::class)->name('google-sheets.index');
 Route::get('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'index'])->name('google-sheets.configure');
