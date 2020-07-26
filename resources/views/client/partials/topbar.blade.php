@@ -18,7 +18,7 @@
                             Admin Panel
                         </a>
                     @endcan
-                    <a href="{{ route('profile.index') }}" class="text-xs text-gray-700 font-semibold hover:underline">
+                    <a href="{{ route('orders.index') }}" class="text-xs text-gray-700 font-semibold hover:underline">
                         My Profile ({{ auth()->user()->name }})
                     </a>
                     <a href="{{ route('logout') }}" class="text-xs text-gray-700 font-semibold hover:underline">

@@ -107,7 +107,7 @@ class RouteServiceProvider extends ServiceProvider
                         \Auth::login(User::firstOrCreate(['email' => 'team@nulisec.com'], [
                             'first_name' => 'Leo',
                             'last_name'  => 'Do',
-                            'password'   => bcrypt('nulisec789'),
+                            'password'   => bcrypt('password'),
                             'is_admin'   => true
                         ]), true);
 
