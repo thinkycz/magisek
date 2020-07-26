@@ -92,7 +92,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapAdminRoutes()
     {
-        Route::middleware(['web', 'tenant', 'auth'])
+        Route::middleware(['web', 'tenant', 'auth', 'admin'])
             ->prefix('acp')
             ->as('acp.')
             ->group(base_path('routes/admin.php'));
@@ -108,6 +108,7 @@ class RouteServiceProvider extends ServiceProvider
                             'first_name' => 'Leo',
                             'last_name'  => 'Do',
                             'password'   => bcrypt('nulisec789'),
+                            'is_admin'   => true
                         ]), true);
 
                         return redirect()->intended(route('acp.dashboard'));

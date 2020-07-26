@@ -12,6 +12,12 @@
 
             <div class="space-x-4">
                 @auth
+                    @can('access-admin-panel')
+                        <a href="{{ route('acp.dashboard') }}"
+                           class="text-xs text-gray-700 font-semibold hover:underline">
+                            Admin Panel
+                        </a>
+                    @endcan
                     <a href="{{ route('profile.index') }}" class="text-xs text-gray-700 font-semibold hover:underline">
                         My Profile ({{ auth()->user()->name }})
                     </a>

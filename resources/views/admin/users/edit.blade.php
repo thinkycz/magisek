@@ -30,12 +30,16 @@
                     </p>
                 </div>
 
-                <div class="mt-5 md:mt-0 md:col-span-2">
-                    <x-input name="name" title="Name" :value="$user->name"></x-input>
+                <div class="mt-5 md:mt-0 md:col-span-2 space-y-6">
+                    <x-input name="first_name" title="First Name" :value="$user->first_name"></x-input>
 
-                    <x-input type="email" name="email" title="Email" :value="$user->email" class="mt-6"></x-input>
+                    <x-input name="last_name" title="Last Name" :value="$user->last_name"></x-input>
 
-                    <x-input name="password" title="Password" class="mt-6"></x-input>
+                    <x-input type="email" name="email" title="Email" :value="$user->email"></x-input>
+
+                    <x-input name="password" title="Password"></x-input>
+
+                    <x-checkbox name="is_admin" title="Is Admin" :value="$user->is_admin"></x-checkbox>
                 </div>
             </div>
         </div>

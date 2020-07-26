@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -24,7 +25,10 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        User::create($this->data($request));
+        $data = collect($this->data($request))
+            ->reject(fn($item, $key) => ($key === 'password' && !$item));
+
+        User::create($data->toArray());
 
         return redirect()->route('acp.users.index');
     }
@@ -38,7 +42,11 @@ class UserController extends Controller
 
     public function update(User $user, Request $request)
     {
-        $user->update($this->data($request));
+        $data = collect($this->data($request))
+            ->reject(fn($item, $key) => ($key === 'password' && !$item))
+            ->reject(fn($item, $key) => (currentUser()->is($user) && $key === 'is_admin'));
+
+        $user->update($data->toArray());
 
         return redirect()->route('acp.users.index');
     }
@@ -53,7 +61,11 @@ class UserController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-
+            'first_name' => ['required'],
+            'last_name'  => ['required'],
+            'email'      => ['required', 'email', Rule::unique('users', 'email')->ignore($request->route('user'))],
+            'password'   => ['nullable'],
+            'is_admin'   => ['boolean']
         ]);
     }
 }
