@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\ProductActions;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class SavePricingController
+class UpdatePricingController
 {
     public function __invoke(Product $product, Request $request)
     {

@@ -1,5 +1,9 @@
+@php
+    $priceLevels = \App\Models\PriceLevel::where('enabled', true)->get();
+@endphp
+
 <x-accordion title="Pricing">
-    <x-form :action="route('acp.products.save-pricing', $product)">
+    <x-form :action="route('acp.products.update-pricing', $product)">
         <div class="p-4 space-y-4">
             @foreach($priceLevels as $priceLevel)
                 <input type="hidden" name="prices[{{ $priceLevel->id }}][price_level_id]" value="{{ $priceLevel->id }}">

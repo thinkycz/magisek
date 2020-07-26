@@ -13,7 +13,8 @@ Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->exc
 
 Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 Route::post('products/{product}/upload-photo', \App\Http\Controllers\Admin\ProductActions\UploadPhotoController::class)->name('products.upload-photo');
-Route::post('products/{product}/save-pricing', \App\Http\Controllers\Admin\ProductActions\SavePricingController::class)->name('products.save-pricing');
+Route::post('products/{product}/update-pricing', \App\Http\Controllers\Admin\ProductActions\UpdatePricingController::class)->name('products.update-pricing');
+Route::post('products/{product}/update-stock', \App\Http\Controllers\Admin\ProductActions\UpdateStockController::class)->name('products.update-stock');
 
 Route::get('google-sheets', \App\Http\Controllers\Admin\GoogleSheetsController::class)->name('google-sheets.index');
 Route::get('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'index'])->name('google-sheets.configure');
