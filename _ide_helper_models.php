@@ -111,6 +111,8 @@ namespace App\Models{
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newModelQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category newQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLike($column, $keyword)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLikeQuery($column, $keyword)
  */
 	class Category extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -141,18 +143,22 @@ namespace App\Models{
  * @property-read mixed $price
  * @property-read mixed $price_excl_vat
  * @property-read mixed $purchasable
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read int|null $media_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
  * @property-read int|null $ordered_items_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
  * @property-read int|null $prices_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Property[] $properties
  * @property-read int|null $properties_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
+ * @property-read int|null $tags_count
  * @property-read \App\Models\Unit $unit
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product query()
  */
-	class Product extends \Eloquent implements \Gloudemans\Shoppingcart\Contracts\Buyable {}
+	class Product extends \Eloquent implements \Gloudemans\Shoppingcart\Contracts\Buyable, \Spatie\MediaLibrary\HasMedia {}
 }
 
 namespace App\Models{
@@ -217,6 +223,22 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country query()
  */
 	class Country extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Tag
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
+ * @property-write mixed $value
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereLike($column, $keyword)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereLikeQuery($column, $keyword)
+ */
+	class Tag extends \Eloquent {}
 }
 
 namespace App\Models{

@@ -60,6 +60,11 @@ class Product extends Model implements Buyable, HasMedia
         return $this->hasMany(Property::class);
     }
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
     public function getPrice(?PriceLevel $priceLevel = null)
     {
         $priceLevel = $priceLevel ?? currentUser()->priceLevel;
