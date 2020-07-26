@@ -131,6 +131,15 @@ class Product extends Model implements Buyable, HasMedia
         ]);
     }
 
+    public function setPricesAttribute($value)
+    {
+        if (is_array($value)) {
+            foreach ($value as $price) {
+                $this->setPrice($price['price_level_id'], $price['price'], $price['old_price']);
+            }
+        }
+    }
+
     public function addProperty($value, $property_type_id, $is_option = false)
     {
         $property_value_id = PropertyValue::firstOrCreate(compact('value'))->id;

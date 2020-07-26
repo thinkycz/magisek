@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PriceLevel;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('admin.products.show', [
-            'product' => $product
+            'product'     => $product,
+            'priceLevels' => PriceLevel::where('enabled', true)->get()
         ]);
     }
 
