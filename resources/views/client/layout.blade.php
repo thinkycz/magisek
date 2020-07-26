@@ -19,5 +19,7 @@
         @show
     </div>
 
+    @yield('subcontent')
+
     @include('client.partials.footer')
 @endsection
