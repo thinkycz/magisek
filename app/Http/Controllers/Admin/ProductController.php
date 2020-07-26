@@ -18,8 +18,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('admin.products.show', [
-            'product' => $product,
-            'photos' => $product->getMedia('photos')
+            'product' => $product
         ]);
     }
 

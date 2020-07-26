@@ -3,12 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ settingsRepository()->getStoreDescription() }}">
+        <meta name="keywords" content="{{ settingsRepository()->getStoreKeywords() }}">
 
         @hasSection('title')
-            <title>@yield('title') - {{ config('app.name') }}</title>
+            <title>@yield('title') - {{ settingsRepository()->getStoreName() }}</title>
         @else
-            <title>{{ config('app.name') }}</title>
+            <title>{{ settingsRepository()->getStoreName() }}</title>
         @endif
+
+        <!-- Favicon -->
+        <link rel="icon" href="{{ settingsRepository()->getStoreFavicon() }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">

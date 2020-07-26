@@ -2,9 +2,15 @@
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="xl:col-span-1">
-                <img class="h-10" src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg" alt="Company name">
+                @if(settingsRepository()->getStoreLogo())
+                    <img class="h-10" src="{{ settingsRepository()->getStoreLogo() }}"
+                         alt="{{ settingsRepository()->getStoreName() }}">
+                @else
+                    <x-logo class="w-8 h-8"></x-logo>
+                @endif
+
                 <p class="mt-8 text-gray-500 text-base leading-6">
-                    Making the world a better place through constructing elegant hierarchies.
+                    {{ settingsRepository()->getStoreDescription() }}
                 </p>
             </div>
             <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">

@@ -25,6 +25,7 @@ return [
      */
     'switch_tenant_tasks' => [
         SwitchTenantDatabaseTask::class,
+        \App\Multitenancy\SwitchFilesystemsTask::class
     ],
 
     /*

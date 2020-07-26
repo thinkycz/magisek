@@ -48,19 +48,29 @@ class SettingsRepository extends InstanceCache
         return $this->get('company_details', 'street') . ' ' . $this->get('company_details', 'city');
     }
 
-    public function getLogo()
+    public function getStoreLogo()
     {
-        return $this->get('store_settings', 'logo') ?: asset('images/chameleon.png');
+        return $this->get('store_settings', 'logo') ?: '';
     }
 
-    public function getFaviconImage()
+    public function getStoreName()
+    {
+        return $this->get('store_settings', 'name') ?: config('app.name');
+    }
+
+    public function getStoreDescription()
+    {
+        return $this->get('store_settings', 'description') ?: '';
+    }
+
+    public function getStoreKeywords()
+    {
+        return $this->get('store_settings', 'keywords') ?: '';
+    }
+
+    public function getStoreFavicon()
     {
         return $this->get('store_settings', 'favicon') ?: asset('favicon.ico');
-    }
-
-    public function getCurrencyConversionMethod()
-    {
-        return $this->get('exchange_rate_multiply') ? CurrencyConversionMethod::MULTIPLY_BY_EXCHANGE_RATE : CurrencyConversionMethod::DIVIDE_BY_EXCHANGE_RATE;
     }
 
     public function getCustomLink1()

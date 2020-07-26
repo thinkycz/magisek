@@ -3,7 +3,12 @@
         <div class="flex space-x-8">
             <div class="w-64 px-4 flex items-center">
                 <a href="{{ route('home') }}">
-                    <x-logo class="w-8 h-8"></x-logo>
+                    @if(settingsRepository()->getStoreLogo())
+                        <img class="h-10" src="{{ settingsRepository()->getStoreLogo() }}"
+                             alt="{{ settingsRepository()->getStoreName() }}">
+                    @else
+                        <x-logo class="w-8 h-8"></x-logo>
+                    @endif
                 </a>
             </div>
 
