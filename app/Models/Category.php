@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ScopeWhereLike;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\MediaLibrary\HasMedia;
@@ -14,6 +15,7 @@ class Category extends Model implements HasMedia
     use HasSlug;
     use NodeTrait;
     use InteractsWithMedia;
+    use ScopeWhereLike;
 
     protected $guarded = [];
 
