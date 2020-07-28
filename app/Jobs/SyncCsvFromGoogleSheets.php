@@ -113,8 +113,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
             ->handleProductPrices($product)
             ->handleProductProperties($product)
             ->handleProductOptions($product)
-//            ->handleProductUnit($product)
-//            ->handleQuantityDiscounts($product)
+            ->handleProductUnit($product)
             ->handleProductPhoto($product);
 
         return $product->save();
@@ -228,24 +227,9 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     protected function handleProductUnit(Product $product)
     {
         if ($unit = $this->getFromData('unit')) {
-            $unit = Unit::whereLike('name', $unit)->first() ?: preferenceRepository()->getDefaultQuantitativeUnit();
+            $unit = Unit::where('abbr->cs', $unit)->first() ?: preferenceRepository()->getDefaultQuantitativeUnit();
             $product->unit()->associate($unit);
         }
-
-        return $this;
-    }
-
-    protected function handleQuantityDiscounts(Product $product)
-    {
-        $discounts = $this->getMatchingData('quantity_discount');
-
-        $discounts->each(function ($values) use ($product) {
-            $values = collect(explode('|', $values));
-            $quantity = $values[0] ?? null;
-            $price = $values[1] ?? null;
-
-            $product->setQuantityDiscount(normalizeNumber($quantity), normalizeNumber($price));
-        });
 
         return $this;
     }

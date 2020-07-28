@@ -9,6 +9,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -32,6 +33,23 @@ class Product extends Model implements Buyable, HasMedia
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumbnail')
+            ->width(300)
+            ->height(300)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
+
+        $this->addMediaConversion('optimized')
+            ->width(800)
+            ->height(800)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
     }
 
     public function availability()
@@ -78,31 +96,6 @@ class Product extends Model implements Buyable, HasMedia
         return $price ? $price->convertToCurrency(currentCurrency()) : null;
     }
 
-    public function getPriceAttribute()
-    {
-        return optional($this->getPrice())->price;
-    }
-
-    public function getFormattedPriceAttribute()
-    {
-        return showPriceWithCurrency($this->price, currentCurrency());
-    }
-
-    public function getPriceExclVatAttribute()
-    {
-        return getPriceExclVat($this->price, $this->vatrate, currentCurrency());
-    }
-
-    public function getFormattedPriceExclVatAttribute()
-    {
-        return showPriceWithCurrency($this->price_excl_vat, currentCurrency());
-    }
-
-    public function getPurchasableAttribute()
-    {
-        return $this->hasPrice() && $this->isAvailable() && $this->isInStock();
-    }
-
     public function hasPrice(PriceLevel $priceLevel = null)
     {
         return $this->getPrice($priceLevel) ? true : false;
@@ -138,15 +131,6 @@ class Product extends Model implements Buyable, HasMedia
             'price'     => normalizeNumber($price),
             'old_price' => normalizeNumber($old_price) > normalizeNumber($price) ? normalizeNumber($old_price) : null
         ]);
-    }
-
-    public function setPricesAttribute($value)
-    {
-        if (is_array($value)) {
-            foreach ($value as $price) {
-                $this->setPrice($price['price_level_id'], $price['price'], $price['old_price']);
-            }
-        }
     }
 
     public function addProperty($value, $property_type_id, $is_option = false)

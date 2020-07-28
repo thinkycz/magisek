@@ -4,6 +4,11 @@ namespace App\Traits\Product;
 
 trait ProductHasAttributes
 {
+    public function getThumbnailAttribute()
+    {
+        return $this->hasMedia('photos') ? $this->getFirstMediaUrl('photos', 'thumbnail') : asset('img/no_image.jpg');
+    }
+
     public function getAvailabilityIdAttribute($value)
     {
         return $value ?? preferenceRepository()->getDefaultOutOfStockAvailability()->id;
@@ -31,19 +36,29 @@ trait ProductHasAttributes
         return $qty;
     }
 
-    public function hasCategory()
+    public function getPriceAttribute()
     {
-        return $this->categories()->count();
+        return optional($this->getPrice())->price;
     }
 
-    public function getFirstCategory()
+    public function getFormattedPriceAttribute()
     {
-        return $this->categories->first();
+        return showPriceWithCurrency($this->price, currentCurrency());
     }
 
-    public function getShowPathAttribute()
+    public function getPriceExclVatAttribute()
     {
-        return route('products.show', $this);
+        return getPriceExclVat($this->price, $this->vatrate, currentCurrency());
+    }
+
+    public function getFormattedPriceExclVatAttribute()
+    {
+        return showPriceWithCurrency($this->price_excl_vat, currentCurrency());
+    }
+
+    public function getPurchasableAttribute()
+    {
+        return $this->hasPrice() && $this->isAvailable() && $this->isInStock();
     }
 
     public function getFormattedVatrateAttribute()
@@ -59,5 +74,14 @@ trait ProductHasAttributes
     public function setVatrateAttribute($value)
     {
         $this->attributes['vatrate'] = is_numeric($value) ? $value : config('config.default_vat_rate_percentage');
+    }
+
+    public function setPricesAttribute($value)
+    {
+        if (is_array($value)) {
+            foreach ($value as $price) {
+                $this->setPrice($price['price_level_id'], $price['price'], $price['old_price']);
+            }
+        }
     }
 }

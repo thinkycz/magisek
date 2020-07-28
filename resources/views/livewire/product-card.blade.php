@@ -1,6 +1,6 @@
 <li class="col-span-1 flex flex-col bg-white rounded-lg shadow">
     <div class="flex-1 flex flex-col p-4">
-        <img class="w-full h-40 flex-shrink-0 mx-auto object-contain" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="" />
+        <img class="w-full h-40 flex-shrink-0 mx-auto object-contain" src="{{ $product->thumbnail }}" alt="{{ $product->name }}" />
         <a href="{{ route('products.show', $product) }}" class="mt-6 text-gray-900 text-sm leading-5 font-medium hover:underline">
             {{ $product->name }}
         </a>
