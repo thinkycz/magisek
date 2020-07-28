@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Product\ProductHasEligibilities;
 use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
@@ -15,6 +16,7 @@ class Product extends Model implements Buyable, HasMedia
     use HasSlug;
     use CanBeBought;
     use InteractsWithMedia;
+    use ProductHasEligibilities;
 
     protected $guarded = [];
 
@@ -67,7 +69,7 @@ class Product extends Model implements Buyable, HasMedia
 
     public function getPrice(?PriceLevel $priceLevel = null)
     {
-        $priceLevel = $priceLevel ?? currentUser()->priceLevel;
+        $priceLevel = $priceLevel ?? currentUser()->priceLevel ?? preferenceRepository()->getDefaultPriceLevel();
 
         $price = $priceLevel ? $this->prices->where('price_level_id', $priceLevel->id)->first() : null;
 
@@ -121,7 +123,7 @@ class Product extends Model implements Buyable, HasMedia
 
     public function getBuyablePrice($options = null)
     {
-        return $this->price ?? 5.5;
+        return $this->price;
     }
 
     public function setPrice($price_level_id, $price = null, $old_price = null)

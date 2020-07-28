@@ -1,8 +1,9 @@
 <div class="fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:justify-end">
-    <div x-data="{ show: false, hasMessage: {{ session()->has('message') ? 1 : 0 }} }"
+    <div x-data="{ show: false, hasMessage: {{ session()->has('message') ? 1 : 0 }}, message: '{{ session()->get('message') }}', description: '{{ session()->get('message_description') }}' }"
          x-init="hasMessage ? () => {setTimeout(() => show = true, 100); setTimeout(() => show = false, 3000)} : null"
          x-show="show"
          x-description="Notification panel, show/hide based on alert state."
+         x-on:notify.window="show = true; message = $event.detail; setTimeout(() => show = false, 3000)"
          x-transition:enter="transform ease-out duration-300 transition"
          x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
          x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0"
@@ -15,18 +16,11 @@
             <div class="p-4">
                 <div class="flex items-start">
                     <div class="flex-shrink-0">
-                        <svg class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                        <x-icons.information-circle class="h-6 w-6 text-blue-400"></x-icons.information-circle>
                     </div>
                     <div class="ml-3 w-0 flex-1 pt-0.5">
-                        <p class="text-sm leading-5 font-medium text-gray-900">
-                            {{ session()->get('message') }}
-                        </p>
-                        <p class="mt-1 text-sm leading-5 text-gray-500">
-                            {{ session()->get('message_description') }}
-                        </p>
+                        <p class="text-sm leading-5 font-medium text-gray-900" x-text="message"></p>
+                        <p class="mt-1 text-sm leading-5 text-gray-500" x-text="description"></p>
                     </div>
                     <div class="ml-4 flex-shrink-0 flex">
                         <button @click="show = false"

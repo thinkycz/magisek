@@ -39,20 +39,20 @@ if (!function_exists('currentCurrency')) {
     }
 }
 
-/*
- * @return \App\Repositories\PreferenceRepository
- */
 if (!function_exists('preferenceRepository')) {
+    /**
+     * @return \App\Repositories\PreferenceRepository
+     */
     function preferenceRepository()
     {
         return App::make(\App\Repositories\PreferenceRepository::class);
     }
 }
 
-/*
- * @return \App\Repositories\SettingsRepository
- */
 if (!function_exists('settingsRepository')) {
+    /**
+     * @return \App\Repositories\SettingsRepository
+     */
     function settingsRepository()
     {
         return App::make(\App\Repositories\SettingsRepository::class);

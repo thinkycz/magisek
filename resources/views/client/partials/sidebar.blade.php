@@ -8,5 +8,11 @@
                 </a>
             </li>
         @endforeach
+            <li class="flex">
+                <a href="{{ route('categories.index') }}"
+                   class="flex-1 px-4 py-2 bg-teal-100 shadow-sm text-teal-800 font-semibold rounded text-xs uppercase hover:bg-teal-200">
+                    All Categories
+                </a>
+            </li>
     </ul>
 </div>

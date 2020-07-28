@@ -91,6 +91,52 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
+        Setting::updateOrCreate(['code' => 'shopping_policy'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'company_id_required'       => ['type' => 'boolean'],
+                    'hide_out_of_stock'         => ['type' => 'boolean'],
+                    'hide_prices_for_guests'    => ['type' => 'boolean'],
+                    'allow_residual_qty_orders' => ['type' => 'boolean'],
+                ],
+            ],
+            'data'   => [
+                'company_id_required'       => false,
+                'hide_out_of_stock'         => false,
+                'hide_prices_for_guests'    => false,
+                'allow_residual_qty_orders' => false,
+            ],
+        ]);
+
+        Setting::updateOrCreate(['code' => 'footer_links'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'link_1_title' => ['type' => 'string'],
+                    'link_1_url'   => ['type' => 'string'],
+                    'link_2_title' => ['type' => 'string'],
+                    'link_2_url'   => ['type' => 'string'],
+                    'link_3_title' => ['type' => 'string'],
+                    'link_3_url'   => ['type' => 'string'],
+                    'link_4_title' => ['type' => 'string'],
+                    'link_4_url'   => ['type' => 'string'],
+                ],
+            ],
+            'data'   => [
+                'link_1_title' => 'Link 1',
+                'link_1_url'  => null,
+                'link_2_title' => 'Link 2',
+                'link_2_url'  => null,
+                'link_3_title' => 'Link 3',
+                'link_3_url'  => null,
+                'link_4_title' => 'Link 4',
+                'link_4_url'  => null,
+            ],
+        ]);
+
         Setting::updateOrCreate(['code' => 'mail_configuration'], [
             'schema' => [
                 'type'       => 'object',

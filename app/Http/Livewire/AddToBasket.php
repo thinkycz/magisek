@@ -38,6 +38,8 @@ class AddToBasket extends Component
         $this->quantity = $this->cartItem ? $this->cartItem->qty : 1;
 
         $this->purchased = $this->cartItem ? true : false;
+
+        $this->dispatchBrowserEvent('notify', 'Basket was updated');
     }
 
     public function render()
@@ -47,6 +49,12 @@ class AddToBasket extends Component
 
     public function purchase()
     {
+        $eligibility = $this->product->checkEligibility(1);
+
+        if ($eligibility->failed()) {
+            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+        }
+
         Cart::add($this->product, 1)->setTaxRate($this->product->vatrate);
 
         $this->emit('basketUpdated');
@@ -54,6 +62,12 @@ class AddToBasket extends Component
 
     public function increment()
     {
+        $eligibility = $this->product->checkEligibility($this->quantity + 1);
+
+        if ($eligibility->failed()) {
+            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+        }
+
         Cart::update($this->cartItem->rowId, $this->quantity + 1);
 
         $this->emit('basketUpdated');
@@ -61,6 +75,12 @@ class AddToBasket extends Component
 
     public function decrement()
     {
+        $eligibility = $this->product->checkEligibility($this->quantity - 1);
+
+        if ($eligibility->failed()) {
+            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+        }
+
         Cart::update($this->cartItem->rowId, $this->quantity - 1);
 
         $this->emit('basketUpdated');
@@ -68,6 +88,12 @@ class AddToBasket extends Component
 
     public function change()
     {
+        $eligibility = $this->product->checkEligibility($this->quantity);
+
+        if ($eligibility->failed()) {
+            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+        }
+
         Cart::update($this->cartItem->rowId, $this->quantity);
 
         $this->emit('basketUpdated');

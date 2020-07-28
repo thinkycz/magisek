@@ -5,10 +5,8 @@ namespace App\Repositories;
 use App\Models\Availability;
 use App\Models\Country;
 use App\Models\Currency;
-use App\Models\OrderStatus;
-use App\Models\Page;
+use App\Models\Status;
 use App\Models\Preference;
-use App\Models\StoreStatus;
 use App\Models\Unit;
 use App\Nova\PriceLevel;
 use App\Services\InstanceCache;
@@ -56,15 +54,7 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
-     * @return StoreStatus
-     */
-    public function getCreatedStoreStatus()
-    {
-        return $this->getPreference('created_store_status');
-    }
-
-    /**
-     * @return OrderStatus
+     * @return Status
      */
     public function getCreatedOrderStatus()
     {
@@ -72,7 +62,7 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
-     * @return OrderStatus
+     * @return Status
      */
     public function getConfirmedOrderStatus()
     {
@@ -80,15 +70,7 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
-     * @return OrderStatus
-     */
-    public function getApprovedOrderStatus()
-    {
-        return $this->getPreference('approved_order_status');
-    }
-
-    /**
-     * @return OrderStatus
+     * @return Status
      */
     public function getCancelledOrderStatus()
     {
@@ -96,7 +78,7 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
-     * @return OrderStatus
+     * @return Status
      */
     public function getCompletedOrderStatus()
     {
@@ -109,38 +91,6 @@ class PreferenceRepository extends InstanceCache
     public function getDefaultPriceLevel()
     {
         return $this->getPreference('default_price_level');
-    }
-
-    /**
-     * @return Page
-     */
-    public function getTermsPage()
-    {
-        return $this->getPreference('terms_conditions_page');
-    }
-
-    /**
-     * @return Page
-     */
-    public function getPrivacyPage()
-    {
-        return $this->getPreference('privacy_policy_page');
-    }
-
-    /**
-     * @return Page
-     */
-    public function getRefundsPage()
-    {
-        return $this->getPreference('return_refund_page');
-    }
-
-    /**
-     * @return Page
-     */
-    public function getFaqPage()
-    {
-        return $this->getPreference('frequently_asked_questions_page');
     }
 
     /**

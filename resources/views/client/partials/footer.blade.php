@@ -14,115 +14,87 @@
                 </p>
             </div>
             <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-                <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div class="md:grid md:grid-cols-3 md:gap-8 xl:col-span-2">
                     <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Solutions
+                            Store
                         </h4>
-                        <ul class="mt-4">
+                        <ul class="mt-4 space-y-4">
                             <li>
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Marketing
+                                <a href="{{ route('categories.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    All Categories
                                 </a>
                             </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Analytics
+                            <li>
+                                <a href="{{ route('basket.index') }}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    Basket
                                 </a>
                             </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Commerce
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                            Profile
+                        </h4>
+                        <ul class="mt-4 space-y-4">
+                            <li>
+                                <a href="{{ route('orders.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    Order History
                                 </a>
                             </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Insights
+                            <li>
+                                <a href="{{ route('profile.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('privacy.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    Privacy Settings
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-12 md:mt-0">
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Support
+                            Links
                         </h4>
-                        <ul class="mt-4">
-                            <li>
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Pricing
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Documentation
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Guides
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    API Status
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="md:grid md:grid-cols-2 md:gap-8">
-                    <div>
-                        <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Company
-                        </h4>
-                        <ul class="mt-4">
-                            <li>
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    About
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Blog
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Jobs
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Press
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Partners
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-12 md:mt-0">
-                        <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Legal
-                        </h4>
-                        <ul class="mt-4">
-                            <li>
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Claim
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Privacy
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Terms
-                                </a>
-                            </li>
+                        <ul class="mt-4 space-y-4">
+                            @if(settingsRepository()->get('footer_links', 'link_1_title'))
+                                <li>
+                                    <a href="{{ settingsRepository()->get('footer_links', 'link_1_url') }}"
+                                       class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                        {{ settingsRepository()->get('footer_links', 'link_1_title') }}
+                                    </a>
+                                </li>
+                            @endif
+                            @if(settingsRepository()->get('footer_links', 'link_2_title'))
+                                <li>
+                                    <a href="{{ settingsRepository()->get('footer_links', 'link_2_url') }}"
+                                       class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                        {{ settingsRepository()->get('footer_links', 'link_2_title') }}
+                                    </a>
+                                </li>
+                            @endif
+                            @if(settingsRepository()->get('footer_links', 'link_3_title'))
+                                <li>
+                                    <a href="{{ settingsRepository()->get('footer_links', 'link_3_url') }}"
+                                       class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                        {{ settingsRepository()->get('footer_links', 'link_3_title') }}
+                                    </a>
+                                </li>
+                            @endif
+                            @if(settingsRepository()->get('footer_links', 'link_4_title'))
+                                <li>
+                                    <a href="{{ settingsRepository()->get('footer_links', 'link_4_url') }}"
+                                       class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                        {{ settingsRepository()->get('footer_links', 'link_4_title') }}
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
