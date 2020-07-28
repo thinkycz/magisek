@@ -20,6 +20,7 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('content');
+            $table->boolean('hide_from_blog')->default(false);
         });
     }
 

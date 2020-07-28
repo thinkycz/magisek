@@ -5,5 +5,5 @@
 @endsection
 
 @section('subcontent')
-    @include('client.home.partials.blog')
+    <x-from-the-blog></x-from-the-blog>
 @endsection

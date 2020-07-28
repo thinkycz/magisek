@@ -13,23 +13,27 @@ class PageSeeder extends Seeder
     public function run()
     {
         Page::create([
-            'title' => 'Obchodní Podmínky',
-            'content' => '',
+            'title'          => 'Obchodní Podmínky',
+            'content'        => '',
+            'hide_from_blog' => true
         ]);
 
         Page::create([
-            'title' => 'Ochrana osobních údajů',
-            'content' => '',
+            'title'          => 'Ochrana osobních údajů',
+            'content'        => '',
+            'hide_from_blog' => true
         ]);
 
         Page::create([
-            'title' => 'Reklamační řád',
-            'content' => '',
+            'title'          => 'Reklamační řád',
+            'content'        => '',
+            'hide_from_blog' => true
         ]);
 
         Page::create([
-            'title' => 'Často kladené otázky',
-            'content' =>  '',
+            'title'          => 'Často kladené otázky',
+            'content'        => '',
+            'hide_from_blog' => true
         ]);
     }
 }

@@ -138,11 +138,16 @@ namespace App\Models{
  * @property-read \App\Models\Availability $availability
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $categories
  * @property-read int|null $categories_count
+ * @property-read mixed $availability_id
  * @property-read mixed $formatted_price
  * @property-read mixed $formatted_price_excl_vat
+ * @property-read mixed $formatted_vatrate
  * @property-read mixed $price
  * @property-read mixed $price_excl_vat
+ * @property-read mixed $public_stock_quantity
  * @property-read mixed $purchasable
+ * @property-read mixed $thumbnail
+ * @property-read mixed $unit_id
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
@@ -151,6 +156,8 @@ namespace App\Models{
  * @property-read int|null $prices_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Property[] $properties
  * @property-read int|null $properties_count
+ * @property-write mixed $minimum_order_quantity
+ * @property-write mixed $vatrate
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
  * @property-read int|null $tags_count
  * @property-read \App\Models\Unit $unit
@@ -286,6 +293,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit whereLike($column, $keyword)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Unit whereLikeQuery($column, $keyword)
  */
 	class Unit extends \Eloquent {}
 }

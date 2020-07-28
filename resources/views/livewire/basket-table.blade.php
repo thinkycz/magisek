@@ -95,6 +95,8 @@
             </div>
         </div>
     @else
-        <h3 class="text-center py-8 font-semibold text-xl text-gray-800">Your basket is empty</h3>
+        <div class="p-4 bg-white rounded border border-gray-200">
+            <h3 class="text-center py-8 font-semibold text-xl text-gray-700">Your basket is empty</h3>
+        </div>
     @endif
 </div>

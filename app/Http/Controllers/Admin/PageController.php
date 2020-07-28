@@ -53,8 +53,10 @@ class PageController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-            'title'   => 'required',
-            'content' => 'required'
+            'title'          => 'required',
+            'content'        => 'nullable',
+            'hide_from_blog' => 'boolean',
+            'image'          => 'sometimes|nullable'
         ]);
     }
 }

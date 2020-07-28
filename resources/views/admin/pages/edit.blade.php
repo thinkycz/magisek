@@ -30,10 +30,14 @@
                     </p>
                 </div>
 
-                <div class="mt-5 md:mt-0 md:col-span-2">
+                <div class="mt-5 md:mt-0 md:col-span-2 space-y-6">
                     <x-input name="title" title="Title" :value="$page->title"></x-input>
 
-                    <x-editor name="content" title="Content" :value="$page->content" class="mt-6"></x-editor>
+                    <x-file name="image" title="Image"></x-file>
+
+                    <x-editor name="content" title="Content" :value="$page->content"></x-editor>
+
+                    <x-checkbox name="hide_from_blog" title="Hide From Blog" :value="$page->hide_from_blog"></x-checkbox>
                 </div>
             </div>
         </div>

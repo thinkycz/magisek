@@ -38,7 +38,7 @@ class Product extends Model implements Buyable, HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumbnail')
-            ->width(300)
+            ->width(500)
             ->height(300)
             ->optimize()
             ->keepOriginalImageFormat()
