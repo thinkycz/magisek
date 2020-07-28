@@ -49,39 +49,49 @@ class AddToBasket extends Component
 
     public function purchase()
     {
-        $eligibility = $this->product->checkEligibility(1);
+        $eligibility = $this->product->checkEligibility($this->product->moq ?: 1);
 
         if ($eligibility->failed()) {
-            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+            $this->dispatchBrowserEvent('notify', $eligibility->message());
+
+            return;
         }
 
-        Cart::add($this->product, 1)->setTaxRate($this->product->vatrate);
+        Cart::add($this->product, $this->product->moq ?: 1)->setTaxRate($this->product->vatrate);
 
         $this->emit('basketUpdated');
     }
 
     public function increment()
     {
-        $eligibility = $this->product->checkEligibility($this->quantity + 1);
+        $toIncrement = $this->product->multiply_of_moq_only ? $this->product->moq : 1;
+
+        $eligibility = $this->product->checkEligibility($this->quantity + $toIncrement);
 
         if ($eligibility->failed()) {
-            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+            $this->dispatchBrowserEvent('notify', $eligibility->message());
+
+            return;
         }
 
-        Cart::update($this->cartItem->rowId, $this->quantity + 1);
+        Cart::update($this->cartItem->rowId, $this->quantity + $toIncrement);
 
         $this->emit('basketUpdated');
     }
 
     public function decrement()
     {
-        $eligibility = $this->product->checkEligibility($this->quantity - 1);
+        $toDecrement = $this->product->multiply_of_moq_only || $this->quantity == $this->product->moq ? $this->product->moq : 1;
+
+        $eligibility = $this->product->checkEligibility($this->quantity - $toDecrement);
 
         if ($eligibility->failed()) {
-            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+            $this->dispatchBrowserEvent('notify', $eligibility->message());
+
+            return;
         }
 
-        Cart::update($this->cartItem->rowId, $this->quantity - 1);
+        Cart::update($this->cartItem->rowId, $this->quantity - $toDecrement);
 
         $this->emit('basketUpdated');
     }
@@ -91,7 +101,9 @@ class AddToBasket extends Component
         $eligibility = $this->product->checkEligibility($this->quantity);
 
         if ($eligibility->failed()) {
-            return $this->dispatchBrowserEvent('notify', $eligibility->message());
+            $this->dispatchBrowserEvent('notify', $eligibility->message());
+
+            return;
         }
 
         Cart::update($this->cartItem->rowId, $this->quantity);

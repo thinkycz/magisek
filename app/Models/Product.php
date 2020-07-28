@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Product\ProductHasAttributes;
 use App\Traits\Product\ProductHasEligibilities;
 use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
@@ -17,6 +18,7 @@ class Product extends Model implements Buyable, HasMedia
     use CanBeBought;
     use InteractsWithMedia;
     use ProductHasEligibilities;
+    use ProductHasAttributes;
 
     protected $guarded = [];
 

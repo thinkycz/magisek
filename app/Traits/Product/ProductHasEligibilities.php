@@ -66,7 +66,7 @@ trait ProductHasEligibilities
     {
         $isResidual = settingsRepository()->get('shopping_policy', 'allow_residual_qty_orders') && $this->quantity_in_stock < $this->moq;
 
-        return $isResidual ? $quantity == $this->quantity_in_stock : $quantity >= $this->moq;
+        return $quantity == 0 ? true : ($isResidual ? $quantity == $this->quantity_in_stock : $quantity >= $this->moq);
     }
 
     public function userOrdersMOQMultiplier($quantity)
