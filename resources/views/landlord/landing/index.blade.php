@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('landlord.layouts.base')
 
 @section('body')
     @include('landlord.landing.partials.hero')

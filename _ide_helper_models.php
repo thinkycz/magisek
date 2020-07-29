@@ -428,11 +428,16 @@ namespace App\Models{
 /**
  * App\Models\Page
  *
+ * @property-read mixed $excerpt
+ * @property mixed $image
+ * @property-read mixed $thumbnail
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read int|null $media_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page query()
  */
-	class Page extends \Eloquent {}
+	class Page extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
 namespace App\Models{
