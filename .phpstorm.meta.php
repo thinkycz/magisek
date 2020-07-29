@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-07-29 02:34:35.
+    * Generated on 2020-07-29 20:54:40.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -56,6 +56,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -247,6 +248,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -438,6 +440,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -629,6 +632,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -820,6 +824,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -1011,6 +1016,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -1202,6 +1208,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
@@ -1393,6 +1400,7 @@ namespace PHPSTORM_META {
         'Laravel\Horizon\Listeners\TrimRecentJobs' => \Laravel\Horizon\Listeners\TrimRecentJobs::class,
         'Laravel\Horizon\Lock' => \Laravel\Horizon\Lock::class,
         'Laravel\Horizon\Stopwatch' => \Laravel\Horizon\Stopwatch::class,
+        'Laravel\Scout\EngineManager' => \Laravel\Scout\EngineManager::class,
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'Maatwebsite\Excel\Files\Filesystem' => \Maatwebsite\Excel\Files\Filesystem::class,
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,

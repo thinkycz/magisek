@@ -12,7 +12,7 @@ class SearchDropdown extends Component
     public function render()
     {
         return view('livewire.search-dropdown', [
-            'products' => Product::take(4)->latest()->get()
+            'products' => Product::search($this->value)->take(6)->get()
         ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Traits\Product\ProductHasEligibilities;
 use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -15,6 +16,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Product extends Model implements Buyable, HasMedia
 {
+    use Searchable;
     use HasSlug;
     use CanBeBought;
     use InteractsWithMedia;
@@ -22,6 +24,16 @@ class Product extends Model implements Buyable, HasMedia
     use ProductHasAttributes;
 
     protected $guarded = [];
+
+    public function toSearchableArray()
+    {
+        return [
+            $this->getKeyName() => $this->getKey(),
+            'name'              => $this->name,
+            'catalog'           => (string)$this->catalog,
+            'barcode'           => (string)$this->barcode,
+        ];
+    }
 
     public function getSlugOptions(): SlugOptions
     {
