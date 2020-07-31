@@ -7,17 +7,17 @@
             <div class="mt-5 space-y-4">
                 <x-input name="shipping_company_name" title="Company name"></x-input>
 
-                <x-input name="shipping_first_name" title="First name"></x-input>
+                <x-input name="shipping_first_name" title="First name" :required="true"></x-input>
 
-                <x-input name="shipping_last_name" title="Last name"></x-input>
+                <x-input name="shipping_last_name" title="Last name" :required="true"></x-input>
 
-                <x-input name="shipping_street" title="Street"></x-input>
+                <x-input name="shipping_street" title="Street" :required="true"></x-input>
 
-                <x-input name="shipping_city" title="City"></x-input>
+                <x-input name="shipping_city" title="City" :required="true"></x-input>
 
-                <x-input name="shipping_zipcode" title="Zip Code"></x-input>
+                <x-input name="shipping_zipcode" title="Zip Code" :required="true"></x-input>
 
-                <x-select-country name="shipping_country_id" title="Country"></x-select-country>
+                <x-select-country name="shipping_country_id" title="Country" :required="true"></x-select-country>
             </div>
         </div>
     </div>
@@ -35,17 +35,17 @@
                     @if($billingDifferent)
                         <x-input name="billing_company_name" title="Company name"></x-input>
 
-                        <x-input name="billing_first_name" title="First name"></x-input>
+                        <x-input name="billing_first_name" title="First name" :required="true"></x-input>
 
-                        <x-input name="billing_last_name" title="Last name"></x-input>
+                        <x-input name="billing_last_name" title="Last name" :required="true"></x-input>
 
-                        <x-input name="billing_street" title="Street"></x-input>
+                        <x-input name="billing_street" title="Street" :required="true"></x-input>
 
-                        <x-input name="billing_city" title="City"></x-input>
+                        <x-input name="billing_city" title="City" :required="true"></x-input>
 
-                        <x-input name="billing_zipcode" title="Zip Code"></x-input>
+                        <x-input name="billing_zipcode" title="Zip Code" :required="true"></x-input>
 
-                        <x-select-country name="billing_country_id" title="Country"></x-select-country>
+                        <x-select-country name="billing_country_id" title="Country" :required="true"></x-select-country>
                     @endif
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="space-y-4">
                     @if($businessPurchase)
-                        <x-input name="company_id" title="Company ID"></x-input>
+                        <x-input name="company_id" title="Company ID" :required="true"></x-input>
 
                         <x-input name="vat_id" title="VAT ID"></x-input>
                     @endif

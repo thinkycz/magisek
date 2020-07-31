@@ -19,7 +19,7 @@ class CheckoutDeliveryPayment extends Component
 
         $this->selectedDelivery = old('delivery_method_id', $this->deliveryMethods ? $this->deliveryMethods->first()->id : null);
 
-        $this->selectedPayment = old('payment_method_id');
+        $this->selectedPayment = old('payment_method_id', $this->selectedDelivery ? optional(DeliveryMethod::find($this->selectedDelivery)->paymentMethods()->where('enabled', true)->first())->id : null);
     }
 
     public function render()

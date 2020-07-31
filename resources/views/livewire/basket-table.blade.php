@@ -27,14 +27,14 @@
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full"
-                                                 src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                 alt="">
+                                            <img class="h-10 w-10 rounded object-contain"
+                                                 src="{{ $item->model->thumbnail }}"
+                                                 alt="{{ $item->name }}">
                                         </div>
                                         <div class="ml-4">
-                                            <div class="text-sm leading-5 font-medium text-gray-900">
+                                            <a href="{{ route('products.show', $item->model) }}" class="text-sm leading-5 font-medium text-gray-900 hover:underline">
                                                 {{ $item->name }}
-                                            </div>
+                                            </a>
                                             <div class="text-xs leading-5 text-gray-500">
                                                 {{ $item->model->barcode ? 'EAN ' . $item->model->barcode : 'CAT ' . $item->model->catalog }}
                                             </div>

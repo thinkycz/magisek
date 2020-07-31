@@ -22,7 +22,7 @@
             <div class="lg:flex justify-between items-center mt-4">
                 <div>
                     <a href="{{ route('basket.index') }}"
-                       class="text-gray-600 text-sm font-semibold flex items-center space-x-2 hover:text-gray-800">
+                       class="text-gray-600 text-sm font-semibold flex items-center space-x-2 hover:underline">
                         <x-icons.chevron-left class="w-5 h-5"></x-icons.chevron-left>
                         <span>Back to basket</span>
                     </a>

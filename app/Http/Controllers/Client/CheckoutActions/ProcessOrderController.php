@@ -15,20 +15,24 @@ class ProcessOrderController
             ->merge(['user_id' => auth()->user()->id ?? null]);
 
         $order = Order::create($data->only([
+            'user_id',
             'email',
             'phone',
             'customer_note',
             'delivery_method_id',
-            'payment_method_id'
+            'payment_method_id',
         ])->toArray());
 
-        $order->processShippingDetails($data)
-        ->processBillingDetails($data)
-        ->processBasketItems();
+        $order
+            ->processShippingDetails($data)
+            ->processBillingDetails($data)
+            ->processBasketItems();
 
         Cart::destroy();
 
-        return redirect()->route('orders.index');
+        return redirect()->route('thank-you.index', [
+            'order' => $order
+        ]);
     }
 
     protected function data(Request $request)

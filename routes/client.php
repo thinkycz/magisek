@@ -11,6 +11,7 @@ Route::get('basket', \App\Http\Controllers\Client\BasketController::class)->name
 Route::get('checkout', \App\Http\Controllers\Client\CheckoutController::class)->name('checkout.index');
 Route::get('search', \App\Http\Controllers\Client\SearchController::class)->name('search.index');
 Route::post('checkout/process-order', \App\Http\Controllers\Client\CheckoutActions\ProcessOrderController::class)->name('checkout.process-order');
+Route::get('thank-you/{order}', \App\Http\Controllers\Client\ThankYouController::class)->name('thank-you.index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('orders', [\App\Http\Controllers\Client\OrderController::class, 'index'])->name('orders.index');

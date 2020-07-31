@@ -11,6 +11,11 @@ class Order extends Model
 {
     protected $guarded = [];
 
+    protected $dates = [
+        'due_date',
+        'tax_date'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -46,9 +51,43 @@ class Order extends Model
         return $this->hasMany(OrderedItem::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'order_number';
+    }
+
+    public function getCustomerNameAttribute()
+    {
+        return $this->user->name ?? 'Guest';
+    }
+
+    public function getTotalValueAttribute()
+    {
+        return $this->orderedItems->sum(function ($item) {
+            return $item->total_price;
+        });
+    }
+
+    public function getFormattedTotalValueAttribute()
+    {
+        return showPriceWithCurrency($this->total_value, currentCurrency());
+    }
+
+    public function getTotalValueExclVatAttribute()
+    {
+        return $this->orderedItems->sum(function ($item) {
+            return $item->total_price_excl_vat;
+        });
+    }
+
+    public function getFormattedTotalValueExclVatAttribute()
+    {
+        return showPriceWithCurrency($this->total_value_excl_vat, currentCurrency());
+    }
+
     public function processShippingDetails(Collection $data)
     {
-        $this->shippingDetail()->create([
+        $shippingDetail = $this->shippingDetail()->create([
             'company_name' => $data->get('shipping_company_name'),
             'first_name'   => $data->get('shipping_first_name'),
             'last_name'    => $data->get('shipping_last_name'),
@@ -60,12 +99,16 @@ class Order extends Model
             'user_id'      => $data->get('user_id'),
         ]);
 
+        $this->update([
+            'shipping_detail_id' => $shippingDetail->id
+        ]);
+
         return $this;
     }
 
     public function processBillingDetails(Collection $data)
     {
-        $this->billingDetail()->create([
+        $billingDetail = $this->billingDetail()->create([
             'company_name' => $data->get('billing_company_name'),
             'first_name'   => $data->get('billing_first_name'),
             'last_name'    => $data->get('billing_last_name'),
@@ -77,6 +120,10 @@ class Order extends Model
             'company_id'   => $data->get('company_id'),
             'vat_id'       => $data->get('vat_id'),
             'user_id'      => $data->get('user_id'),
+        ]);
+
+        $this->update([
+            'billing_detail_id' => $billingDetail->id
         ]);
 
         return $this;

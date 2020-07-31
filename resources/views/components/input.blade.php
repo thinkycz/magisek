@@ -1,14 +1,20 @@
-@props(['name' => '', 'title' => '', 'value' => '', 'type' => 'text'])
+@props(['name' => '', 'title' => '', 'value' => '', 'type' => 'text', 'required' => false])
 
 <div {{ $attributes }}>
     <label for="{{ $name }}" class="block text-sm font-medium leading-5 text-gray-700">
         {{ $title }}
+        @if($required)
+            <sup class="text-red-500 font-bold">*</sup>
+        @endif
     </label>
 
     <div class="mt-1 relative rounded-md shadow-sm">
-        <input type="{{ $type }}" id="{{ $name }}" name="{{ $name }}"
-               class="form-input block w-full sm:text-sm sm:leading-5"
-               value="{{ old($name, $value) }}"/>
+        <input type="{{ $type }}"
+               id="{{ $name }}"
+               name="{{ $name }}"
+               {{ $required ? 'required' : '' }}
+               value="{{ old($name, $value) }}"
+               class="form-input block w-full sm:text-sm sm:leading-5"/>
     </div>
 
     @error($name)

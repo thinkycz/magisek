@@ -8,7 +8,9 @@ class OrderController
 {
     public function index()
     {
-        return view('client.orders.index');
+        return view('client.orders.index', [
+            'orders' => currentUser()->orders()->latest()->paginate()
+        ]);
     }
 
     public function show(Order $order)

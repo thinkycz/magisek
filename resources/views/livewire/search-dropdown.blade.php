@@ -1,5 +1,5 @@
-<div x-data="{ value: '', overlay: false }" class="flex-1">
-    <div class="flex-1 relative z-10">
+<div x-data="{ value: '', overlay: false }" x-init="value = '{{ $value }}'" class="flex-1">
+    <div class="flex-1 relative z-20">
         <div>
             <x-form method="GET" :action="route('search.index')">
                 <label for="query" class="sr-only">
@@ -69,5 +69,6 @@
          x-transition:leave="transition-opacity ease-linear duration-150"
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-0"
-         class="w-full h-full fixed left-0 top-0" style="background-color: rgba(0, 0, 0, 0.5); display: none;"></div>
+         class="w-full h-full fixed left-0 top-0 z-10"
+         style="background-color: rgba(0, 0, 0, 0.4); display: none;"></div>
 </div>

@@ -4,9 +4,9 @@
             Contact and Notes
         </h3>
         <div class="mt-5 space-y-4">
-            <x-input type="email" name="email" title="Email"></x-input>
+            <x-input type="email" name="email" title="Email" :value="currentUser()->email" :required="true"></x-input>
 
-            <x-input name="phone" title="Phone"></x-input>
+            <x-input name="phone" title="Phone" :value="currentUser()->phone" :required="true"></x-input>
 
             <x-textarea name="customer_note" title="Notes" help="Anything you would like to add to the order."></x-textarea>
         </div>

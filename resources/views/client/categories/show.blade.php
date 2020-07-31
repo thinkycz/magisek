@@ -11,5 +11,7 @@
                 <livewire:product-card :product="$product"></livewire:product-card>
             @endforeach
         </ul>
+
+        {{ $products->links() }}
     </div>
 @endsection

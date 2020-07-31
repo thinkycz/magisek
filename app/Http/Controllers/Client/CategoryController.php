@@ -17,7 +17,7 @@ class CategoryController
     {
         return view('client.categories.show', [
             'category' => $category,
-            'products' => $category->products()->latest()->take(6)->get()
+            'products' => $category->products()->paginate()
         ]);
     }
 }

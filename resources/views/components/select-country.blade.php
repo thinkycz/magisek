@@ -1,12 +1,16 @@
 <div {{ $attributes }}>
     <label for="{{ $name }}" class="block text-sm font-medium leading-5 text-gray-700">
         {{ $title }}
+        @if($required)
+            <sup class="text-red-500 font-bold">*</sup>
+        @endif
     </label>
 
     <div class="mt-1">
         <div class="rounded-md shadow-sm">
             <select id="{{ $name }}"
                     name="{{ $name }}"
+                    {{ $required ? 'required' : '' }}
                     class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                 <option value=""></option>
                 @foreach($countries as $country)
