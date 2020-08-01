@@ -2,8 +2,15 @@
 
 namespace App\Traits\Product;
 
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
 trait ProductHasAttributes
 {
+    public function getPhotosAttribute()
+    {
+        return $this->hasMedia('photos') ? $this->getMedia('photos')->map(fn(Media $media) => $media->getUrl('optimized')) : iterable(asset('img/no_image.jpg'));
+    }
+
     public function getThumbnailAttribute()
     {
         return $this->hasMedia('photos') ? $this->getFirstMediaUrl('photos', 'thumbnail') : asset('img/no_image.jpg');

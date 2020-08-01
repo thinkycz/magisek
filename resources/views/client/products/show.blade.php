@@ -4,9 +4,7 @@
     <div class="space-y-8">
 
         <div class="flex w-full space-x-6 p-6 bg-white rounded border border-gray-200">
-            <div class="w-1/3">
-                <img src="{{ $product->thumbnail }}" class="w-full">
-            </div>
+            <x-gallery :photos="$product->photos"></x-gallery>
 
             <div class="flex-1 space-y-6">
                 <h2 class="text-2xl text-gray-700 font-semibold">
@@ -46,7 +44,8 @@
                     </li>
                     <li class="py-2 flex justify-between text-xs font-semibold">
                         <span class="text-cool-gray-500">Skladem</span>
-                        <span class="text-gray-700">{{ $product->public_stock_quantity }} {{ $product->unit->abbr }}</span>
+                        <span
+                            class="text-gray-700">{{ $product->public_stock_quantity }} {{ $product->unit->abbr }}</span>
                     </li>
                 </ul>
             </div>
@@ -91,6 +90,5 @@
                 {!! $product->details !!}
             </div>
         </div>
-
     </div>
 @endsection
