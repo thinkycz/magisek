@@ -22,10 +22,12 @@ class CreateTagsTable extends Migration
         });
 
         Schema::create('taggables', function (Blueprint $table) {
+            $table->id();
+
             $table->foreignId('tag_id')->index();
             $table->morphs('taggable');
 
-            $table->primary(['tag_id', 'taggable_id', 'taggable_type']);
+            $table->unique(['tag_id', 'taggable_id', 'taggable_type']);
         });
     }
 

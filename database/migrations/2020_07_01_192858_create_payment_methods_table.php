@@ -25,10 +25,12 @@ class CreatePaymentMethodsTable extends Migration
         });
 
         Schema::create('delivery_payment', function (Blueprint $table) {
+            $table->id();
+
             $table->foreignId('delivery_method_id');
             $table->foreignId('payment_method_id');
 
-            $table->primary(['delivery_method_id', 'payment_method_id']);
+            $table->unique(['delivery_method_id', 'payment_method_id']);
             $table->foreign('delivery_method_id', 'delivery_id')->references('id')->on('delivery_methods')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('payment_method_id', 'payment_id')->references('id')->on('payment_methods')->onUpdate('cascade')->onDelete('cascade');
         });
