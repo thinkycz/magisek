@@ -1,7 +1,7 @@
 <div class="bg-white border-t border-gray-100">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div class="xl:col-span-1">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+            <div class="lg:col-span-1">
                 @if(settingsRepository()->getStoreLogo())
                     <img class="h-10" src="{{ settingsRepository()->getStoreLogo() }}"
                          alt="{{ settingsRepository()->getStoreName() }}">
@@ -13,8 +13,8 @@
                     {{ settingsRepository()->getStoreDescription() }}
                 </p>
             </div>
-            <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-                <div class="md:grid md:grid-cols-3 md:gap-8 xl:col-span-2">
+            <div class="mt-12 grid grid-cols-2 gap-8 lg:mt-0 lg:col-span-2">
+                <div class="md:grid md:grid-cols-3 md:gap-8 md:col-span-2 space-y-12 md:space-y-0">
                     <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                             Store
@@ -58,7 +58,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="mt-12 md:mt-0">
+                    <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                             Links
                         </h4>

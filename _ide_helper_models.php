@@ -84,6 +84,14 @@ namespace App\Models{
 /**
  * App\Models\OrderedItem
  *
+ * @property-read mixed $formatted_price
+ * @property-read mixed $formatted_price_excl_vat
+ * @property-read mixed $formatted_total_price
+ * @property-read mixed $formatted_total_price_excl_vat
+ * @property-read mixed $price_excl_vat
+ * @property-read mixed $total_price
+ * @property-read mixed $total_price_excl_vat
+ * @property-read mixed $vatrate
  * @property-read \App\Models\Order $order
  * @property-read \App\Models\Product $product
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\OrderedItem newModelQuery()
@@ -174,6 +182,11 @@ namespace App\Models{
  *
  * @property-read \App\Models\BillingDetail $billingDetail
  * @property-read \App\Models\DeliveryMethod $deliveryMethod
+ * @property-read mixed $customer_name
+ * @property-read mixed $formatted_total_value
+ * @property-read mixed $formatted_total_value_excl_vat
+ * @property-read mixed $total_value
+ * @property-read mixed $total_value_excl_vat
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
  * @property-read int|null $ordered_items_count
  * @property-read \App\Models\PaymentMethod $paymentMethod
@@ -345,6 +358,7 @@ namespace App\Models{
  * App\Models\BillingDetail
  *
  * @property-read \App\Models\Country $country
+ * @property-read mixed $full_name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
  * @property-read int|null $orders_count
  * @property-read \App\Models\User $user
@@ -401,6 +415,7 @@ namespace App\Models{
  * App\Models\ShippingDetail
  *
  * @property-read \App\Models\Country $country
+ * @property-read mixed $full_name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
  * @property-read int|null $orders_count
  * @property-read \App\Models\User $user

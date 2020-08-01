@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('profile', \App\Http\Controllers\Client\ProfileController::class)->middleware('password.confirm')->name('profile.index');
     Route::post('profile/update-account-settings', \App\Http\Controllers\Client\ProfileActions\UpdateAccountSettingsController::class)->name('profile.update-account-settings');
+    Route::post('profile/update-subscription-settings', \App\Http\Controllers\Client\ProfileActions\UpdateSubscriptionSettingsController::class)->name('profile.update-subscription-settings');
 
     Route::get('privacy', \App\Http\Controllers\Client\PrivacyController::class)->middleware('password.confirm')->name('privacy.index');
 });

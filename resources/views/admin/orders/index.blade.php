@@ -32,7 +32,7 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white">
-                    @foreach($orders as $order)
+                    @forelse($orders as $order)
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $order->order_number }}</span>
@@ -41,7 +41,8 @@
                                 <span class="text-sm leading-5 text-gray-900">{{ $order->customer_name }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <span class="text-sm leading-5 text-gray-900">{{ $order->created_at->format('j.n.Y H:i') }}</span>
+                                <span
+                                    class="text-sm leading-5 text-gray-900">{{ $order->created_at->format('j.n.Y H:i') }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $order->formatted_total_value }}</span>
@@ -50,7 +51,14 @@
                                 <x-chevron-link :href="route('acp.orders.show', $order)"></x-chevron-link>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="100%"
+                                class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">There are no
+                                orders
+                            </td>
+                        </tr>
+                    @endforelse
                     </tbody>
                 </table>
             </div>
