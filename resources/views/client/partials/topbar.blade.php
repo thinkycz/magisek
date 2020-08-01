@@ -10,7 +10,9 @@
                 </div>
             </div>
 
-            <div class="space-x-4">
+            <div class="flex items-center space-x-4">
+                <x-lang-switcher></x-lang-switcher>
+
                 @auth
                     @can('access-admin-panel')
                         <a href="{{ route('acp.dashboard') }}"

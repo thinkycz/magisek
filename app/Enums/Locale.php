@@ -2,32 +2,30 @@
 
 namespace App\Enums;
 
+use Illuminate\Support\Facades\Session;
+
 abstract class Locale
 {
     const CZECH = 'cs';
     const ENGLISH = 'en';
+    const VIETNAMESE = 'vi';
 
-    public static function all()
+    public static function allowed()
     {
         return [
-            static::ENGLISH => trans('global.locales.en'),
-            static::CZECH   => trans('global.locales.cs'),
+            static::ENGLISH,
+            static::CZECH,
+//            static::VIETNAMESE,
         ];
     }
 
-    public static function codes()
+    public static function all()
     {
-        return array_keys(static::all());
-    }
-
-    public static function values()
-    {
-        return array_values(static::all());
-    }
-
-    public static function current()
-    {
-        return session('lang') ?? static::app();
+        return collect(static::allowed())
+            ->mapWithKeys(function ($locale) {
+                return [$locale => static::translation($locale)];
+            })
+            ->toArray();
     }
 
     public static function app()
@@ -35,8 +33,18 @@ abstract class Locale
         return config('app.locale', static::fallback());
     }
 
+    public static function translation($locale)
+    {
+        return trans("global.locale.$locale");
+    }
+
+    public static function current()
+    {
+        return Session::get('lang') ?? static::app();
+    }
+
     public static function fallback()
     {
-        return config('app.fallback_locale', static::ENGLISH);
+        return config('app.fallback_locale', Locale::ENGLISH);
     }
 }
