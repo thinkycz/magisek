@@ -15,9 +15,9 @@
 </div>
 
 @section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/themes/splide-sea-green.min.css" integrity="sha256-5kJhf2RKFj+fcrquSWaAfei30Optj6ZQIZMIAfafc+w=" crossorigin="anonymous">
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/js/splide.min.js" integrity="sha256-uAncy13cSynorO5+2C3gp5Mb+azFNu5PnZ9iWgvsGQA=" crossorigin="anonymous"></script>
 @endsection
