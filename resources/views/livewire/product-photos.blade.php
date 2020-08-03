@@ -12,7 +12,7 @@
                     <div class="ml-4 flex-shrink-0">
                         <button wire:click="delete({{ $photo->id }})"
                                 class="font-medium text-red-600 hover:text-red-500 transition duration-150 ease-in-out focus:outline-none">
-                            Delete
+                            {{ __('global.remove') }}
                         </button>
                     </div>
                 </li>

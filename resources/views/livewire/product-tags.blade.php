@@ -2,7 +2,7 @@
     <x-form wire:submit.prevent="attach">
         <x-input name="tag" title="Tag" wire:model="value"></x-input>
 
-        <x-button class="bg-teal-600 hover:bg-teal-500 mt-4">Attach</x-button>
+        <x-button class="bg-teal-600 hover:bg-teal-500 mt-4">{{ __('global.attach') }}</x-button>
     </x-form>
 
     @if($tags->isNotEmpty())
@@ -13,7 +13,7 @@
                         <span class="text-sm font-semibold">{{ $tag->value }}</span>
 
                         <x-button wire:click="remove({{ $tag->id }})" class="bg-red-600 hover:bg-red-500">
-                            Remove
+                            {{ __('global.remove') }}
                         </x-button>
                     </li>
                 @endforeach

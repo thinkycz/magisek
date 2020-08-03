@@ -8,16 +8,16 @@
                         <thead>
                         <tr>
                             <th class="px-6 py-3 border-b border-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Product
+                                {{ __('global.product') }}
                             </th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Price
+                                {{ __('global.price') }}
                             </th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Quantity
+                                {{ __('global.quantity') }}
                             </th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Total
+                                {{ __('global.total') }}
                             </th>
                         </tr>
                         </thead>
@@ -46,7 +46,7 @@
                                         {{ showPriceWithCurrency($item->price) }}
                                     </div>
                                     <div class="text-xs leading-5 text-gray-500">
-                                        {{ showPriceWithCurrency($item->priceNet) }} excl. VAT
+                                        {{ showPriceWithCurrency($item->priceNet) }} {{ __('global.excl_vat') }}
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
@@ -57,7 +57,7 @@
                                         {{ showPriceWithCurrency($item->total) }}
                                     </div>
                                     <div class="text-xs leading-5 text-gray-500">
-                                        {{ showPriceWithCurrency($item->subtotal) }} excl. VAT
+                                        {{ showPriceWithCurrency($item->subtotal) }} {{ __('global.excl_vat') }}
                                     </div>
                                 </td>
                             </tr>
@@ -76,11 +76,11 @@
             <div class="w-full lg:w-80 space-y-8">
                 <ul class="space-y-2">
                     <li class="flex justify-between text-lg font-semibold">
-                        <span class="text-cool-gray-500">Total</span>
+                        <span class="text-cool-gray-500">{{ __('global.total') }}</span>
                         <span class="text-gray-700">{{ $total }}</span>
                     </li>
                     <li class="flex justify-between text-sm font-semibold">
-                        <span class="text-cool-gray-500">Total excl. VAT</span>
+                        <span class="text-cool-gray-500">{{ __('global.total') }} {{ __('global.excl_vat') }}</span>
                         <span class="text-gray-700">{{ $totalNet }}</span>
                     </li>
                 </ul>
@@ -89,14 +89,14 @@
                     <a href="{{ route('checkout.index') }}"
                        class="flex-1 rounded h-12 text-white text-sm font-semibold flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600">
                         <x-icons.chevron-right class="w-5 h-5"></x-icons.chevron-right>
-                        <span>Checkout</span>
+                        <span>{{ __('global.checkout') }}</span>
                     </a>
                 </div>
             </div>
         </div>
     @else
         <div class="p-4 bg-white rounded border border-gray-200">
-            <h3 class="text-center py-8 font-semibold text-xl text-gray-700">Your basket is empty</h3>
+            <h3 class="text-center py-8 font-semibold text-xl text-gray-700">{{ __('global.your_basket_is_empty') }}</h3>
         </div>
     @endif
 </div>

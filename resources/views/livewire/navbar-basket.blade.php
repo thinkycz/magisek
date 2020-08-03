@@ -3,6 +3,6 @@
 
     <div class="flex flex-col">
         <p class="text-sm font-semibold text-gray-800">{{ $total }}</p>
-        <p class="text-xs text-gray-500">{{ $count }} items</p>
+        <p class="text-xs text-gray-500">{{ $count }} {{ __('global.items') }}</p>
     </div>
 </a>

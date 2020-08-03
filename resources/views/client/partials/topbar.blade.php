@@ -17,21 +17,21 @@
                     @can('access-admin-panel')
                         <a href="{{ route('acp.dashboard') }}"
                            class="text-xs text-gray-700 font-semibold hover:underline">
-                            Admin Panel
+                            {{ __('global.admin_panel') }}
                         </a>
                     @endcan
                     <a href="{{ route('orders.index') }}" class="text-xs text-gray-700 font-semibold hover:underline">
-                        My Profile ({{ auth()->user()->name }})
+                        {{ __('global.my_profile') }} ({{ auth()->user()->name }})
                     </a>
                     <a href="{{ route('logout') }}" class="text-xs text-gray-700 font-semibold hover:underline">
-                        Logout
+                        {{ __('global.logout') }}
                     </a>
                 @else
                     <a href="{{ route('login') }}" class="text-xs text-gray-700 font-semibold hover:underline">
-                        Login
+                        {{ __('global.login') }}
                     </a>
                     <a href="{{ route('register') }}" class="text-xs text-gray-700 font-semibold hover:underline">
-                        Register
+                        {{ __('global.register') }}
                     </a>
                 @endauth
             </div>

@@ -3,19 +3,19 @@
         <div>
             <x-form method="GET" :action="route('search.index')">
                 <label for="query" class="sr-only">
-                    Search
+                    {{ __('global.search') }}
                 </label>
                 <div class="relative rounded-md shadow-sm">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <x-icons.search class="h-5 w-5 text-gray-400"></x-icons.search>
                     </div>
                     <input wire:model="value"
-                           x-model="value"
                            x-on:click="overlay = true"
+                           x-model="value"
                            id="query"
                            name="query"
                            class="bg-white border rounded block w-full p-4 pl-10 sm:text-md sm:leading-5 focus:outline-none"
-                           placeholder="Search..."/>
+                           placeholder="{{ __('global.search') }}..."/>
                 </div>
             </x-form>
         </div>
@@ -29,7 +29,7 @@
              x-transition:leave-end="opacity-0"
              style="display: none;"
              class="bg-white w-full rounded mt-4 shadow-lg absolute border">
-            <h2 class="text-xs font-semibold uppercase text-gray-600 px-4 py-3">Search results</h2>
+            <h2 class="text-xs font-semibold uppercase text-gray-600 px-4 py-3">{{ __('global.search_results') }}</h2>
 
             <ul>
                 @forelse($products as $product)
@@ -54,7 +54,7 @@
                     </li>
                 @empty
                     <li class="p-4 text-center font-semibold uppercase text-gray-500 text-xs">
-                        There are no results
+                        {{ __('global.no_results') }}
                     </li>
                 @endforelse
             </ul>

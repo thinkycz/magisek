@@ -2,7 +2,7 @@
     <div class="bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:p-6">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Delivery Method
+                {{ __('global.delivery_method') }}
             </h3>
             <div class="mt-5">
                 <fieldset class="space-y-4">
@@ -25,7 +25,7 @@
     <div class="bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:p-6">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Payment Method
+                {{ __('global.payment_method') }}
             </h3>
             <div class="mt-5">
                 <fieldset class="space-y-4">
@@ -36,8 +36,9 @@
                                  wire:model="selectedPayment">
                         </x-radio>
                     @empty
-                        <p class="text-center py-2 font-semibold text-sm text-orange-600">Please select delivery
-                            method</p>
+                        <p class="text-center py-2 font-semibold text-sm text-orange-600">
+                            {{ __('global.please_select_delivery_method') }}
+                        </p>
                     @endforelse
                 </fieldset>
 

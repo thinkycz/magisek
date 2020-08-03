@@ -1,5 +1,5 @@
 <div>
-    <x-input name="category_name" title="Category Name" wire:model="name"></x-input>
+    <x-input name="category_name" :title="__('global.category_name')" wire:model="name"></x-input>
 
     @if($categories->isNotEmpty())
         <div class="w-full bg-white rounded-lg border border-gray-200 mt-2 z-10">
@@ -9,9 +9,9 @@
                         <span class="text-sm font-semibold">{{ $category->name }}</span>
 
                         @if($product->fresh()->categories->contains($category))
-                            <x-button wire:click="toggle({{ $category->id }})" class="bg-red-600 hover:bg-red-500">Detach</x-button>
+                            <x-button wire:click="toggle({{ $category->id }})" class="bg-red-600 hover:bg-red-500">{{ __('global.detach') }}</x-button>
                         @else
-                            <x-button wire:click="toggle({{ $category->id }})" class="bg-teal-600 hover:bg-teal-500">Attach</x-button>
+                            <x-button wire:click="toggle({{ $category->id }})" class="bg-teal-600 hover:bg-teal-500">{{ __('global.attach') }}</x-button>
                         @endif
                     </li>
                 @endforeach

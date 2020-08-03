@@ -11,9 +11,9 @@
         </a>
 
         <dl class="mt-3 flex-grow flex flex-col justify-between">
-            <dt class="sr-only">Price</dt>
+            <dt class="sr-only">{{ __('global.price') }}</dt>
             <dd class="text-teal-500 text-xl font-semibold leading-5">{{ $product->formatted_price }}</dd>
-            <dt class="sr-only">Price excl. VAT</dt>
+            <dt class="sr-only">{{ __('global.price') }} {{ __('global.excl_vat') }}</dt>
             <dd class="text-gray-500 text-xs font-semibold leading-5">{{ $product->formatted_price_excl_vat }}</dd>
         </dl>
     </div>
