@@ -3,7 +3,7 @@
 @section('container')
     <div class="container mx-auto py-6 space-y-8">
         <h2 class="text-2xl text-gray-700 font-semibold mb-2">
-            Checkout
+            {{ __('global.checkout_page') }}
         </h2>
 
         <x-form :action="route('checkout.process-order')">
@@ -24,7 +24,7 @@
                     <a href="{{ route('basket.index') }}"
                        class="text-gray-600 text-sm font-semibold flex items-center space-x-2 hover:underline">
                         <x-icons.chevron-left class="w-5 h-5"></x-icons.chevron-left>
-                        <span>Back to basket</span>
+                        <span>{{ __('global.back_to_basket') }}</span>
                     </a>
                 </div>
 
@@ -33,7 +33,7 @@
                         <button type="submit"
                                 class="flex-1 rounded h-12 text-white text-sm font-semibold flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600">
                             <x-icons.check class="w-5 h-5"></x-icons.check>
-                            <span>Place Order</span>
+                            <span>{{ __('global.place_order') }}</span>
                         </button>
                     </div>
                 </div>

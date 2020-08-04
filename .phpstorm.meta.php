@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-08-01 13:40:23.
+    * Generated on 2020-08-04 10:23:48.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -67,8 +67,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -259,8 +257,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -451,8 +447,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -643,8 +637,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -835,8 +827,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -1027,8 +1017,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -1219,8 +1207,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,
@@ -1411,8 +1397,6 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\MediaCollections\MediaRepository' => \Spatie\MediaLibrary\MediaCollections\MediaRepository::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
-        'Spatie\Multitenancy\Tasks\TasksCollection' => \Spatie\Multitenancy\Tasks\TasksCollection::class,
-        'Spatie\Multitenancy\TenantFinder\TenantFinder' => \App\Multitenancy\StoreTenantFinder::class,
         'Whoops\Handler\HandlerInterface' => \Facade\Ignition\ErrorPage\IgnitionWhoopsHandler::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
         'auth.driver' => \Illuminate\Auth\SessionGuard::class,

@@ -84,8 +84,8 @@
         ],
         "init-dev": [
             "php artisan key:generate",
-            "php artisan migrate:fresh --path=database/migrations/landlord --database=landlord",
-            "php artisan db:seed --class=LandlordSeeder",
+            "php artisan migrate:fresh",
+            "php artisan db:seed",
             "php artisan cache:clear",
             "php artisan config:clear",
             "php artisan view:clear",

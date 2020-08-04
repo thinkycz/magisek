@@ -13,13 +13,13 @@
                             <thead>
                             <tr>
                                 <th class="px-6 py-3 border-b border-cool-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Order Number
+                                    {{ __('global.order_number') }}
                                 </th>
                                 <th class="px-6 py-3 border-b border-cool-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Date
+                                    {{ __('global.date') }}
                                 </th>
                                 <th class="px-6 py-3 border-b border-cool-gray-200 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Total Value
+                                    {{ __('global.total') }}
                                 </th>
                                 <th class="px-6 py-3 border-b border-cool-gray-200 bg-cool-gray-100"></th>
                             </tr>
@@ -44,7 +44,9 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="100%" class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">There are no orders</td>
+                                    <td colspan="100%" class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">
+                                        {{ __('global.no_results') }}
+                                    </td>
                                 </tr>
                             @endforelse
                             </tbody>

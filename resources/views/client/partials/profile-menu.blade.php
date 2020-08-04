@@ -7,9 +7,9 @@
 <div>
     <div class="sm:hidden">
         <select aria-label="Selected tab" class="form-select block w-full">
-            <option selected>Placed Orders</option>
-            <option>Account Settings</option>
-            <option>Privacy Policy</option>
+            <option selected>{{ __('global.order_history') }}</option>
+            <option>{{ __('global.my_profile') }}</option>
+            <option>{{ __('global.privacy_settings') }}</option>
         </select>
     </div>
 
@@ -18,15 +18,15 @@
             <nav class="flex -mb-px space-x-8">
                 <a href="{{ route('orders.index') }}" class="inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 focus:outline-none focus:text-gray-700 focus:border-gray-300 {{ request()->routeIs('orders.*') ? 'text-teal-600 border-teal-600 hover:text-teal-600 hover:border-teal-600' : 'text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                     <x-icons.credit-card class="mr-2 h-5 w-5"></x-icons.credit-card>
-                    <span>Placed Orders</span>
+                    <span>{{ __('global.order_history') }}</span>
                 </a>
                 <a href="{{ route('profile.index') }}" class="inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 focus:outline-none focus:text-gray-700 focus:border-gray-300 {{ request()->routeIs('profile.*') ? 'text-teal-600 border-teal-600 hover:text-teal-600 hover:border-teal-600' : 'text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                     <x-icons.users class="mr-2 h-5 w-5"></x-icons.users>
-                    <span>Account Settings</span>
+                    <span>{{ __('global.my_profile') }}</span>
                 </a>
                 <a href="{{ route('privacy.index') }}" class="inline-flex items-center py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 focus:outline-none focus:text-gray-700 focus:border-gray-300 {{ request()->routeIs('privacy.*') ? 'text-teal-600 border-teal-600 hover:text-teal-600 hover:border-teal-600' : 'text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                     <x-icons.flag class="mr-2 h-5 w-5"></x-icons.flag>
-                    <span>Privacy Settings</span>
+                    <span>{{ __('global.privacy_settings') }}</span>
                 </a>
             </nav>
         </div>

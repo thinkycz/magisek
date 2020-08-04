@@ -17,50 +17,50 @@
                 <div class="md:grid md:grid-cols-3 md:gap-8 md:col-span-2 space-y-12 md:space-y-0">
                     <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Store
+                            {{ __('global.store') }}
                         </h4>
                         <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="{{ route('categories.index') }}"
                                    class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    All Categories
+                                    {{ __('global.all_categories') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('basket.index') }}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Basket
+                                    {{ __('global.basket') }}
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Profile
+                            {{ __('global.my_profile') }}
                         </h4>
                         <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="{{ route('orders.index') }}"
                                    class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Order History
+                                    {{ __('global.order_history') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('profile.index') }}"
                                    class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    My Profile
+                                    {{ __('global.my_profile') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('privacy.index') }}"
                                    class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                                    Privacy Settings
+                                    {{ __('global.privacy_settings') }}
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                            Links
+                            {{ __('global.links') }}
                         </h4>
                         <ul class="mt-4 space-y-4">
                             @if(settingsRepository()->get('footer_links', 'link_1_title'))
@@ -102,7 +102,7 @@
         </div>
         <div class="mt-12 border-t border-gray-200 pt-8">
             <p class="text-base leading-6 text-gray-400 xl:text-center">
-                &copy; {{ now()->year }} Powered by Pluli.com - All Rights Reserved
+                &copy; {{ now()->year }} Magisek.cz - {{ __('global.copyright') }}
             </p>
         </div>
     </div>

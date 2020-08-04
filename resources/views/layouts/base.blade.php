@@ -7,9 +7,9 @@
         <meta name="keywords" content="{{ settingsRepository()->getStoreKeywords() }}">
 
         @hasSection('title')
-            <title>@yield('title') - {{ settingsRepository()->getStoreName() }}</title>
+            <title>@yield('title') - {{ settingsRepository()->getStoreName() . ' - ' . settingsRepository()->getStoreDescription() }}</title>
         @else
-            <title>{{ settingsRepository()->getStoreName() }}</title>
+            <title>{{ settingsRepository()->getStoreName() . ' - ' . settingsRepository()->getStoreDescription() }}</title>
         @endif
 
         <!-- Favicon -->
