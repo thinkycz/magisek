@@ -34,8 +34,6 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapLandlordRoutes();
-
         $this->mapClientRoutes();
 
         $this->mapAuthRoutes();
@@ -43,20 +41,6 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapAdminRoutes();
 
         $this->mapTestRoutes();
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapLandlordRoutes()
-    {
-        Route::domain(config('app.landlord_domain'))
-            ->middleware('web')
-            ->group(base_path('routes/landlord.php'));
     }
 
     /**
@@ -75,7 +59,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapAuthRoutes()
     {
-        Route::middleware('web', 'tenant')
+        Route::middleware('web')
             ->namespace('App\\Http\\Controllers')
             ->group(function () {
                 \Auth::routes(['verify' => true]);
@@ -86,13 +70,13 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapClientRoutes()
     {
-        Route::middleware(['web', 'tenant'])
+        Route::middleware(['web'])
             ->group(base_path('routes/client.php'));
     }
 
     protected function mapAdminRoutes()
     {
-        Route::middleware(['web', 'tenant', 'auth', 'admin'])
+        Route::middleware(['web', 'auth', 'admin'])
             ->prefix('acp')
             ->as('acp.')
             ->group(base_path('routes/admin.php'));

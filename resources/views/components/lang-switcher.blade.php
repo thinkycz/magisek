@@ -7,6 +7,7 @@
     <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-30"
          @click.away="langopen = false"
          x-show="langopen"
+         style="display: none"
          x-transition:enter="transition ease-out duration-100"
          x-transition:enter-start="transform opacity-0 scale-95"
          x-transition:enter-end="transform opacity-100 scale-100"
