@@ -68,5 +68,6 @@ return [
     'tax_date'                      => 'Tax Date',
     'due_date'                      => 'Due Date',
     'ordered_items'                 => 'Ordered Items',
+    'save'                          => 'Save',
 
 ];

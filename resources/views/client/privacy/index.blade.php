@@ -7,83 +7,83 @@
         <div class="mt-6 bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
-                    <h3 class="text-lg font-medium leading-6 text-gray-900">Privacy Policy</h3>
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">
+                        {{ __('privacy.privacy_policy') }}
+                    </h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500">
-                        In this section you can manage your privacy settings.
+                        {{ __('privacy.privacy_policy_sub') }}
                     </p>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2 space-y-8">
                     <div>
-                        <h2
-                            class="font-medium text-xl text-cool-gray-700 mb-4">Informace o ochraně osobních údajů</h2>
+                        <h2 class="font-medium text-xl text-cool-gray-700 mb-4">
+                            {{ __('privacy.privacy_info') }}
+                        </h2>
                         <p class="text-cool-gray-600 mb-4">
-                            V naší firmě chápeme důležitost ochrany vašich osobních informací. Na naší platformě máte
-                            plnou moc a kontrolu nad vašimi údaji.
+                            {{ __('privacy.privacy_info_sub') }}
                         </p>
-                        <p class="text-cool-gray-600 mb-4">V této sekci je možné:</p>
+                        <p class="text-cool-gray-600 mb-4">
+                            {{ __('privacy.privacy_info_sub2') }}
+                        </p>
                         <ul class="mb-8">
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Spravovat vaše preference a souhlasy.
+                                {{ __('privacy.privacy_info_sub3') }}
                             </li>
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Stáhnout data, které o vás evidujeme v čitelné podobě.
+                                {{ __('privacy.privacy_info_sub4') }}
                             </li>
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Požádat o nenávratné smazání vašeho účtu, včetně osobních informací týkajících se vašeho
-                                účtu.
+                                {{ __('privacy.privacy_info_sub5') }}
                             </li>
                         </ul>
                         <p class="text-cool-gray-600 mb-4">
-                            Chcete-li se dozvědět více informací o tom, jak zpracováváme vaše osobní informace,
-                            navštivte stránku zásady ochrany osobních údajů.
+                            {{ __('privacy.privacy_info_sub6') }}
                         </p>
                     </div>
 
                     <div>
-                        <h2 class="font-medium text-xl text-cool-gray-700 mb-4">Nenávratné odstranění účtu</h2>
+                        <h2 class="font-medium text-xl text-cool-gray-700 mb-4">
+                            {{ __('privacy.account_deletion') }}
+                        </h2>
                         <p class="text-cool-gray-600 mb-4">
-                            Ctíme vaše právo na smazání vašich dat z naší platformy, včetně služeb třetích stran, se
-                            kterými spolupracujeme.
+                            {{ __('privacy.account_deletion_sub') }}
                         </p>
-                        <p class="text-cool-gray-600 mb-4">Pokud podáte žádost o smazání vašeho účtu:</p>
-                        <ul class="mb-4">
-                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Nenávratně odstraníme váš účet a všechny informace spojené s tímto účtem z našich
-                                serverů
-                            </li>
-                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Požádáme všechny služby třetích stran, které používáme, o odstranění dat týkajících se
-                                vašeho účtu
-                            </li>
-                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Budeme vás kontaktovat a informovat o procesu a výsledku vaší žádosti
-                            </li>
-                        </ul>
                         <p class="text-cool-gray-600 mb-4">
-                            Mějte prosím na vědomí, že kvůli legislativním povinnostem máme povinnost evidovat některé
-                            informace. Toto se týká například těchto údajů:
+                            {{ __('privacy.account_deletion_sub2') }}
                         </p>
                         <ul class="mb-4">
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Fakturační údaje a informace týkající se provedených transakcí, pro daňové a účetní
-                                účely
+                                {{ __('privacy.account_deletion_sub3') }}
                             </li>
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Informace o právnické osobě, pokud jste si u nás založili obchod nebo uskutečnili
-                                transakci
+                                {{ __('privacy.account_deletion_sub4') }}
                             </li>
                             <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
-                                Informace o produktech, u kterých došlo k transakci na naší platformě
+                                {{ __('privacy.account_deletion_sub5') }}
                             </li>
                         </ul>
                         <p class="text-cool-gray-600 mb-4">
-                            Pokud máte jakýkoliv dotaz nebo připomínky, neváhejte nás kontaktovat. Rádi vám pomůžeme.
+                            {{ __('privacy.account_deletion_notice') }}
+                        </p>
+                        <ul class="mb-4">
+                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
+                                {{ __('privacy.account_deletion_notice2') }}
+                            </li>
+                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
+                                {{ __('privacy.account_deletion_notice3') }}
+                            </li>
+                            <li class="text-cool-gray-600 mb-2 ml-8 list-disc">
+                                {{ __('privacy.account_deletion_notice4') }}
+                            </li>
+                        </ul>
+                        <p class="text-cool-gray-600 mb-4">
+                            {{ __('privacy.contact_us_for_more_info') }}
                         </p>
                         <p class="text-cool-gray-600 font-semibold mb-4">
-                            Vaši žádost o smazání účtu prosím zašlete na emailovou adresu team@nulisec.com
+                            {{ __('privacy.send_request_to_email', ['email' => settingsRepository()->getCompanyEmail()]) }}
                         </p>
                         <p class="text-cool-gray-600 mb-4">
-                            Vaší žádost zpracujeme a dokončíme do 30 dnů po obdržení žádosti.
+                            {{ __('privacy.request_fulfilled') }}
                         </p>
                     </div>
                 </div>
@@ -93,15 +93,15 @@
         <div class="mt-6 bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
-                    <h3 class="text-lg font-medium leading-6 text-gray-900">Preferences</h3>
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">{{ __('privacy.preferences') }}</h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500">
-                        Would you like to receive our newsletters?
+                        {{ __('privacy.preferences_sub') }}
                     </p>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
                     <x-form :action="route('profile.update-subscription-settings')">
                         <x-checkbox name="receive_newsletter"
-                                    title="Receive Newsletter"
+                                    :title="__('privacy.receive_newsletter')"
                                     class="mt-4"
                                     :value="auth()->user()->receive_newsletter">
                         </x-checkbox>
@@ -110,7 +110,7 @@
                             <div class="inline-flex rounded-md shadow-sm">
                                 <button type="submit"
                                         class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal active:bg-teal-700 transition duration-150 ease-in-out">
-                                    Save
+                                    {{ __('global.save') }}
                                 </button>
                             </div>
                         </div>

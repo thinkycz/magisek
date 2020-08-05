@@ -26,7 +26,7 @@ return [
     'quantity'                      => 'Množství',
     'total'                         => 'Celkem',
     'checkout'                      => 'K pokladně',
-    'your_basket_is_empty'          => 'Váš košík je prázdný',
+    'your_basket_is_empty'          => 'Tvůj košík je prázdný',
     'contact_and_notes'             => 'Kontakt a poznámky',
     'email'                         => 'Email',
     'phone'                         => 'Telefon',
@@ -68,5 +68,6 @@ return [
     'tax_date'                      => 'Datum zd. plnění',
     'due_date'                      => 'Datum splatnosti',
     'ordered_items'                 => 'Objednané položky',
+    'save'                          => 'Uložit',
 
 ];

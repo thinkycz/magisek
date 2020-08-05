@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'privacy_policy'           => 'Ochrana osobních údajů',
+    'privacy_policy_sub'       => 'V této sekci můžeš spravovat nastavení, které se týkají tvých osobních údajů.',
+    'privacy_info'             => 'Informace o ochraně osobních údajů',
+    'privacy_info_sub'         => 'V Magísku chápeme důležitost ochrany tvých osobních informací. Na naší platformě mají členové Magísku plnou moc a kontrolu nad svými údaji.',
+    'privacy_info_sub2'        => 'V této sekci je možné:',
+    'privacy_info_sub3'        => 'Spravovat tvé preference a souhlasy.',
+    'privacy_info_sub4'        => 'Stáhnout data, které o tobě evidujeme v čitelné podobě.',
+    'privacy_info_sub5'        => 'Požádat o nenávratné smazání účtu, včetně osobních informací týkajících se tvého účtu.',
+    'privacy_info_sub6'        => 'Pokud se chceš dozvědět více informací o tom, jak zpracováváme tvé osobní informace, navštiv naší stránku zásady ochrany osobních údajů.',
+    'account_deletion'         => 'Nenávratné odstranění účtu',
+    'account_deletion_sub'     => 'Magísek respektuje tvé právo na smazání svých dat z naší platformy, včetně služeb třetích stran, se kterými Magísek spolupracuje.',
+    'account_deletion_sub2'    => 'Pokud podáš žádost o smazání svého účtu:',
+    'account_deletion_sub3'    => 'Nenávratně odstraníme tvůj účet a všechny informace spojené s tímto účtem z našich serverů',
+    'account_deletion_sub4'    => 'Požádáme všechny služby třetích stran, které používáme, o odstranění dat týkajících se tvého účtu',
+    'account_deletion_sub5'    => 'Budeme tě kontaktovat a informovat o procesu a výsledku tvé žádosti',
+    'account_deletion_notice'  => 'Měj prosím na vědomí, že kvůli legislativním povinnostem má Magísek povinnost evidovat některé informace. Toto se týká například těchto údajů:',
+    'account_deletion_notice2' => 'Fakturační údaje a informace týkající se provedených transakcí, pro daňové a účetní účely',
+    'account_deletion_notice3' => 'Informace o právnické osobě, pokud jsi u nás udělal objednávku',
+    'account_deletion_notice4' => 'Informace o zakoupených produktech, u kterých došlo k transakci na naší platformě',
+    'contact_us_for_more_info' => 'Pokud máš jakýkoliv dotaz nebo připomínky, neváhej nás kontaktovat. Rádi ti pomůžeme.',
+    'send_request_to_email'    => 'Svoji žádost o smazání účtu prosím zašli na emailovou adresu :email',
+    'request_fulfilled'        => 'Tvoji žádost zpracujeme a dokončíme do 30 dnů po obdržení žádosti.',
+    'preferences'              => 'Preference',
+    'preferences_sub'          => 'Přeješ si dostávat novinky od Magísku?',
+    'receive_newsletter'       => 'Odebírat novinky',
+
+];

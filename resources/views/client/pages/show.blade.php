@@ -2,7 +2,6 @@
 
 @section('container')
     <div class="container mx-auto py-6">
-        <!-- This component requires Tailwind CSS >= 1.5.1 and @tailwindcss/ui >= 0.4.0 -->
         <div class="py-16 bg-white overflow-hidden shadow-lg border border-gray-100 rounded">
             <div class="px-4 sm:px-6 lg:px-8">
                 <div class="text-lg max-w-prose mx-auto mb-6">

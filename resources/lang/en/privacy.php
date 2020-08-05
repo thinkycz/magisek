@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'privacy_policy'           => 'Privacy Policy',
+    'privacy_policy_sub'       => 'In this section you can manage your privacy settings.',
+    'privacy_info'             => 'Privacy Policy Information',
+    'privacy_info_sub'         => 'We understand the importance of personal information. On our platform, you have the power over your personal information.',
+    'privacy_info_sub2'        => 'In this section, you can:',
+    'privacy_info_sub3'        => 'Manage your agreements and preferences.',
+    'privacy_info_sub4'        => 'Download all your personal data in a readable format.',
+    'privacy_info_sub5'        => 'Permanently delete your account, including all your personal information.',
+    'privacy_info_sub6'        => 'You can find more information how we process your data on our privacy policy page.',
+    'account_deletion'         => 'Permanently delete your account',
+    'account_deletion_sub'     => 'We honor your right to be completely forgotten from our platform, including any third party services we share your information with.',
+    'account_deletion_sub2'    => 'When you request a complete deletion of your account, we will:',
+    'account_deletion_sub3'    => 'Delete your account and all related data from our database',
+    'account_deletion_sub4'    => 'Request 3rd party services we use to remove your information',
+    'account_deletion_sub5'    => 'Contact you and let you know what we\'ve deleted, and where from',
+    'account_deletion_notice'  => 'Please note, to comply with the law, we cannot remove some information. This includes, but may not be limited to:',
+    'account_deletion_notice2' => 'Billing information and invoice related data for accounting purposes',
+    'account_deletion_notice3' => 'Your company information, if you created a store for that company',
+    'account_deletion_notice4' => 'Information about products you purchased in our store',
+    'contact_us_for_more_info' => 'Please let us know if you have any questions about this, and we\'d be happy to help',
+    'send_request_to_email'    => 'To request a complete deletion of your account, please email :email',
+    'request_fulfilled'        => 'We will process your request within 30 days of receiving your email.',
+    'preferences'              => 'Preferences',
+    'preferences_sub'          => 'Would you like to subscribe to our Newsletter?',
+    'receive_newsletter'       => 'Receive newsletter',
+
+];
