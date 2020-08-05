@@ -4,7 +4,7 @@
     <div class="md:flex md:items-center md:justify-between pt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Dashboard
+                {{ __('global.dashboard') }}
             </h2>
         </div>
     </div>
@@ -20,7 +20,7 @@
                         <div class="ml-5 w-0 flex-1">
                             <dl>
                                 <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
-                                    Total Customers
+                                    {{ __('global.total_customers') }}
                                 </dt>
                                 <dd class="flex items-baseline">
                                     <div class="text-2xl leading-8 font-semibold text-gray-900">
@@ -34,7 +34,7 @@
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
                         <a href="{{ route('acp.users.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
-                            View all
+                            {{ __('global.view_all') }}
                         </a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <div class="ml-5 w-0 flex-1">
                             <dl>
                                 <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
-                                    Total Products
+                                    {{ __('global.total_products') }}
                                 </dt>
                                 <dd class="flex items-baseline">
                                     <div class="text-2xl leading-8 font-semibold text-gray-900">
@@ -63,7 +63,7 @@
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
                         <a href="{{ route('acp.products.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
-                            View all
+                            {{ __('global.view_all') }}
                         </a>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <div class="ml-5 w-0 flex-1">
                             <dl>
                                 <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
-                                    Total Orders
+                                    {{ __('global.total_orders') }}
                                 </dt>
                                 <dd class="flex items-baseline">
                                     <div class="text-2xl leading-8 font-semibold text-gray-900">
@@ -91,7 +91,7 @@
                 <div class="bg-gray-50 px-4 py-4 sm:px-6">
                     <div class="text-sm leading-5">
                         <a href="{{ route('acp.orders.index') }}" class="font-medium text-teal-600 hover:text-teal-500 transition ease-in-out duration-150">
-                            View all
+                            {{ __('global.view_all') }}
                         </a>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
 
     <div class="flex flex-col mt-16">
         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-5">
-            Latest orders
+            {{ __('global.latest_orders') }}
         </h3>
 
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
@@ -111,16 +111,16 @@
                     <thead>
                     <tr>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Order Number
+                            {{ __('global.order_number') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Customer Name
+                            {{ __('global.customer') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Date
+                            {{ __('global.date') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Total Value
+                            {{ __('global.total') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
@@ -148,8 +148,8 @@
                     @empty
                         <tr>
                             <td colspan="100%"
-                                class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">There are no
-                                orders
+                                class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">
+                                {{ __('global.no_results') }}
                             </td>
                         </tr>
                     @endforelse

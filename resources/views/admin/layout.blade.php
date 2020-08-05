@@ -2,10 +2,8 @@
 
 @section('body')
     <div x-data="{open: false}" class="h-screen flex overflow-hidden bg-gray-100">
-        <!-- Off-canvas menu for mobile -->
-    @include('admin.partials.mobile_menu')
+        @include('admin.partials.mobile_menu')
 
-    <!-- Static sidebar for desktop -->
         <div class="hidden md:flex md:flex-shrink-0">
             <div class="flex flex-col w-64 bg-gray-800">
                 <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -18,125 +16,129 @@
                            class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.dashboard') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.home
                                 class="mr-3 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.home>
-                            Dashboard
+                            {{ __('global.dashboard') }}
                         </a>
 
-                        <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">My
-                            Store</h2>
+                        <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
+                            {{ __('global.my_store') }}
+                        </h2>
 
                         <a href="{{ route('acp.users.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.users.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.users
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.users>
-                            Customers
+                            {{ __('global.customers') }}
                         </a>
                         <a href="{{ route('acp.categories.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.categories.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.folder
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.folder>
-                            Categories
+                            {{ __('global.categories') }}
                         </a>
                         <a href="{{ route('acp.products.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.products.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.view-grid
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.view-grid>
-                            Products
+                            {{ __('global.products') }}
                         </a>
                         <a href="{{ route('acp.orders.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.orders.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.shopping-cart
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.shopping-cart>
-                            Orders
+                            {{ __('global.orders') }}
                         </a>
                         <a href="{{ route('acp.pages.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.pages.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.document
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.document>
-                            Pages
+                            {{ __('global.pages') }}
                         </a>
 
-                        <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">Product
-                            Import</h2>
+                        <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
+                            {{ __('global.product_import') }}
+                        </h2>
 
                         <a href="{{ route('acp.google-sheets.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.google-sheets.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.view-boards
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.view-boards>
-                            Google Sheets
+                            {{ __('global.google_sheets') }}
                         </a>
 
                         <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
-                            Configuration</h2>
+                            {{ __('global.configuration') }}
+                        </h2>
 
                         <a href="{{ route('acp.delivery-methods.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.delivery-methods.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.collection
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.collection>
-                            Delivery Methods
+                            {{ __('global.delivery_methods') }}
                         </a>
                         <a href="{{ route('acp.payment-methods.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.payment-methods.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.credit-card
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.credit-card>
-                            Payment Methods
+                            {{ __('global.payment_methods') }}
                         </a>
                         <a href="{{ route('acp.price-levels.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.price-levels.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.chart-bar
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.chart-bar>
-                            Price Levels
+                            {{ __('global.price_levels') }}
                         </a>
                         <a href="{{ route('acp.preferences.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.preferences.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.duplicate
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.duplicate>
-                            Preferences
+                            {{ __('global.preferences') }}
                         </a>
                         <a href="{{ route('acp.settings.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.settings.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.cog
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cog>
-                            Settings
+                            {{ __('global.settings') }}
                         </a>
 
                         <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
-                            Options</h2>
+                            {{ __('global.options') }}
+                        </h2>
 
                         <a href="{{ route('acp.availabilities.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.check-circle
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.check-circle>
-                            Availabilities
+                            {{ __('global.availabilities') }}
                         </a>
                         <a href="{{ route('acp.countries.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.countries.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.globe
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.globe>
-                            Countries
+                            {{ __('global.countries') }}
                         </a>
                         <a href="{{ route('acp.currencies.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.currencies.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.currency-euro
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.currency-euro>
-                            Currencies
+                            {{ __('global.currencies') }}
                         </a>
                         <a href="{{ route('acp.property-types.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.property-types.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.flag
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.flag>
-                            Property Types
+                            {{ __('global.property_types') }}
                         </a>
                         <a href="{{ route('acp.statuses.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.statuses.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.cursor-click
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cursor-click>
-                            Order Statuses
+                            {{ __('global.order_statuses') }}
                         </a>
                         <a href="{{ route('acp.units.index') }}"
                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
                             <x-icons.scale
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.scale>
-                            Units
+                            {{ __('global.units') }}
                         </a>
                     </nav>
                 </div>
@@ -145,8 +147,8 @@
                         <div class="flex items-center">
                             <div>
                                 <img class="inline-block h-9 w-9 rounded-full"
-                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                     alt=""/>
+                                     src="{{ auth()->user()->avatar }}"
+                                     alt="{{ auth()->user()->name }}"/>
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm leading-5 font-medium text-white">
