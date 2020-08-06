@@ -4,14 +4,14 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Pages
+                {{ __('pages.pages') }}
             </h2>
         </div>
 
         <div class="mt-4 flex md:mt-0 md:ml-4">
             <x-button :href="route('acp.pages.create')" class="bg-teal-600 hover:bg-teal-500">
                 <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
-                Add Page
+                {{ __('pages.add_page') }}
             </x-button>
         </div>
     </div>
@@ -24,10 +24,10 @@
                     <thead>
                     <tr>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Title
+                            {{ __('pages.title') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Slug
+                            {{ __('pages.slug') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
@@ -36,7 +36,9 @@
                     @foreach($pages as $page)
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <a href="{{ route('pages.show', $page) }}" class="text-sm leading-5 text-blue-700 hover:text-blue-600 hover:underline font-semibold" target="_blank">{{ $page->title }}</a>
+                                <a href="{{ route('pages.show', $page) }}" class="text-sm leading-5 text-blue-700 hover:text-blue-600 hover:underline font-semibold" target="_blank">
+                                    {{ $page->title }}
+                                </a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $page->slug }}</span>
