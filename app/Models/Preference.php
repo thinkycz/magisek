@@ -27,9 +27,4 @@ class Preference extends Model
     {
         return __("preferences.{$this->code}");
     }
-
-    public function getDescriptionAttribute()
-    {
-        return __("preferences.{$this->code}.description");
-    }
 }
