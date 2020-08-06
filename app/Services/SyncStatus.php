@@ -17,17 +17,17 @@ class SyncStatus
 
     public function lastUpdate()
     {
-        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('syncstatus.now')) : __('syncstatus.never');
+        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('google_sheets.now')) : __('google_sheets.never');
     }
 
     public function nextPossibleUpdate()
     {
-        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('syncstatus.now');
+        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('google_sheets.now');
     }
 
     public function duration()
     {
-        if (!$this->job) return __('syncstatus.not_active_yet');
+        if (!$this->job) return __('google_sheets.not_active_yet');
 
         $reservedAt = Carbon::createFromTimestamp($this->job->reserved_at);
 
@@ -36,13 +36,13 @@ class SyncStatus
         } elseif ($this->failed()) {
             return Carbon::createFromTimestamp($this->job->failed_at)->diffForHumans($reservedAt, true);
         } else {
-            return __('syncstatus.pending');
+            return __('google_sheets.pending');
         }
     }
 
     public function status()
     {
-        return $this->job ? __("syncstatus.{$this->job->status}") : __('syncstatus.not_active_yet');
+        return $this->job ? __("google_sheets.{$this->job->status}") : __('google_sheets.not_active_yet');
     }
 
     public function failed()
