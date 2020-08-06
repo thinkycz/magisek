@@ -4,16 +4,16 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Orders
+                {{ __('orders.orders') }}
             </h2>
 
             <div class="bg-white shadow overflow-hidden sm:rounded-lg mt-8">
                 <div class="px-4 py-5 border-b border-gray-200 sm:px-6 space-y-2">
                     <h3 class="text-xl leading-6 font-medium text-gray-900">
-                        Order Detail
+                        {{ __('orders.order_detail') }}
                     </h3>
                     <p class="max-w-2xl text-sm leading-5 text-gray-500">
-                        Order Number
+                        {{ __('orders.order_number') }}
                         <span class="font-semibold">{{ $order->order_number }}</span>
                     </p>
                 </div>
@@ -21,7 +21,7 @@
                     <dl class="grid grid-cols-1 col-gap-4 row-gap-8 sm:grid-cols-2">
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Billing Details
+                                {{ __('orders.billing_details') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 <p class="text-lg">
@@ -33,7 +33,7 @@
                         </div>
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Shipping Details
+                                {{ __('orders.shipping_details') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 <p class="text-lg">
@@ -46,7 +46,7 @@
                         @if($order->billingDetail->company_id)
                             <div class="sm:col-span-1">
                                 <dt class="text-sm leading-5 font-medium text-gray-500">
-                                    Company ID
+                                    {{ __('orders.company_id') }}
                                 </dt>
                                 <dd class="mt-1 text-sm leading-5 text-gray-900">
                                     {{$order->billingDetail->company_id}}
@@ -56,7 +56,7 @@
                         @if($order->billingDetail->vat_id)
                             <div class="sm:col-span-1">
                                 <dt class="text-sm leading-5 font-medium text-gray-500">
-                                    VAT ID
+                                    {{ __('orders.vat_id') }}
                                 </dt>
                                 <dd class="mt-1 text-sm leading-5 text-gray-900">
                                     {{$order->billingDetail->vat_id}}
@@ -65,7 +65,7 @@
                         @endif
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Delivery Method
+                                {{ __('orders.delivery_method') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 {{$order->deliveryMethod->name}}
@@ -73,7 +73,7 @@
                         </div>
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Payment Method
+                                {{ __('orders.payment_method') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 {{$order->paymentMethod->name}}
@@ -81,7 +81,7 @@
                         </div>
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Email
+                                {{ __('orders.email') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 {{ $order->email }}
@@ -89,7 +89,7 @@
                         </div>
                         <div class="sm:col-span-1">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Phone
+                                {{ __('orders.phone') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 {{ $order->phone}}
@@ -102,8 +102,7 @@
                         <div
                             class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Invoice Number
-
+                                {{ __('orders.invoice_number') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                                 {{ $order->invoice_number }}
@@ -113,8 +112,7 @@
                         <div
                             class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Variable Symbol
-
+                                {{ __('orders.variable_symbol') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                                 {{ $order->variable_symbol }}
@@ -123,7 +121,7 @@
                         <div
                             class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Tax Date
+                                {{ __('orders.tax_date') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                                 {{ $order->tax_date->format('j.n.Y') }}
@@ -132,7 +130,7 @@
                         <div
                             class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Due Date
+                                {{ __('orders.due_date') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                                 {{ $order->due_date->format('j.n.Y')  }}
@@ -141,18 +139,18 @@
                         <div
                             class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                             <dt class="text-sm leading-5 font-medium text-gray-500">
-                                Total Value
+                                {{ __('orders.total_value') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                                 <p class="text-lg">{{ $order->formatted_total_value }}</p>
-                                <p class="text-gray-600">{{ $order->formatted_total_value_excl_vat }} excl. VAT</p>
+                                <p class="text-gray-600">{{ $order->formatted_total_value_excl_vat }} {{ __('global.excl_vat') }}</p>
                             </dd>
                         </div>
                     </dl>
                 </div>
             </div>
 
-            <x-accordion title="Ordered items" class="mt-8">
+            <x-accordion :title="__('orders.ordered_items')" class="mt-8">
                 <div class="flex flex-col">
                     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                         <div class="align-middle inline-block min-w-full overflow-hidden border-b border-cool-gray-200">
@@ -160,16 +158,16 @@
                                 <thead>
                                 <tr>
                                     <th class="px-6 py-3 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-cool-gray-500 uppercase tracking-wider">
-                                        Name
+                                        {{ __('orders.product') }}
                                     </th>
                                     <th class="px-6 py-3 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-cool-gray-500 uppercase tracking-wider">
-                                        Quantity
+                                        {{ __('orders.quantity') }}
                                     </th>
                                     <th class="px-6 py-3 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-cool-gray-500 uppercase tracking-wider">
-                                        Price
+                                        {{ __('orders.price') }}
                                     </th>
                                     <th class="px-6 py-3 bg-cool-gray-100 text-left text-xs leading-4 font-medium text-cool-gray-500 uppercase tracking-wider">
-                                        Total
+                                        {{ __('orders.total') }}
                                     </th>
                                 </tr>
                                 </thead>

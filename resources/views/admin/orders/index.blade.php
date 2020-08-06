@@ -4,7 +4,7 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Orders
+                {{ __('orders.orders') }}
             </h2>
         </div>
     </div>
@@ -17,16 +17,16 @@
                     <thead>
                     <tr>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Order Number
+                            {{ __('orders.order_number') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Customer Name
+                            {{ __('orders.customer') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Date
+                            {{ __('orders.date') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Total Value
+                            {{ __('orders.total_value') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
@@ -54,8 +54,8 @@
                     @empty
                         <tr>
                             <td colspan="100%"
-                                class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">There are no
-                                orders
+                                class="p-6 text-center text-cool-gray-500 text-sm font-semibold uppercase">
+                                {{ __('global.no_results') }}
                             </td>
                         </tr>
                     @endforelse

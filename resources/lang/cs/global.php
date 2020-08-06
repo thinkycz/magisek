@@ -65,7 +65,7 @@ return [
     'order_detail'                  => 'Podrobnosti objednávky',
     'invoice_number'                => 'Číslo faktury',
     'variable_symbol'               => 'Variabilní symbol',
-    'tax_date'                      => 'Datum zd. plnění',
+    'tax_date'                      => 'Datum usk. zd. plnění',
     'due_date'                      => 'Datum splatnosti',
     'ordered_items'                 => 'Objednané položky',
     'save'                          => 'Uložit',
