@@ -100,5 +100,6 @@ return [
     'password'                      => 'Heslo',
     'password_confirmation'         => 'Potvrdit heslo',
     'confirm'                       => 'Potvrdit',
+    'please_enter_details'          => 'Zadejte prosím detaily',
 
 ];

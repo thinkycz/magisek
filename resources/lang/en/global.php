@@ -100,5 +100,6 @@ return [
     'password'                      => 'Password',
     'password_confirmation'         => 'Password confirmation',
     'confirm'                       => 'Confirm',
+    'please_enter_details'          => 'Please enter details',
 
 ];
