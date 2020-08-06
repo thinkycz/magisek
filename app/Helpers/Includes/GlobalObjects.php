@@ -11,16 +11,6 @@ if (!function_exists('currentUser')) {
     }
 }
 
-if (!function_exists('currentStore')) {
-    /**
-     * @return \App\Store
-     */
-    function currentStore()
-    {
-        return \App\Store::current();
-    }
-}
-
 if (!function_exists('currentCurrency')) {
     /**
      * @return \App\Models\Currency

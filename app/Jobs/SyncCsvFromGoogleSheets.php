@@ -121,7 +121,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
 
     protected function getFile()
     {
-        $path = "google_sheets/" . currentStore()->id;
+        $path = "google_sheets/";
         $file = file_get_contents($this->endpoint);
         $name = 'endpoint.csv';
 
