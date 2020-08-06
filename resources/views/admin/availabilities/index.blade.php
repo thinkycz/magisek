@@ -4,14 +4,14 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Availabilities
+                {{ __('availabilities.availabilities') }}
             </h2>
         </div>
 
         <div class="mt-4 flex md:mt-0 md:ml-4">
             <x-button :href="route('acp.availabilities.create')" class="bg-teal-600 hover:bg-teal-500">
                 <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
-                Add Availability
+                {{ __('availabilities.add_availability') }}
             </x-button>
         </div>
     </div>
@@ -24,19 +24,19 @@
                     <thead>
                     <tr>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Name
+                            {{ __('availabilities.name') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Description
+                            {{ __('availabilities.description') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Allow Orders
+                            {{ __('availabilities.allow_orders') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Negative Quantity
+                            {{ __('availabilities.negative_quantity') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Products Visible
+                            {{ __('availabilities.products_visible') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
