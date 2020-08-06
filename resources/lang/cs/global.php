@@ -9,7 +9,7 @@ return [
     'my_profile'                    => 'Můj profil',
     'logout'                        => 'Odhlásit se',
     'login'                         => 'Přihlásit se',
-    'register'                      => 'Registrace',
+    'register'                      => 'Zaregistrovat se',
     'items'                         => 'položek',
     'search'                        => 'Vyhledávání',
     'search_results'                => 'Výsledky vyhledávání',
@@ -97,5 +97,8 @@ return [
     'property_types'                => 'Typy vlastností',
     'order_statuses'                => 'Stavy objednávek',
     'units'                         => 'Jednotky',
+    'password'                      => 'Heslo',
+    'password_confirmation'         => 'Potvrdit heslo',
+    'confirm'                       => 'Potvrdit',
 
 ];

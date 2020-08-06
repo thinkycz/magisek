@@ -7,8 +7,8 @@ return [
     'locale.vi'                     => 'Vietnamese',
     'admin_panel'                   => 'Admin Panel',
     'my_profile'                    => 'My Profile',
-    'logout'                        => 'Logout',
-    'login'                         => 'Login',
+    'logout'                        => 'Log out',
+    'login'                         => 'Log in',
     'register'                      => 'Register',
     'items'                         => 'items',
     'search'                        => 'Search',
@@ -97,5 +97,8 @@ return [
     'property_types'                => 'Property Types',
     'order_statuses'                => 'Order Statuses',
     'units'                         => 'Units',
+    'password'                      => 'Password',
+    'password_confirmation'         => 'Password confirmation',
+    'confirm'                       => 'Confirm',
 
 ];

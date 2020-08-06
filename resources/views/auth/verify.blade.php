@@ -1,11 +1,12 @@
 @extends('auth.layout')
-@section('title', 'Verify your email address')
+
+@section('title', __('auth.verify_your_email_address'))
 
 @section('content')
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <h2 class="text-3xl font-semibold text-center text-gray-900 leading-9">
-                Verify your email address
+                {{ __('auth.verify_your_email_address') }}
             </h2>
         </div>
 
@@ -21,15 +22,17 @@
                                   clip-rule="evenodd"></path>
                         </svg>
 
-                        <p>A fresh verification link has been sent to your email address.</p>
+                        <p>{{ __('auth.fresh_link_sent') }}</p>
                     </div>
                 @endif
 
                 <div class="text-sm text-gray-700 text-center">
-                    <p class="mb-4">Before proceeding, please check your email for a verification link. If you did not receive the email, click this button to request another.</p>
+                    <p class="mb-4">{{ __('auth.verify_email_sub') }}</p>
 
                     <x-form :action="route('verification.resend')">
-                        <x-button class="w-full sm:w-auto bg-teal-500 text-teal-100 px-6 py-2 rounded hover:bg-teal-600 focus:outline-none cursor-pointer">Resend verification email</x-button>
+                        <x-button class="w-full sm:w-auto bg-teal-500 text-teal-100 px-6 py-2 rounded hover:bg-teal-600 focus:outline-none cursor-pointer">
+                            {{ __('auth.resend_verification_email') }}
+                        </x-button>
                     </x-form>
                 </div>
             </div>
