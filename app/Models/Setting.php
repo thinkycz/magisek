@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -22,9 +21,7 @@ class Setting extends Model implements HasMedia
     {
         $namespace = $this->namespace ? "{$this->namespace}::" : '';
 
-        $key = "{$namespace}settings.{$this->code}";
-
-        return \Lang::has($key) ? __($key) : str_replace('_', ' ', Str::title($this->code));
+        return __("{$namespace}settings.{$this->code}");
     }
 
     public function getValueAttribute()

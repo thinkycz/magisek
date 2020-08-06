@@ -4,7 +4,7 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Settings
+                {{ __('settings.settings') }}
             </h2>
         </div>
     </div>
@@ -17,7 +17,7 @@
                     <thead>
                     <tr>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Name
+                            {{ __('settings.name') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
