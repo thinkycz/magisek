@@ -25,13 +25,7 @@
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p class="text-sm text-gray-700 leading-5">
-                    Showing
-                    <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                    to
-                    <span class="font-medium">{{ $paginator->lastItem() }}</span>
-                    of
-                    <span class="font-medium">{{ $paginator->total() }}</span>
-                    results
+                    {!! __('global.showing_from_results', ['from' => $paginator->firstItem(), 'to' => $paginator->lastItem(), 'total' => $paginator->total()]) !!}
                 </p>
             </div>
 

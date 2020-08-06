@@ -101,5 +101,6 @@ return [
     'password_confirmation'         => 'Password confirmation',
     'confirm'                       => 'Confirm',
     'please_enter_details'          => 'Please enter details',
+    'showing_from_results'          => 'Showing <span class="font-medium">:from</span> to <span class="font-medium">:to</span> of <span class="font-medium">:total</span> results',
 
 ];
