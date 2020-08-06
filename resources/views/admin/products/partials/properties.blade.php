@@ -1,4 +1,4 @@
-<x-accordion title="Properties">
+<x-accordion :title="__('products.properties')">
     <div class="p-4">
 
     </div>

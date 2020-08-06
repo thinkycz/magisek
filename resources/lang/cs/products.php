@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'products'             => 'Produkty',
+    'add_product'          => 'Přidat produkt',
+    'edit_product'         => 'Upravit produkt',
+    'delete_product'       => 'Odstranit produkt',
+    'name'                 => 'Název',
+    'catalog'              => 'Katalog',
+    'barcode'              => 'Čárový kód',
+    'quantity_in_stock'    => 'Skladové množství',
+    'moq'                  => 'Minimální objednávka',
+    'vat_rate'             => 'Sazba DPH',
+    'description'          => 'Popisek',
+    'product'              => 'Produkt',
+    'details'              => 'Detaily',
+    'enabled'              => 'Povoleno',
+    'categories'           => 'Kategorie',
+    'photos'               => 'Fotky',
+    'pricing'              => 'Cenotvorba',
+    'price'                => 'Cena',
+    'old_price'            => 'Původní cena',
+    'properties'           => 'Vlastnosti',
+    'quantity_discounts'   => 'Množstevní slevy',
+    'stock'                => 'Sklad',
+    'availability'         => 'Dostupnost',
+    'unit'                 => 'Jednotka',
+    'multiply_of_moq_only' => 'Pouze násobky min. obj.',
+    'tags'                 => 'Štítky',
+
+];

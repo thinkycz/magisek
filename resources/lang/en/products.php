@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'products'             => 'Products',
+    'add_product'          => 'Add Product',
+    'edit_product'         => 'Edit Product',
+    'delete_product'       => 'Delete Product',
+    'name'                 => 'Name',
+    'catalog'              => 'Catalog',
+    'barcode'              => 'Barcode',
+    'quantity_in_stock'    => 'Quantity In Stock',
+    'moq'                  => 'Minimum Order Quantity',
+    'vat_rate'             => 'VAT rate',
+    'description'          => 'Description',
+    'product'              => 'Product',
+    'details'              => 'Details',
+    'enabled'              => 'Enabled',
+    'categories'           => 'Categories',
+    'photos'               => 'Photos',
+    'pricing'              => 'Pricing',
+    'price'                => 'Price',
+    'old_price'            => 'Old Price',
+    'properties'           => 'Properties',
+    'quantity_discounts'   => 'Quantity Discounts',
+    'stock'                => 'Stock',
+    'availability'         => 'Availability',
+    'unit'                 => 'Unit',
+    'multiply_of_moq_only' => 'Multiply of MOQ only',
+    'tags'                 => 'Tags',
+
+];

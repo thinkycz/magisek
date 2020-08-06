@@ -4,14 +4,14 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Products
+                {{ __('products.products') }}
             </h2>
         </div>
 
         <div class="mt-4 flex md:mt-0 md:ml-4">
             <x-button :href="route('acp.products.edit', $product)" class="bg-teal-600 hover:bg-teal-500">
                 <x-icons.pencil class="w-4 h-4 mr-2"></x-icons.pencil>
-                Edit Product
+                {{ __('products.edit_product') }}
             </x-button>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 <dl>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            Catalog
+                            {{ __('products.catalog') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->catalog }}
@@ -39,7 +39,7 @@
                     <div
                         class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            Barcode
+                            {{ __('products.barcode') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->barcode }}
@@ -48,7 +48,7 @@
                     <div
                         class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            Quantity In Stock
+                            {{ __('products.quantity_in_stock') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->quantity_in_stock }}
@@ -57,7 +57,7 @@
                     <div
                         class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            Minimum Order Quantity
+                            {{ __('products.moq') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->moq }}
@@ -66,7 +66,7 @@
                     <div
                         class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            VAT rate
+                            {{ __('products.vat_rate') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->vatrate }}
@@ -75,7 +75,7 @@
                     <div
                         class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
-                            Description
+                            {{ __('products.description') }}
                         </dt>
                         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
                             {{ $product->description }}
