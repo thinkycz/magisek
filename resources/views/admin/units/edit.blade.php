@@ -4,7 +4,7 @@
     <div class="md:flex md:items-center md:justify-between mt-8">
         <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
-                Units
+                {{ __('units.units') }}
             </h2>
         </div>
 
@@ -12,7 +12,7 @@
             @if($unit->exists)
                 <x-form-button method="delete" :action="route('acp.units.destroy', $unit)" class="bg-red-600 hover:bg-red-500">
                     <x-icons.trash class="w-4 h-4 mr-2"></x-icons.trash>
-                    Delete Unit
+                    {{ __('units.delete_unit') }}
                 </x-form-button>
             @endif
         </div>
@@ -23,23 +23,25 @@
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
                     <h3 class="text-lg font-medium leading-6 text-gray-900">
-                        Unit
+                        {{ __('units.unit') }}
                     </h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500">
-                        Please enter details.
+                        {{ __('global.please_enter_details') }}
                     </p>
                 </div>
 
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <x-input name="name" title="Name" :value="$unit->name"></x-input>
+                    <x-input name="name" :title="__('units.name')" :value="$unit->name"></x-input>
 
-                    <x-input name="abbr" title="Abbreviation" :value="$unit->abbr" class="mt-6"></x-input>
+                    <x-input name="abbr" :title="__('units.abbr')" :value="$unit->abbr" class="mt-6"></x-input>
                 </div>
             </div>
         </div>
 
         <div class="flex justify-end mt-8">
-            <x-button class="bg-teal-600 hover:bg-teal-500">Save</x-button>
+            <x-button class="bg-teal-600 hover:bg-teal-500">
+                {{ __('global.save') }}
+            </x-button>
         </div>
     </x-form>
 @endsection
