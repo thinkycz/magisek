@@ -69,77 +69,73 @@
                             {{ __('global.configuration') }}
                         </h2>
 
-                        <a href="{{ route('acp.delivery-methods.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.delivery-methods.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.collection
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.collection>
-                            {{ __('global.delivery_methods') }}
-                        </a>
-                        <a href="{{ route('acp.payment-methods.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.payment-methods.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.credit-card
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.credit-card>
-                            {{ __('global.payment_methods') }}
-                        </a>
-                        <a href="{{ route('acp.price-levels.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.price-levels.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.chart-bar
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.chart-bar>
-                            {{ __('global.price_levels') }}
-                        </a>
-                        <a href="{{ route('acp.preferences.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.preferences.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.duplicate
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.duplicate>
-                            {{ __('global.preferences') }}
-                        </a>
-                        <a href="{{ route('acp.settings.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.settings.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.cog
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cog>
-                            {{ __('global.settings') }}
-                        </a>
+                        <div x-data="{ isExpanded: {{ request()->routeIs('acp.delivery-methods.*') || request()->routeIs('acp.payment-methods.*') || request()->routeIs('acp.price-levels.*') || request()->routeIs('acp.preferences.*') || request()->routeIs('acp.settings.*') ? 'true' : 'false' }} }">
+                            <button @click.prevent="isExpanded = !isExpanded"
+                                    :class="{'bg-gray-900': isExpanded}"
+                                    class="mt-1 group w-full flex items-center pl-2 pr-1 py-2 text-sm leading-5 focus:outline-none font-medium rounded-md text-white hover:bg-gray-700 transition ease-in-out duration-150">
+                                <x-icons.cog
+                                    class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cog>
+                                    {{ __('global.configuration') }}
+                                <svg :class="{'text-gray-400 rotate-90': isExpanded, 'text-gray-300': !isExpanded}"
+                                     class="ml-auto h-5 w-5 transform group-hover:text-gray-400 group-focus:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20">
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
+                            </button>
 
-                        <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
-                            {{ __('global.options') }}
-                        </h2>
+                            <div x-show="isExpanded" class="mt-1 space-y-1">
+                                <a href="{{ route('acp.delivery-methods.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.delivery-methods.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.delivery_methods') }}
+                                </a>
+                                <a href="{{ route('acp.payment-methods.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.payment-methods.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.payment_methods') }}
+                                </a>
+                                <a href="{{ route('acp.price-levels.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.price-levels.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.price_levels') }}
+                                </a>
+                                <a href="{{ route('acp.preferences.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.preferences.*') ? 'bg-gray-900' : 'text-gray-300' }}" >
+                                    {{ __('global.preferences') }}
+                                </a>
+                                <a href="{{ route('acp.settings.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.settings.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.settings') }}
+                                </a>
+                            </div>
+                        </div>
 
-                        <a href="{{ route('acp.availabilities.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.check-circle
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.check-circle>
-                            {{ __('global.availabilities') }}
-                        </a>
-                        <a href="{{ route('acp.countries.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.countries.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.globe
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.globe>
-                            {{ __('global.countries') }}
-                        </a>
-                        <a href="{{ route('acp.currencies.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.currencies.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.currency-euro
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.currency-euro>
-                            {{ __('global.currencies') }}
-                        </a>
-                        <a href="{{ route('acp.property-types.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.property-types.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.flag
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.flag>
-                            {{ __('global.property_types') }}
-                        </a>
-                        <a href="{{ route('acp.statuses.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.statuses.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.cursor-click
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.cursor-click>
-                            {{ __('global.order_statuses') }}
-                        </a>
-                        <a href="{{ route('acp.units.index') }}"
-                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
-                            <x-icons.scale
-                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.scale>
-                            {{ __('global.units') }}
-                        </a>
+                        <div x-data="{ isExpanded: {{ request()->routeIs('acp.availabilities.*') || request()->routeIs('acp.countries.*') || request()->routeIs('acp.currencies.*') || request()->routeIs('acp.property-types.*') || request()->routeIs('acp.statuses.*') || request()->routeIs('acp.units.*') ? 'true' : 'false' }} }">
+                            <button @click.prevent="isExpanded = !isExpanded"
+                                    :class="{'bg-gray-900': isExpanded}"
+                                    class="mt-1 group w-full flex items-center pl-2 pr-1 py-2 text-sm leading-5 focus:outline-none font-medium rounded-md text-white hover:bg-gray-700 transition ease-in-out duration-150">
+                                <x-icons.flag
+                                    class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.flag>
+                                {{ __('global.options') }}
+                                <svg :class="{'text-gray-400 rotate-90': isExpanded, 'text-gray-300': !isExpanded}"
+                                     class="ml-auto h-5 w-5 transform group-hover:text-gray-400 group-focus:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20">
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
+                            </button>
+
+                            <div x-show="isExpanded" class="mt-1 space-y-1">
+                                <a href="{{ route('acp.availabilities.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.availabilities') }}
+                                </a>
+                                <a href="{{ route('acp.countries.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.countries.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.countries') }}
+                                </a>
+                                <a href="{{ route('acp.currencies.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.currencies.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.currencies') }}
+                                </a>
+                                <a href="{{ route('acp.property-types.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.property-types.*') ? 'bg-gray-900' : 'text-gray-300' }}" >
+                                    {{ __('global.property_types') }}
+                                </a>
+                                <a href="{{ route('acp.statuses.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.statuses.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.order_statuses') }}
+                                </a>
+                                <a href="{{ route('acp.units.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'bg-gray-900' : 'text-gray-300' }}">
+                                    {{ __('global.units') }}
+
+                                </a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
                 <div class="flex-shrink-0 flex bg-gray-700 p-4">
