@@ -82,7 +82,15 @@
                                 </svg>
                             </button>
 
-                            <div x-show="isExpanded" class="mt-1 space-y-1">
+                            <div x-show="isExpanded"
+                                 class="mt-1 space-y-1"
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="transform opacity-0 scale-95 -translate-y-4"
+                                 x-transition:enter-end="transform opacity-100 scale-100 translate-y-0"
+                                 x-transition:leave="transition ease-in duration-200"
+                                 x-transition:leave-start="transform opacity-100 scale-100 translate-y-0"
+                                 x-transition:leave-end="transform opacity-0 scale-95 -translate-y-4">
+
                                 <a href="{{ route('acp.delivery-methods.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.delivery-methods.*') ? 'bg-gray-900' : 'text-gray-300' }}">
                                     {{ __('global.delivery_methods') }}
                                 </a>
@@ -102,6 +110,7 @@
                         </div>
 
                         <div x-data="{ isExpanded: {{ request()->routeIs('acp.availabilities.*') || request()->routeIs('acp.countries.*') || request()->routeIs('acp.currencies.*') || request()->routeIs('acp.property-types.*') || request()->routeIs('acp.statuses.*') || request()->routeIs('acp.units.*') ? 'true' : 'false' }} }">
+
                             <button @click.prevent="isExpanded = !isExpanded"
                                     :class="{'bg-gray-900': isExpanded}"
                                     class="mt-1 group w-full flex items-center pl-2 pr-1 py-2 text-sm leading-5 focus:outline-none font-medium rounded-md text-white hover:bg-gray-700 transition ease-in-out duration-150">
@@ -114,7 +123,15 @@
                                 </svg>
                             </button>
 
-                            <div x-show="isExpanded" class="mt-1 space-y-1">
+                            <div x-show="isExpanded"
+                                 class="mt-1 space-y-1"
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="transform opacity-0 scale-95 -translate-y-4"
+                                 x-transition:enter-end="transform opacity-100 scale-100 translate-y-0"
+                                 x-transition:leave="transition ease-in duration-200"
+                                 x-transition:leave-start="transform opacity-100 scale-100 translate-y-0"
+                                 x-transition:leave-end="transform opacity-0 scale-95 -translate-y-4">
+
                                 <a href="{{ route('acp.availabilities.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.availabilities.*') ? 'bg-gray-900' : 'text-gray-300' }}">
                                     {{ __('global.availabilities') }}
                                 </a>
@@ -132,7 +149,6 @@
                                 </a>
                                 <a href="{{ route('acp.units.index') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:text-gray-300 hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.units.*') ? 'bg-gray-900' : 'text-gray-300' }}">
                                     {{ __('global.units') }}
-
                                 </a>
                             </div>
                         </div>

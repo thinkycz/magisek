@@ -300,7 +300,6 @@ namespace App\Models{
  * @property string $code
  * @property int|null $preferable_id
  * @property string $preferable_type
- * @property-read mixed $description
  * @property-read mixed $name
  * @property mixed $value
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $preferable
@@ -426,6 +425,7 @@ namespace App\Models{
  * @property int|null $currency_id
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BillingDetail[] $billingDetails
  * @property-read int|null $billing_details_count
+ * @property-read mixed $avatar
  * @property-read mixed $name
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
@@ -746,6 +746,7 @@ namespace App\Models{
  * @property string $name
  * @property int $enabled
  * @property int $has_quantity_discounts
+ * @property-read mixed $import_code
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
  * @property-read int|null $prices_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PriceLevel newModelQuery()
