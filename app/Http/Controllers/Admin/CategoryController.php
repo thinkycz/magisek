@@ -15,6 +15,14 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function show(Category $category)
+    {
+        return view('admin.categories.show', [
+            'category' => $category,
+            'products' => $category->products()->paginate()
+        ]);
+    }
+
     public function create()
     {
         return view('admin.categories.edit', [
@@ -53,10 +61,11 @@ class CategoryController extends Controller
     protected function data(Request $request)
     {
         return $request->validate([
-            'name'      => 'required',
-            'position'  => 'required|numeric',
-            'parent_id' => 'sometimes|nullable|numeric|exists:categories,id',
-            'enabled'   => 'boolean'
+            'name'         => 'required',
+            'position'     => 'required|numeric',
+            'show_in_menu' => 'boolean',
+            'is_featured'  => 'boolean',
+            'enabled'      => 'boolean'
         ]);
     }
 }

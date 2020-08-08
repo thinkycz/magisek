@@ -35,7 +35,9 @@
 
                     <x-input type="number" name="position" :title="__('categories.position')" :value="$category->position" class="mt-6"></x-input>
 
-                    <x-input type="number" name="parent_id" :title="__('categories.parent_category')" :value="$category->parent_id" class="mt-6"></x-input>
+                    <x-checkbox name="show_in_menu" :title="__('categories.show_in_menu')" :value="$category->show_in_menu" class="mt-6"></x-checkbox>
+
+                    <x-checkbox name="is_featured" :title="__('categories.is_featured')" :value="$category->is_featured" class="mt-6"></x-checkbox>
 
                     <x-checkbox name="enabled" :title="__('categories.enabled')" :value="$category->enabled" class="mt-6"></x-checkbox>
                 </div>

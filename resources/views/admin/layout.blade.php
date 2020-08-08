@@ -66,7 +66,7 @@
                         </a>
 
                         <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
-                            {{ __('global.configuration') }}
+                            {{ __('global.settings') }}
                         </h2>
 
                         <div x-data="{ isExpanded: {{ request()->routeIs('acp.delivery-methods.*') || request()->routeIs('acp.payment-methods.*') || request()->routeIs('acp.price-levels.*') || request()->routeIs('acp.preferences.*') || request()->routeIs('acp.settings.*') ? 'true' : 'false' }} }">
