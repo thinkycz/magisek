@@ -1,15 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Admin\GoogleSheetsActions;
+namespace App\Http\Livewire;
 
-use App\Http\Controllers\Controller;
 use App\Jobs\SyncCsvFromGoogleSheets;
+use App\Services\SyncStatus;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Livewire\Component;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Validator;
 
-class SyncNowController extends Controller
+class GoogleSheetsSync extends Component
 {
-    public function __invoke()
+    use DispatchesJobs;
+
+    public function render()
+    {
+        return view('livewire.google-sheets-sync', [
+            'status' => SyncStatus::get('google_sheets_status')
+        ]);
+    }
+
+    public function sync()
     {
         $settings = Setting::loadConfiguration('google_sheets_importer') ?? [];
 
@@ -19,7 +30,5 @@ class SyncNowController extends Controller
         ])->validate();
 
         $this->dispatch(new SyncCsvFromGoogleSheets());
-
-        return redirect()->back()->with('message', 'Sync in progress');
     }
 }

@@ -32,7 +32,7 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     /**
      * @var string
      */
-    protected $statusCode = 'google_spreadsheets_status';
+    protected $statusCode = 'google_sheets_status';
 
     /**
      * Max 60 minutes

@@ -17,7 +17,7 @@ class SyncStatus
 
     public function lastUpdate()
     {
-        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('google_sheets.now')) : __('google_sheets.never');
+        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format('j.n.Y H:i') : __('google_sheets.now')) : __('google_sheets.never');
     }
 
     public function nextPossibleUpdate()
