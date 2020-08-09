@@ -11,7 +11,8 @@ class SidebarCategories extends Component
     {
         return view('components.sidebar-categories', [
             'categories' => Category::query()
-                ->whereEnabled(true)
+                ->where('enabled', true)
+                ->where('show_in_menu', true)
                 ->orderBy('position')
                 ->get()
                 ->toTree()

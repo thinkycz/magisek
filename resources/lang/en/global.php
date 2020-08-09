@@ -104,5 +104,6 @@ return [
     'showing_from_results'          => 'Showing <span class="font-medium">:from</span> to <span class="font-medium">:to</span> of <span class="font-medium">:total</span> results',
     'subcategories'                 => 'Subcategories',
     'count_products'                => ':count products',
+    'newest_products'               => 'Newest Products',
 
 ];

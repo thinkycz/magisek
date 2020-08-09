@@ -1,4 +1,5 @@
 @props(['photos' => []])
+
 <div x-data x-init="new Splide($refs.splide).mount();"
      x-ref="splide"
      data-splide='{"type":"loop"}'

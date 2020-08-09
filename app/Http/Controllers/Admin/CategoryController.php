@@ -11,7 +11,9 @@ class CategoryController extends Controller
     public function index()
     {
         return view('admin.categories.index', [
-            'categories' => Category::withCount('products')->paginate()
+            'categories' => Category::withCount('products')
+                ->orderBy('position')
+                ->paginate()
         ]);
     }
 

@@ -13,6 +13,12 @@
         <span class="text-sm leading-5 text-gray-900">{{ $category->products_count }}</span>
     </td>
     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+        <x-boolean :checked="$category->show_in_menu"></x-boolean>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+        <x-boolean :checked="$category->is_featured"></x-boolean>
+    </td>
+    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
         <x-boolean :checked="$category->enabled"></x-boolean>
     </td>
     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">

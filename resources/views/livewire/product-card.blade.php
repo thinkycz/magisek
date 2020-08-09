@@ -1,4 +1,4 @@
-<li class="col-span-1 flex flex-col bg-white rounded-lg shadow">
+<div class="col-span-1 flex flex-col bg-white rounded-lg shadow">
     <div class="flex-1 flex flex-col p-4">
         <a href="{{ route('products.show', $product) }}">
             <img class="w-full h-40 flex-shrink-0 mx-auto object-contain" src="{{ $product->thumbnail }}"
@@ -17,7 +17,8 @@
             <dd class="text-gray-500 text-xs font-semibold leading-5">{{ $product->formatted_price_excl_vat }}</dd>
         </dl>
     </div>
+
     <div class="p-4 bg-cool-gray-100">
         <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
     </div>
-</li>
+</div>

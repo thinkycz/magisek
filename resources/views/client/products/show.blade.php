@@ -18,8 +18,9 @@
                 <div class="flex justify-between items-center">
                     <div class="w-1/2">
                         <p class="text-2xl font-semibold text-teal-700">{{ $product->formatted_price }}</p>
-                        <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} bez
-                            DPH</p>
+                        <p class="text-xs font-semibold text-gray-500">
+                            {{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}
+                        </p>
                     </div>
 
                     <div class="w-1/2">

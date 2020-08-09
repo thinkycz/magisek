@@ -6,11 +6,11 @@
             Search results for "{{ $query }}"
         </h2>
 
-        <ul class="grid grid-cols-1 gap-6 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 xl:grid-cols-4">
             @foreach($products as $product)
                 <livewire:product-card :product="$product"></livewire:product-card>
             @endforeach
-        </ul>
+        </div>
 
         {{ $products->links() }}
     </div>

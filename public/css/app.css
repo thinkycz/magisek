@@ -1541,6 +1541,18 @@ input:invalid, textarea:invalid, select:invalid {
   margin-left: calc(32rem * calc(1 - var(--space-x-reverse)));
 }
 
+.space-y-256 > :not(template) ~ :not(template) {
+  --space-y-reverse: 0;
+  margin-top: calc(64rem * calc(1 - var(--space-y-reverse)));
+  margin-bottom: calc(64rem * var(--space-y-reverse));
+}
+
+.space-x-256 > :not(template) ~ :not(template) {
+  --space-x-reverse: 0;
+  margin-right: calc(64rem * var(--space-x-reverse));
+  margin-left: calc(64rem * calc(1 - var(--space-x-reverse)));
+}
+
 .space-y-px > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(1px * calc(1 - var(--space-y-reverse)));
@@ -2283,6 +2295,18 @@ input:invalid, textarea:invalid, select:invalid {
   --space-x-reverse: 0;
   margin-right: calc(-32rem * var(--space-x-reverse));
   margin-left: calc(-32rem * calc(1 - var(--space-x-reverse)));
+}
+
+.-space-y-256 > :not(template) ~ :not(template) {
+  --space-y-reverse: 0;
+  margin-top: calc(-64rem * calc(1 - var(--space-y-reverse)));
+  margin-bottom: calc(-64rem * var(--space-y-reverse));
+}
+
+.-space-x-256 > :not(template) ~ :not(template) {
+  --space-x-reverse: 0;
+  margin-right: calc(-64rem * var(--space-x-reverse));
+  margin-left: calc(-64rem * calc(1 - var(--space-x-reverse)));
 }
 
 .-space-y-px > :not(template) ~ :not(template) {
@@ -12091,6 +12115,10 @@ input:invalid, textarea:invalid, select:invalid {
   height: 32rem;
 }
 
+.h-256 {
+  height: 64rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -12467,6 +12495,10 @@ input:invalid, textarea:invalid, select:invalid {
   margin: 32rem;
 }
 
+.m-256 {
+  margin: 64rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -12717,6 +12749,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .-m-128 {
   margin: -32rem;
+}
+
+.-m-256 {
+  margin: -64rem;
 }
 
 .-m-px {
@@ -13155,6 +13191,16 @@ input:invalid, textarea:invalid, select:invalid {
 .mx-128 {
   margin-left: 32rem;
   margin-right: 32rem;
+}
+
+.my-256 {
+  margin-top: 64rem;
+  margin-bottom: 64rem;
+}
+
+.mx-256 {
+  margin-left: 64rem;
+  margin-right: 64rem;
 }
 
 .my-auto {
@@ -13785,6 +13831,16 @@ input:invalid, textarea:invalid, select:invalid {
 .-mx-128 {
   margin-left: -32rem;
   margin-right: -32rem;
+}
+
+.-my-256 {
+  margin-top: -64rem;
+  margin-bottom: -64rem;
+}
+
+.-mx-256 {
+  margin-left: -64rem;
+  margin-right: -64rem;
 }
 
 .-my-px {
@@ -14601,6 +14657,22 @@ input:invalid, textarea:invalid, select:invalid {
 
 .ml-128 {
   margin-left: 32rem;
+}
+
+.mt-256 {
+  margin-top: 64rem;
+}
+
+.mr-256 {
+  margin-right: 64rem;
+}
+
+.mb-256 {
+  margin-bottom: 64rem;
+}
+
+.ml-256 {
+  margin-left: 64rem;
 }
 
 .mt-auto {
@@ -15611,6 +15683,22 @@ input:invalid, textarea:invalid, select:invalid {
   margin-left: -32rem;
 }
 
+.-mt-256 {
+  margin-top: -64rem;
+}
+
+.-mr-256 {
+  margin-right: -64rem;
+}
+
+.-mb-256 {
+  margin-bottom: -64rem;
+}
+
+.-ml-256 {
+  margin-left: -64rem;
+}
+
 .-mt-px {
   margin-top: -1px;
 }
@@ -16247,6 +16335,10 @@ input:invalid, textarea:invalid, select:invalid {
   max-height: 32rem;
 }
 
+.max-h-256 {
+  max-height: 64rem;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
@@ -16785,6 +16877,10 @@ input:invalid, textarea:invalid, select:invalid {
   padding: 32rem;
 }
 
+.p-256 {
+  padding: 64rem;
+}
+
 .p-px {
   padding: 1px;
 }
@@ -17221,6 +17317,16 @@ input:invalid, textarea:invalid, select:invalid {
 .px-128 {
   padding-left: 32rem;
   padding-right: 32rem;
+}
+
+.py-256 {
+  padding-top: 64rem;
+  padding-bottom: 64rem;
+}
+
+.px-256 {
+  padding-left: 64rem;
+  padding-right: 64rem;
 }
 
 .py-px {
@@ -18037,6 +18143,22 @@ input:invalid, textarea:invalid, select:invalid {
 
 .pl-128 {
   padding-left: 32rem;
+}
+
+.pt-256 {
+  padding-top: 64rem;
+}
+
+.pr-256 {
+  padding-right: 64rem;
+}
+
+.pb-256 {
+  padding-bottom: 64rem;
+}
+
+.pl-256 {
+  padding-left: 64rem;
 }
 
 .pt-px {
@@ -24365,6 +24487,13 @@ input:invalid, textarea:invalid, select:invalid {
   left: 32rem;
 }
 
+.inset-256 {
+  top: 64rem;
+  right: 64rem;
+  bottom: 64rem;
+  left: 64rem;
+}
+
 .inset-auto {
   top: auto;
   right: auto;
@@ -24904,6 +25033,16 @@ input:invalid, textarea:invalid, select:invalid {
 .inset-x-128 {
   right: 32rem;
   left: 32rem;
+}
+
+.inset-y-256 {
+  top: 64rem;
+  bottom: 64rem;
+}
+
+.inset-x-256 {
+  right: 64rem;
+  left: 64rem;
 }
 
 .inset-y-auto {
@@ -25730,6 +25869,22 @@ input:invalid, textarea:invalid, select:invalid {
 
 .left-128 {
   left: 32rem;
+}
+
+.top-256 {
+  top: 64rem;
+}
+
+.right-256 {
+  right: 64rem;
+}
+
+.bottom-256 {
+  bottom: 64rem;
+}
+
+.left-256 {
+  left: 64rem;
 }
 
 .top-auto {
@@ -31789,6 +31944,10 @@ input:invalid, textarea:invalid, select:invalid {
   width: 32rem;
 }
 
+.w-256 {
+  width: 64rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -32164,6 +32323,11 @@ input:invalid, textarea:invalid, select:invalid {
   gap: 32rem;
 }
 
+.gap-256 {
+  grid-gap: 64rem;
+  gap: 64rem;
+}
+
 .gap-px {
   grid-gap: 1px;
   gap: 1px;
@@ -32508,6 +32672,12 @@ input:invalid, textarea:invalid, select:invalid {
   grid-column-gap: 32rem;
   -moz-column-gap: 32rem;
        column-gap: 32rem;
+}
+
+.col-gap-256 {
+  grid-column-gap: 64rem;
+  -moz-column-gap: 64rem;
+       column-gap: 64rem;
 }
 
 .col-gap-px {
@@ -32855,6 +33025,11 @@ input:invalid, textarea:invalid, select:invalid {
 .row-gap-128 {
   grid-row-gap: 32rem;
   row-gap: 32rem;
+}
+
+.row-gap-256 {
+  grid-row-gap: 64rem;
+  row-gap: 64rem;
 }
 
 .row-gap-px {
@@ -34018,6 +34193,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-x: 32rem;
 }
 
+.translate-x-256 {
+  --transform-translate-x: 64rem;
+}
+
 .translate-x-px {
   --transform-translate-x: 1px;
 }
@@ -34264,6 +34443,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .-translate-x-128 {
   --transform-translate-x: -32rem;
+}
+
+.-translate-x-256 {
+  --transform-translate-x: -64rem;
 }
 
 .-translate-x-px {
@@ -34518,6 +34701,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-y: 32rem;
 }
 
+.translate-y-256 {
+  --transform-translate-y: 64rem;
+}
+
 .translate-y-px {
   --transform-translate-y: 1px;
 }
@@ -34764,6 +34951,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .-translate-y-128 {
   --transform-translate-y: -32rem;
+}
+
+.-translate-y-256 {
+  --transform-translate-y: -64rem;
 }
 
 .-translate-y-px {
@@ -35018,6 +35209,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-x: 32rem;
 }
 
+.hover\:translate-x-256:hover {
+  --transform-translate-x: 64rem;
+}
+
 .hover\:translate-x-px:hover {
   --transform-translate-x: 1px;
 }
@@ -35264,6 +35459,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .hover\:-translate-x-128:hover {
   --transform-translate-x: -32rem;
+}
+
+.hover\:-translate-x-256:hover {
+  --transform-translate-x: -64rem;
 }
 
 .hover\:-translate-x-px:hover {
@@ -35518,6 +35717,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-y: 32rem;
 }
 
+.hover\:translate-y-256:hover {
+  --transform-translate-y: 64rem;
+}
+
 .hover\:translate-y-px:hover {
   --transform-translate-y: 1px;
 }
@@ -35764,6 +35967,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .hover\:-translate-y-128:hover {
   --transform-translate-y: -32rem;
+}
+
+.hover\:-translate-y-256:hover {
+  --transform-translate-y: -64rem;
 }
 
 .hover\:-translate-y-px:hover {
@@ -36018,6 +36225,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-x: 32rem;
 }
 
+.focus\:translate-x-256:focus {
+  --transform-translate-x: 64rem;
+}
+
 .focus\:translate-x-px:focus {
   --transform-translate-x: 1px;
 }
@@ -36264,6 +36475,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .focus\:-translate-x-128:focus {
   --transform-translate-x: -32rem;
+}
+
+.focus\:-translate-x-256:focus {
+  --transform-translate-x: -64rem;
 }
 
 .focus\:-translate-x-px:focus {
@@ -36518,6 +36733,10 @@ input:invalid, textarea:invalid, select:invalid {
   --transform-translate-y: 32rem;
 }
 
+.focus\:translate-y-256:focus {
+  --transform-translate-y: 64rem;
+}
+
 .focus\:translate-y-px:focus {
   --transform-translate-y: 1px;
 }
@@ -36764,6 +36983,10 @@ input:invalid, textarea:invalid, select:invalid {
 
 .focus\:-translate-y-128:focus {
   --transform-translate-y: -32rem;
+}
+
+.focus\:-translate-y-256:focus {
+  --transform-translate-y: -64rem;
 }
 
 .focus\:-translate-y-px:focus {
@@ -37553,6 +37776,18 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: calc(32rem * calc(1 - var(--space-x-reverse)));
   }
 
+  .sm\:space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(64rem * var(--space-y-reverse));
+  }
+
+  .sm\:space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(64rem * var(--space-x-reverse));
+    margin-left: calc(64rem * calc(1 - var(--space-x-reverse)));
+  }
+
   .sm\:space-y-px > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(1px * calc(1 - var(--space-y-reverse)));
@@ -38295,6 +38530,18 @@ input:invalid, textarea:invalid, select:invalid {
     --space-x-reverse: 0;
     margin-right: calc(-32rem * var(--space-x-reverse));
     margin-left: calc(-32rem * calc(1 - var(--space-x-reverse)));
+  }
+
+  .sm\:-space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(-64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(-64rem * var(--space-y-reverse));
+  }
+
+  .sm\:-space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(-64rem * var(--space-x-reverse));
+    margin-left: calc(-64rem * calc(1 - var(--space-x-reverse)));
   }
 
   .sm\:-space-y-px > :not(template) ~ :not(template) {
@@ -48103,6 +48350,10 @@ input:invalid, textarea:invalid, select:invalid {
     height: 32rem;
   }
 
+  .sm\:h-256 {
+    height: 64rem;
+  }
+
   .sm\:h-auto {
     height: auto;
   }
@@ -48479,6 +48730,10 @@ input:invalid, textarea:invalid, select:invalid {
     margin: 32rem;
   }
 
+  .sm\:m-256 {
+    margin: 64rem;
+  }
+
   .sm\:m-auto {
     margin: auto;
   }
@@ -48729,6 +48984,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:-m-128 {
     margin: -32rem;
+  }
+
+  .sm\:-m-256 {
+    margin: -64rem;
   }
 
   .sm\:-m-px {
@@ -49167,6 +49426,16 @@ input:invalid, textarea:invalid, select:invalid {
   .sm\:mx-128 {
     margin-left: 32rem;
     margin-right: 32rem;
+  }
+
+  .sm\:my-256 {
+    margin-top: 64rem;
+    margin-bottom: 64rem;
+  }
+
+  .sm\:mx-256 {
+    margin-left: 64rem;
+    margin-right: 64rem;
   }
 
   .sm\:my-auto {
@@ -49797,6 +50066,16 @@ input:invalid, textarea:invalid, select:invalid {
   .sm\:-mx-128 {
     margin-left: -32rem;
     margin-right: -32rem;
+  }
+
+  .sm\:-my-256 {
+    margin-top: -64rem;
+    margin-bottom: -64rem;
+  }
+
+  .sm\:-mx-256 {
+    margin-left: -64rem;
+    margin-right: -64rem;
   }
 
   .sm\:-my-px {
@@ -50613,6 +50892,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:ml-128 {
     margin-left: 32rem;
+  }
+
+  .sm\:mt-256 {
+    margin-top: 64rem;
+  }
+
+  .sm\:mr-256 {
+    margin-right: 64rem;
+  }
+
+  .sm\:mb-256 {
+    margin-bottom: 64rem;
+  }
+
+  .sm\:ml-256 {
+    margin-left: 64rem;
   }
 
   .sm\:mt-auto {
@@ -51623,6 +51918,22 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: -32rem;
   }
 
+  .sm\:-mt-256 {
+    margin-top: -64rem;
+  }
+
+  .sm\:-mr-256 {
+    margin-right: -64rem;
+  }
+
+  .sm\:-mb-256 {
+    margin-bottom: -64rem;
+  }
+
+  .sm\:-ml-256 {
+    margin-left: -64rem;
+  }
+
   .sm\:-mt-px {
     margin-top: -1px;
   }
@@ -52259,6 +52570,10 @@ input:invalid, textarea:invalid, select:invalid {
     max-height: 32rem;
   }
 
+  .sm\:max-h-256 {
+    max-height: 64rem;
+  }
+
   .sm\:max-h-screen {
     max-height: 100vh;
   }
@@ -52797,6 +53112,10 @@ input:invalid, textarea:invalid, select:invalid {
     padding: 32rem;
   }
 
+  .sm\:p-256 {
+    padding: 64rem;
+  }
+
   .sm\:p-px {
     padding: 1px;
   }
@@ -53233,6 +53552,16 @@ input:invalid, textarea:invalid, select:invalid {
   .sm\:px-128 {
     padding-left: 32rem;
     padding-right: 32rem;
+  }
+
+  .sm\:py-256 {
+    padding-top: 64rem;
+    padding-bottom: 64rem;
+  }
+
+  .sm\:px-256 {
+    padding-left: 64rem;
+    padding-right: 64rem;
   }
 
   .sm\:py-px {
@@ -54049,6 +54378,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:pl-128 {
     padding-left: 32rem;
+  }
+
+  .sm\:pt-256 {
+    padding-top: 64rem;
+  }
+
+  .sm\:pr-256 {
+    padding-right: 64rem;
+  }
+
+  .sm\:pb-256 {
+    padding-bottom: 64rem;
+  }
+
+  .sm\:pl-256 {
+    padding-left: 64rem;
   }
 
   .sm\:pt-px {
@@ -60377,6 +60722,13 @@ input:invalid, textarea:invalid, select:invalid {
     left: 32rem;
   }
 
+  .sm\:inset-256 {
+    top: 64rem;
+    right: 64rem;
+    bottom: 64rem;
+    left: 64rem;
+  }
+
   .sm\:inset-auto {
     top: auto;
     right: auto;
@@ -60916,6 +61268,16 @@ input:invalid, textarea:invalid, select:invalid {
   .sm\:inset-x-128 {
     right: 32rem;
     left: 32rem;
+  }
+
+  .sm\:inset-y-256 {
+    top: 64rem;
+    bottom: 64rem;
+  }
+
+  .sm\:inset-x-256 {
+    right: 64rem;
+    left: 64rem;
   }
 
   .sm\:inset-y-auto {
@@ -61742,6 +62104,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:left-128 {
     left: 32rem;
+  }
+
+  .sm\:top-256 {
+    top: 64rem;
+  }
+
+  .sm\:right-256 {
+    right: 64rem;
+  }
+
+  .sm\:bottom-256 {
+    bottom: 64rem;
+  }
+
+  .sm\:left-256 {
+    left: 64rem;
   }
 
   .sm\:top-auto {
@@ -67801,6 +68179,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: 32rem;
   }
 
+  .sm\:w-256 {
+    width: 64rem;
+  }
+
   .sm\:w-auto {
     width: auto;
   }
@@ -68176,6 +68558,11 @@ input:invalid, textarea:invalid, select:invalid {
     gap: 32rem;
   }
 
+  .sm\:gap-256 {
+    grid-gap: 64rem;
+    gap: 64rem;
+  }
+
   .sm\:gap-px {
     grid-gap: 1px;
     gap: 1px;
@@ -68520,6 +68907,12 @@ input:invalid, textarea:invalid, select:invalid {
     grid-column-gap: 32rem;
     -moz-column-gap: 32rem;
          column-gap: 32rem;
+  }
+
+  .sm\:col-gap-256 {
+    grid-column-gap: 64rem;
+    -moz-column-gap: 64rem;
+         column-gap: 64rem;
   }
 
   .sm\:col-gap-px {
@@ -68867,6 +69260,11 @@ input:invalid, textarea:invalid, select:invalid {
   .sm\:row-gap-128 {
     grid-row-gap: 32rem;
     row-gap: 32rem;
+  }
+
+  .sm\:row-gap-256 {
+    grid-row-gap: 64rem;
+    row-gap: 64rem;
   }
 
   .sm\:row-gap-px {
@@ -70030,6 +70428,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .sm\:translate-x-256 {
+    --transform-translate-x: 64rem;
+  }
+
   .sm\:translate-x-px {
     --transform-translate-x: 1px;
   }
@@ -70276,6 +70678,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:-translate-x-128 {
     --transform-translate-x: -32rem;
+  }
+
+  .sm\:-translate-x-256 {
+    --transform-translate-x: -64rem;
   }
 
   .sm\:-translate-x-px {
@@ -70530,6 +70936,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .sm\:translate-y-256 {
+    --transform-translate-y: 64rem;
+  }
+
   .sm\:translate-y-px {
     --transform-translate-y: 1px;
   }
@@ -70776,6 +71186,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:-translate-y-128 {
     --transform-translate-y: -32rem;
+  }
+
+  .sm\:-translate-y-256 {
+    --transform-translate-y: -64rem;
   }
 
   .sm\:-translate-y-px {
@@ -71030,6 +71444,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .sm\:hover\:translate-x-256:hover {
+    --transform-translate-x: 64rem;
+  }
+
   .sm\:hover\:translate-x-px:hover {
     --transform-translate-x: 1px;
   }
@@ -71276,6 +71694,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:hover\:-translate-x-128:hover {
     --transform-translate-x: -32rem;
+  }
+
+  .sm\:hover\:-translate-x-256:hover {
+    --transform-translate-x: -64rem;
   }
 
   .sm\:hover\:-translate-x-px:hover {
@@ -71530,6 +71952,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .sm\:hover\:translate-y-256:hover {
+    --transform-translate-y: 64rem;
+  }
+
   .sm\:hover\:translate-y-px:hover {
     --transform-translate-y: 1px;
   }
@@ -71776,6 +72202,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:hover\:-translate-y-128:hover {
     --transform-translate-y: -32rem;
+  }
+
+  .sm\:hover\:-translate-y-256:hover {
+    --transform-translate-y: -64rem;
   }
 
   .sm\:hover\:-translate-y-px:hover {
@@ -72030,6 +72460,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .sm\:focus\:translate-x-256:focus {
+    --transform-translate-x: 64rem;
+  }
+
   .sm\:focus\:translate-x-px:focus {
     --transform-translate-x: 1px;
   }
@@ -72276,6 +72710,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:focus\:-translate-x-128:focus {
     --transform-translate-x: -32rem;
+  }
+
+  .sm\:focus\:-translate-x-256:focus {
+    --transform-translate-x: -64rem;
   }
 
   .sm\:focus\:-translate-x-px:focus {
@@ -72530,6 +72968,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .sm\:focus\:translate-y-256:focus {
+    --transform-translate-y: 64rem;
+  }
+
   .sm\:focus\:translate-y-px:focus {
     --transform-translate-y: 1px;
   }
@@ -72776,6 +73218,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:focus\:-translate-y-128:focus {
     --transform-translate-y: -32rem;
+  }
+
+  .sm\:focus\:-translate-y-256:focus {
+    --transform-translate-y: -64rem;
   }
 
   .sm\:focus\:-translate-y-px:focus {
@@ -73556,6 +74002,18 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: calc(32rem * calc(1 - var(--space-x-reverse)));
   }
 
+  .md\:space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(64rem * var(--space-y-reverse));
+  }
+
+  .md\:space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(64rem * var(--space-x-reverse));
+    margin-left: calc(64rem * calc(1 - var(--space-x-reverse)));
+  }
+
   .md\:space-y-px > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(1px * calc(1 - var(--space-y-reverse)));
@@ -74298,6 +74756,18 @@ input:invalid, textarea:invalid, select:invalid {
     --space-x-reverse: 0;
     margin-right: calc(-32rem * var(--space-x-reverse));
     margin-left: calc(-32rem * calc(1 - var(--space-x-reverse)));
+  }
+
+  .md\:-space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(-64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(-64rem * var(--space-y-reverse));
+  }
+
+  .md\:-space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(-64rem * var(--space-x-reverse));
+    margin-left: calc(-64rem * calc(1 - var(--space-x-reverse)));
   }
 
   .md\:-space-y-px > :not(template) ~ :not(template) {
@@ -84106,6 +84576,10 @@ input:invalid, textarea:invalid, select:invalid {
     height: 32rem;
   }
 
+  .md\:h-256 {
+    height: 64rem;
+  }
+
   .md\:h-auto {
     height: auto;
   }
@@ -84482,6 +84956,10 @@ input:invalid, textarea:invalid, select:invalid {
     margin: 32rem;
   }
 
+  .md\:m-256 {
+    margin: 64rem;
+  }
+
   .md\:m-auto {
     margin: auto;
   }
@@ -84732,6 +85210,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:-m-128 {
     margin: -32rem;
+  }
+
+  .md\:-m-256 {
+    margin: -64rem;
   }
 
   .md\:-m-px {
@@ -85170,6 +85652,16 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:mx-128 {
     margin-left: 32rem;
     margin-right: 32rem;
+  }
+
+  .md\:my-256 {
+    margin-top: 64rem;
+    margin-bottom: 64rem;
+  }
+
+  .md\:mx-256 {
+    margin-left: 64rem;
+    margin-right: 64rem;
   }
 
   .md\:my-auto {
@@ -85800,6 +86292,16 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:-mx-128 {
     margin-left: -32rem;
     margin-right: -32rem;
+  }
+
+  .md\:-my-256 {
+    margin-top: -64rem;
+    margin-bottom: -64rem;
+  }
+
+  .md\:-mx-256 {
+    margin-left: -64rem;
+    margin-right: -64rem;
   }
 
   .md\:-my-px {
@@ -86616,6 +87118,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:ml-128 {
     margin-left: 32rem;
+  }
+
+  .md\:mt-256 {
+    margin-top: 64rem;
+  }
+
+  .md\:mr-256 {
+    margin-right: 64rem;
+  }
+
+  .md\:mb-256 {
+    margin-bottom: 64rem;
+  }
+
+  .md\:ml-256 {
+    margin-left: 64rem;
   }
 
   .md\:mt-auto {
@@ -87626,6 +88144,22 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: -32rem;
   }
 
+  .md\:-mt-256 {
+    margin-top: -64rem;
+  }
+
+  .md\:-mr-256 {
+    margin-right: -64rem;
+  }
+
+  .md\:-mb-256 {
+    margin-bottom: -64rem;
+  }
+
+  .md\:-ml-256 {
+    margin-left: -64rem;
+  }
+
   .md\:-mt-px {
     margin-top: -1px;
   }
@@ -88262,6 +88796,10 @@ input:invalid, textarea:invalid, select:invalid {
     max-height: 32rem;
   }
 
+  .md\:max-h-256 {
+    max-height: 64rem;
+  }
+
   .md\:max-h-screen {
     max-height: 100vh;
   }
@@ -88800,6 +89338,10 @@ input:invalid, textarea:invalid, select:invalid {
     padding: 32rem;
   }
 
+  .md\:p-256 {
+    padding: 64rem;
+  }
+
   .md\:p-px {
     padding: 1px;
   }
@@ -89236,6 +89778,16 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:px-128 {
     padding-left: 32rem;
     padding-right: 32rem;
+  }
+
+  .md\:py-256 {
+    padding-top: 64rem;
+    padding-bottom: 64rem;
+  }
+
+  .md\:px-256 {
+    padding-left: 64rem;
+    padding-right: 64rem;
   }
 
   .md\:py-px {
@@ -90052,6 +90604,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:pl-128 {
     padding-left: 32rem;
+  }
+
+  .md\:pt-256 {
+    padding-top: 64rem;
+  }
+
+  .md\:pr-256 {
+    padding-right: 64rem;
+  }
+
+  .md\:pb-256 {
+    padding-bottom: 64rem;
+  }
+
+  .md\:pl-256 {
+    padding-left: 64rem;
   }
 
   .md\:pt-px {
@@ -96380,6 +96948,13 @@ input:invalid, textarea:invalid, select:invalid {
     left: 32rem;
   }
 
+  .md\:inset-256 {
+    top: 64rem;
+    right: 64rem;
+    bottom: 64rem;
+    left: 64rem;
+  }
+
   .md\:inset-auto {
     top: auto;
     right: auto;
@@ -96919,6 +97494,16 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:inset-x-128 {
     right: 32rem;
     left: 32rem;
+  }
+
+  .md\:inset-y-256 {
+    top: 64rem;
+    bottom: 64rem;
+  }
+
+  .md\:inset-x-256 {
+    right: 64rem;
+    left: 64rem;
   }
 
   .md\:inset-y-auto {
@@ -97745,6 +98330,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:left-128 {
     left: 32rem;
+  }
+
+  .md\:top-256 {
+    top: 64rem;
+  }
+
+  .md\:right-256 {
+    right: 64rem;
+  }
+
+  .md\:bottom-256 {
+    bottom: 64rem;
+  }
+
+  .md\:left-256 {
+    left: 64rem;
   }
 
   .md\:top-auto {
@@ -103804,6 +104405,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: 32rem;
   }
 
+  .md\:w-256 {
+    width: 64rem;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -104179,6 +104784,11 @@ input:invalid, textarea:invalid, select:invalid {
     gap: 32rem;
   }
 
+  .md\:gap-256 {
+    grid-gap: 64rem;
+    gap: 64rem;
+  }
+
   .md\:gap-px {
     grid-gap: 1px;
     gap: 1px;
@@ -104523,6 +105133,12 @@ input:invalid, textarea:invalid, select:invalid {
     grid-column-gap: 32rem;
     -moz-column-gap: 32rem;
          column-gap: 32rem;
+  }
+
+  .md\:col-gap-256 {
+    grid-column-gap: 64rem;
+    -moz-column-gap: 64rem;
+         column-gap: 64rem;
   }
 
   .md\:col-gap-px {
@@ -104870,6 +105486,11 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:row-gap-128 {
     grid-row-gap: 32rem;
     row-gap: 32rem;
+  }
+
+  .md\:row-gap-256 {
+    grid-row-gap: 64rem;
+    row-gap: 64rem;
   }
 
   .md\:row-gap-px {
@@ -106033,6 +106654,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .md\:translate-x-256 {
+    --transform-translate-x: 64rem;
+  }
+
   .md\:translate-x-px {
     --transform-translate-x: 1px;
   }
@@ -106279,6 +106904,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:-translate-x-128 {
     --transform-translate-x: -32rem;
+  }
+
+  .md\:-translate-x-256 {
+    --transform-translate-x: -64rem;
   }
 
   .md\:-translate-x-px {
@@ -106533,6 +107162,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .md\:translate-y-256 {
+    --transform-translate-y: 64rem;
+  }
+
   .md\:translate-y-px {
     --transform-translate-y: 1px;
   }
@@ -106779,6 +107412,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:-translate-y-128 {
     --transform-translate-y: -32rem;
+  }
+
+  .md\:-translate-y-256 {
+    --transform-translate-y: -64rem;
   }
 
   .md\:-translate-y-px {
@@ -107033,6 +107670,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .md\:hover\:translate-x-256:hover {
+    --transform-translate-x: 64rem;
+  }
+
   .md\:hover\:translate-x-px:hover {
     --transform-translate-x: 1px;
   }
@@ -107279,6 +107920,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:hover\:-translate-x-128:hover {
     --transform-translate-x: -32rem;
+  }
+
+  .md\:hover\:-translate-x-256:hover {
+    --transform-translate-x: -64rem;
   }
 
   .md\:hover\:-translate-x-px:hover {
@@ -107533,6 +108178,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .md\:hover\:translate-y-256:hover {
+    --transform-translate-y: 64rem;
+  }
+
   .md\:hover\:translate-y-px:hover {
     --transform-translate-y: 1px;
   }
@@ -107779,6 +108428,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:hover\:-translate-y-128:hover {
     --transform-translate-y: -32rem;
+  }
+
+  .md\:hover\:-translate-y-256:hover {
+    --transform-translate-y: -64rem;
   }
 
   .md\:hover\:-translate-y-px:hover {
@@ -108033,6 +108686,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .md\:focus\:translate-x-256:focus {
+    --transform-translate-x: 64rem;
+  }
+
   .md\:focus\:translate-x-px:focus {
     --transform-translate-x: 1px;
   }
@@ -108279,6 +108936,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:focus\:-translate-x-128:focus {
     --transform-translate-x: -32rem;
+  }
+
+  .md\:focus\:-translate-x-256:focus {
+    --transform-translate-x: -64rem;
   }
 
   .md\:focus\:-translate-x-px:focus {
@@ -108533,6 +109194,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .md\:focus\:translate-y-256:focus {
+    --transform-translate-y: 64rem;
+  }
+
   .md\:focus\:translate-y-px:focus {
     --transform-translate-y: 1px;
   }
@@ -108779,6 +109444,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .md\:focus\:-translate-y-128:focus {
     --transform-translate-y: -32rem;
+  }
+
+  .md\:focus\:-translate-y-256:focus {
+    --transform-translate-y: -64rem;
   }
 
   .md\:focus\:-translate-y-px:focus {
@@ -109559,6 +110228,18 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: calc(32rem * calc(1 - var(--space-x-reverse)));
   }
 
+  .lg\:space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(64rem * var(--space-y-reverse));
+  }
+
+  .lg\:space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(64rem * var(--space-x-reverse));
+    margin-left: calc(64rem * calc(1 - var(--space-x-reverse)));
+  }
+
   .lg\:space-y-px > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(1px * calc(1 - var(--space-y-reverse)));
@@ -110301,6 +110982,18 @@ input:invalid, textarea:invalid, select:invalid {
     --space-x-reverse: 0;
     margin-right: calc(-32rem * var(--space-x-reverse));
     margin-left: calc(-32rem * calc(1 - var(--space-x-reverse)));
+  }
+
+  .lg\:-space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(-64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(-64rem * var(--space-y-reverse));
+  }
+
+  .lg\:-space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(-64rem * var(--space-x-reverse));
+    margin-left: calc(-64rem * calc(1 - var(--space-x-reverse)));
   }
 
   .lg\:-space-y-px > :not(template) ~ :not(template) {
@@ -120109,6 +120802,10 @@ input:invalid, textarea:invalid, select:invalid {
     height: 32rem;
   }
 
+  .lg\:h-256 {
+    height: 64rem;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -120485,6 +121182,10 @@ input:invalid, textarea:invalid, select:invalid {
     margin: 32rem;
   }
 
+  .lg\:m-256 {
+    margin: 64rem;
+  }
+
   .lg\:m-auto {
     margin: auto;
   }
@@ -120735,6 +121436,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:-m-128 {
     margin: -32rem;
+  }
+
+  .lg\:-m-256 {
+    margin: -64rem;
   }
 
   .lg\:-m-px {
@@ -121173,6 +121878,16 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:mx-128 {
     margin-left: 32rem;
     margin-right: 32rem;
+  }
+
+  .lg\:my-256 {
+    margin-top: 64rem;
+    margin-bottom: 64rem;
+  }
+
+  .lg\:mx-256 {
+    margin-left: 64rem;
+    margin-right: 64rem;
   }
 
   .lg\:my-auto {
@@ -121803,6 +122518,16 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:-mx-128 {
     margin-left: -32rem;
     margin-right: -32rem;
+  }
+
+  .lg\:-my-256 {
+    margin-top: -64rem;
+    margin-bottom: -64rem;
+  }
+
+  .lg\:-mx-256 {
+    margin-left: -64rem;
+    margin-right: -64rem;
   }
 
   .lg\:-my-px {
@@ -122619,6 +123344,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:ml-128 {
     margin-left: 32rem;
+  }
+
+  .lg\:mt-256 {
+    margin-top: 64rem;
+  }
+
+  .lg\:mr-256 {
+    margin-right: 64rem;
+  }
+
+  .lg\:mb-256 {
+    margin-bottom: 64rem;
+  }
+
+  .lg\:ml-256 {
+    margin-left: 64rem;
   }
 
   .lg\:mt-auto {
@@ -123629,6 +124370,22 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: -32rem;
   }
 
+  .lg\:-mt-256 {
+    margin-top: -64rem;
+  }
+
+  .lg\:-mr-256 {
+    margin-right: -64rem;
+  }
+
+  .lg\:-mb-256 {
+    margin-bottom: -64rem;
+  }
+
+  .lg\:-ml-256 {
+    margin-left: -64rem;
+  }
+
   .lg\:-mt-px {
     margin-top: -1px;
   }
@@ -124265,6 +125022,10 @@ input:invalid, textarea:invalid, select:invalid {
     max-height: 32rem;
   }
 
+  .lg\:max-h-256 {
+    max-height: 64rem;
+  }
+
   .lg\:max-h-screen {
     max-height: 100vh;
   }
@@ -124803,6 +125564,10 @@ input:invalid, textarea:invalid, select:invalid {
     padding: 32rem;
   }
 
+  .lg\:p-256 {
+    padding: 64rem;
+  }
+
   .lg\:p-px {
     padding: 1px;
   }
@@ -125239,6 +126004,16 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:px-128 {
     padding-left: 32rem;
     padding-right: 32rem;
+  }
+
+  .lg\:py-256 {
+    padding-top: 64rem;
+    padding-bottom: 64rem;
+  }
+
+  .lg\:px-256 {
+    padding-left: 64rem;
+    padding-right: 64rem;
   }
 
   .lg\:py-px {
@@ -126055,6 +126830,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:pl-128 {
     padding-left: 32rem;
+  }
+
+  .lg\:pt-256 {
+    padding-top: 64rem;
+  }
+
+  .lg\:pr-256 {
+    padding-right: 64rem;
+  }
+
+  .lg\:pb-256 {
+    padding-bottom: 64rem;
+  }
+
+  .lg\:pl-256 {
+    padding-left: 64rem;
   }
 
   .lg\:pt-px {
@@ -132383,6 +133174,13 @@ input:invalid, textarea:invalid, select:invalid {
     left: 32rem;
   }
 
+  .lg\:inset-256 {
+    top: 64rem;
+    right: 64rem;
+    bottom: 64rem;
+    left: 64rem;
+  }
+
   .lg\:inset-auto {
     top: auto;
     right: auto;
@@ -132922,6 +133720,16 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:inset-x-128 {
     right: 32rem;
     left: 32rem;
+  }
+
+  .lg\:inset-y-256 {
+    top: 64rem;
+    bottom: 64rem;
+  }
+
+  .lg\:inset-x-256 {
+    right: 64rem;
+    left: 64rem;
   }
 
   .lg\:inset-y-auto {
@@ -133748,6 +134556,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:left-128 {
     left: 32rem;
+  }
+
+  .lg\:top-256 {
+    top: 64rem;
+  }
+
+  .lg\:right-256 {
+    right: 64rem;
+  }
+
+  .lg\:bottom-256 {
+    bottom: 64rem;
+  }
+
+  .lg\:left-256 {
+    left: 64rem;
   }
 
   .lg\:top-auto {
@@ -139807,6 +140631,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: 32rem;
   }
 
+  .lg\:w-256 {
+    width: 64rem;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -140182,6 +141010,11 @@ input:invalid, textarea:invalid, select:invalid {
     gap: 32rem;
   }
 
+  .lg\:gap-256 {
+    grid-gap: 64rem;
+    gap: 64rem;
+  }
+
   .lg\:gap-px {
     grid-gap: 1px;
     gap: 1px;
@@ -140526,6 +141359,12 @@ input:invalid, textarea:invalid, select:invalid {
     grid-column-gap: 32rem;
     -moz-column-gap: 32rem;
          column-gap: 32rem;
+  }
+
+  .lg\:col-gap-256 {
+    grid-column-gap: 64rem;
+    -moz-column-gap: 64rem;
+         column-gap: 64rem;
   }
 
   .lg\:col-gap-px {
@@ -140873,6 +141712,11 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:row-gap-128 {
     grid-row-gap: 32rem;
     row-gap: 32rem;
+  }
+
+  .lg\:row-gap-256 {
+    grid-row-gap: 64rem;
+    row-gap: 64rem;
   }
 
   .lg\:row-gap-px {
@@ -142036,6 +142880,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .lg\:translate-x-256 {
+    --transform-translate-x: 64rem;
+  }
+
   .lg\:translate-x-px {
     --transform-translate-x: 1px;
   }
@@ -142282,6 +143130,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:-translate-x-128 {
     --transform-translate-x: -32rem;
+  }
+
+  .lg\:-translate-x-256 {
+    --transform-translate-x: -64rem;
   }
 
   .lg\:-translate-x-px {
@@ -142536,6 +143388,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .lg\:translate-y-256 {
+    --transform-translate-y: 64rem;
+  }
+
   .lg\:translate-y-px {
     --transform-translate-y: 1px;
   }
@@ -142782,6 +143638,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:-translate-y-128 {
     --transform-translate-y: -32rem;
+  }
+
+  .lg\:-translate-y-256 {
+    --transform-translate-y: -64rem;
   }
 
   .lg\:-translate-y-px {
@@ -143036,6 +143896,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .lg\:hover\:translate-x-256:hover {
+    --transform-translate-x: 64rem;
+  }
+
   .lg\:hover\:translate-x-px:hover {
     --transform-translate-x: 1px;
   }
@@ -143282,6 +144146,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:hover\:-translate-x-128:hover {
     --transform-translate-x: -32rem;
+  }
+
+  .lg\:hover\:-translate-x-256:hover {
+    --transform-translate-x: -64rem;
   }
 
   .lg\:hover\:-translate-x-px:hover {
@@ -143536,6 +144404,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .lg\:hover\:translate-y-256:hover {
+    --transform-translate-y: 64rem;
+  }
+
   .lg\:hover\:translate-y-px:hover {
     --transform-translate-y: 1px;
   }
@@ -143782,6 +144654,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:hover\:-translate-y-128:hover {
     --transform-translate-y: -32rem;
+  }
+
+  .lg\:hover\:-translate-y-256:hover {
+    --transform-translate-y: -64rem;
   }
 
   .lg\:hover\:-translate-y-px:hover {
@@ -144036,6 +144912,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .lg\:focus\:translate-x-256:focus {
+    --transform-translate-x: 64rem;
+  }
+
   .lg\:focus\:translate-x-px:focus {
     --transform-translate-x: 1px;
   }
@@ -144282,6 +145162,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:focus\:-translate-x-128:focus {
     --transform-translate-x: -32rem;
+  }
+
+  .lg\:focus\:-translate-x-256:focus {
+    --transform-translate-x: -64rem;
   }
 
   .lg\:focus\:-translate-x-px:focus {
@@ -144536,6 +145420,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .lg\:focus\:translate-y-256:focus {
+    --transform-translate-y: 64rem;
+  }
+
   .lg\:focus\:translate-y-px:focus {
     --transform-translate-y: 1px;
   }
@@ -144782,6 +145670,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .lg\:focus\:-translate-y-128:focus {
     --transform-translate-y: -32rem;
+  }
+
+  .lg\:focus\:-translate-y-256:focus {
+    --transform-translate-y: -64rem;
   }
 
   .lg\:focus\:-translate-y-px:focus {
@@ -145562,6 +146454,18 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: calc(32rem * calc(1 - var(--space-x-reverse)));
   }
 
+  .xl\:space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(64rem * var(--space-y-reverse));
+  }
+
+  .xl\:space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(64rem * var(--space-x-reverse));
+    margin-left: calc(64rem * calc(1 - var(--space-x-reverse)));
+  }
+
   .xl\:space-y-px > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(1px * calc(1 - var(--space-y-reverse)));
@@ -146304,6 +147208,18 @@ input:invalid, textarea:invalid, select:invalid {
     --space-x-reverse: 0;
     margin-right: calc(-32rem * var(--space-x-reverse));
     margin-left: calc(-32rem * calc(1 - var(--space-x-reverse)));
+  }
+
+  .xl\:-space-y-256 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(-64rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(-64rem * var(--space-y-reverse));
+  }
+
+  .xl\:-space-x-256 > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(-64rem * var(--space-x-reverse));
+    margin-left: calc(-64rem * calc(1 - var(--space-x-reverse)));
   }
 
   .xl\:-space-y-px > :not(template) ~ :not(template) {
@@ -156112,6 +157028,10 @@ input:invalid, textarea:invalid, select:invalid {
     height: 32rem;
   }
 
+  .xl\:h-256 {
+    height: 64rem;
+  }
+
   .xl\:h-auto {
     height: auto;
   }
@@ -156488,6 +157408,10 @@ input:invalid, textarea:invalid, select:invalid {
     margin: 32rem;
   }
 
+  .xl\:m-256 {
+    margin: 64rem;
+  }
+
   .xl\:m-auto {
     margin: auto;
   }
@@ -156738,6 +157662,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:-m-128 {
     margin: -32rem;
+  }
+
+  .xl\:-m-256 {
+    margin: -64rem;
   }
 
   .xl\:-m-px {
@@ -157176,6 +158104,16 @@ input:invalid, textarea:invalid, select:invalid {
   .xl\:mx-128 {
     margin-left: 32rem;
     margin-right: 32rem;
+  }
+
+  .xl\:my-256 {
+    margin-top: 64rem;
+    margin-bottom: 64rem;
+  }
+
+  .xl\:mx-256 {
+    margin-left: 64rem;
+    margin-right: 64rem;
   }
 
   .xl\:my-auto {
@@ -157806,6 +158744,16 @@ input:invalid, textarea:invalid, select:invalid {
   .xl\:-mx-128 {
     margin-left: -32rem;
     margin-right: -32rem;
+  }
+
+  .xl\:-my-256 {
+    margin-top: -64rem;
+    margin-bottom: -64rem;
+  }
+
+  .xl\:-mx-256 {
+    margin-left: -64rem;
+    margin-right: -64rem;
   }
 
   .xl\:-my-px {
@@ -158622,6 +159570,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:ml-128 {
     margin-left: 32rem;
+  }
+
+  .xl\:mt-256 {
+    margin-top: 64rem;
+  }
+
+  .xl\:mr-256 {
+    margin-right: 64rem;
+  }
+
+  .xl\:mb-256 {
+    margin-bottom: 64rem;
+  }
+
+  .xl\:ml-256 {
+    margin-left: 64rem;
   }
 
   .xl\:mt-auto {
@@ -159632,6 +160596,22 @@ input:invalid, textarea:invalid, select:invalid {
     margin-left: -32rem;
   }
 
+  .xl\:-mt-256 {
+    margin-top: -64rem;
+  }
+
+  .xl\:-mr-256 {
+    margin-right: -64rem;
+  }
+
+  .xl\:-mb-256 {
+    margin-bottom: -64rem;
+  }
+
+  .xl\:-ml-256 {
+    margin-left: -64rem;
+  }
+
   .xl\:-mt-px {
     margin-top: -1px;
   }
@@ -160268,6 +161248,10 @@ input:invalid, textarea:invalid, select:invalid {
     max-height: 32rem;
   }
 
+  .xl\:max-h-256 {
+    max-height: 64rem;
+  }
+
   .xl\:max-h-screen {
     max-height: 100vh;
   }
@@ -160806,6 +161790,10 @@ input:invalid, textarea:invalid, select:invalid {
     padding: 32rem;
   }
 
+  .xl\:p-256 {
+    padding: 64rem;
+  }
+
   .xl\:p-px {
     padding: 1px;
   }
@@ -161242,6 +162230,16 @@ input:invalid, textarea:invalid, select:invalid {
   .xl\:px-128 {
     padding-left: 32rem;
     padding-right: 32rem;
+  }
+
+  .xl\:py-256 {
+    padding-top: 64rem;
+    padding-bottom: 64rem;
+  }
+
+  .xl\:px-256 {
+    padding-left: 64rem;
+    padding-right: 64rem;
   }
 
   .xl\:py-px {
@@ -162058,6 +163056,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:pl-128 {
     padding-left: 32rem;
+  }
+
+  .xl\:pt-256 {
+    padding-top: 64rem;
+  }
+
+  .xl\:pr-256 {
+    padding-right: 64rem;
+  }
+
+  .xl\:pb-256 {
+    padding-bottom: 64rem;
+  }
+
+  .xl\:pl-256 {
+    padding-left: 64rem;
   }
 
   .xl\:pt-px {
@@ -168386,6 +169400,13 @@ input:invalid, textarea:invalid, select:invalid {
     left: 32rem;
   }
 
+  .xl\:inset-256 {
+    top: 64rem;
+    right: 64rem;
+    bottom: 64rem;
+    left: 64rem;
+  }
+
   .xl\:inset-auto {
     top: auto;
     right: auto;
@@ -168925,6 +169946,16 @@ input:invalid, textarea:invalid, select:invalid {
   .xl\:inset-x-128 {
     right: 32rem;
     left: 32rem;
+  }
+
+  .xl\:inset-y-256 {
+    top: 64rem;
+    bottom: 64rem;
+  }
+
+  .xl\:inset-x-256 {
+    right: 64rem;
+    left: 64rem;
   }
 
   .xl\:inset-y-auto {
@@ -169751,6 +170782,22 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:left-128 {
     left: 32rem;
+  }
+
+  .xl\:top-256 {
+    top: 64rem;
+  }
+
+  .xl\:right-256 {
+    right: 64rem;
+  }
+
+  .xl\:bottom-256 {
+    bottom: 64rem;
+  }
+
+  .xl\:left-256 {
+    left: 64rem;
   }
 
   .xl\:top-auto {
@@ -175810,6 +176857,10 @@ input:invalid, textarea:invalid, select:invalid {
     width: 32rem;
   }
 
+  .xl\:w-256 {
+    width: 64rem;
+  }
+
   .xl\:w-auto {
     width: auto;
   }
@@ -176185,6 +177236,11 @@ input:invalid, textarea:invalid, select:invalid {
     gap: 32rem;
   }
 
+  .xl\:gap-256 {
+    grid-gap: 64rem;
+    gap: 64rem;
+  }
+
   .xl\:gap-px {
     grid-gap: 1px;
     gap: 1px;
@@ -176529,6 +177585,12 @@ input:invalid, textarea:invalid, select:invalid {
     grid-column-gap: 32rem;
     -moz-column-gap: 32rem;
          column-gap: 32rem;
+  }
+
+  .xl\:col-gap-256 {
+    grid-column-gap: 64rem;
+    -moz-column-gap: 64rem;
+         column-gap: 64rem;
   }
 
   .xl\:col-gap-px {
@@ -176876,6 +177938,11 @@ input:invalid, textarea:invalid, select:invalid {
   .xl\:row-gap-128 {
     grid-row-gap: 32rem;
     row-gap: 32rem;
+  }
+
+  .xl\:row-gap-256 {
+    grid-row-gap: 64rem;
+    row-gap: 64rem;
   }
 
   .xl\:row-gap-px {
@@ -178039,6 +179106,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .xl\:translate-x-256 {
+    --transform-translate-x: 64rem;
+  }
+
   .xl\:translate-x-px {
     --transform-translate-x: 1px;
   }
@@ -178285,6 +179356,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:-translate-x-128 {
     --transform-translate-x: -32rem;
+  }
+
+  .xl\:-translate-x-256 {
+    --transform-translate-x: -64rem;
   }
 
   .xl\:-translate-x-px {
@@ -178539,6 +179614,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .xl\:translate-y-256 {
+    --transform-translate-y: 64rem;
+  }
+
   .xl\:translate-y-px {
     --transform-translate-y: 1px;
   }
@@ -178785,6 +179864,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:-translate-y-128 {
     --transform-translate-y: -32rem;
+  }
+
+  .xl\:-translate-y-256 {
+    --transform-translate-y: -64rem;
   }
 
   .xl\:-translate-y-px {
@@ -179039,6 +180122,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .xl\:hover\:translate-x-256:hover {
+    --transform-translate-x: 64rem;
+  }
+
   .xl\:hover\:translate-x-px:hover {
     --transform-translate-x: 1px;
   }
@@ -179285,6 +180372,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:hover\:-translate-x-128:hover {
     --transform-translate-x: -32rem;
+  }
+
+  .xl\:hover\:-translate-x-256:hover {
+    --transform-translate-x: -64rem;
   }
 
   .xl\:hover\:-translate-x-px:hover {
@@ -179539,6 +180630,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .xl\:hover\:translate-y-256:hover {
+    --transform-translate-y: 64rem;
+  }
+
   .xl\:hover\:translate-y-px:hover {
     --transform-translate-y: 1px;
   }
@@ -179785,6 +180880,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:hover\:-translate-y-128:hover {
     --transform-translate-y: -32rem;
+  }
+
+  .xl\:hover\:-translate-y-256:hover {
+    --transform-translate-y: -64rem;
   }
 
   .xl\:hover\:-translate-y-px:hover {
@@ -180039,6 +181138,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-x: 32rem;
   }
 
+  .xl\:focus\:translate-x-256:focus {
+    --transform-translate-x: 64rem;
+  }
+
   .xl\:focus\:translate-x-px:focus {
     --transform-translate-x: 1px;
   }
@@ -180285,6 +181388,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:focus\:-translate-x-128:focus {
     --transform-translate-x: -32rem;
+  }
+
+  .xl\:focus\:-translate-x-256:focus {
+    --transform-translate-x: -64rem;
   }
 
   .xl\:focus\:-translate-x-px:focus {
@@ -180539,6 +181646,10 @@ input:invalid, textarea:invalid, select:invalid {
     --transform-translate-y: 32rem;
   }
 
+  .xl\:focus\:translate-y-256:focus {
+    --transform-translate-y: 64rem;
+  }
+
   .xl\:focus\:translate-y-px:focus {
     --transform-translate-y: 1px;
   }
@@ -180785,6 +181896,10 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:focus\:-translate-y-128:focus {
     --transform-translate-y: -32rem;
+  }
+
+  .xl\:focus\:-translate-y-256:focus {
+    --transform-translate-y: -64rem;
   }
 
   .xl\:focus\:-translate-y-px:focus {
