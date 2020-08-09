@@ -22,13 +22,17 @@ class ParentCategory extends Component
     public function render()
     {
         return view('livewire.parent-category', [
-            'categories' => $this->name ? Category::whereLike('name', $this->name)->take(6)->get() : collect([$this->category->parent])
+            'categories' => $this->name ? Category::whereLike('name', $this->name)->take(6)->get() : collect([$this->category->parent])->filter(fn(?Category $category) => $category)
         ]);
     }
 
     public function associate($categoryId)
     {
-        $this->category->parent_id = $categoryId;
-        $this->category->save();
+        $this->category->parent()->associate($categoryId)->save();
+    }
+
+    public function dissociate()
+    {
+        $this->category->parent()->dissociate()->save();
     }
 }

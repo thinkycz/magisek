@@ -6,6 +6,8 @@
             {{ $category->name }}
         </h2>
 
+        @includeWhen($category->children->isNotEmpty(), 'client.categories.partials.subcategories')
+
         <ul class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
             @foreach($products as $product)
                 <livewire:product-card :product="$product"></livewire:product-card>

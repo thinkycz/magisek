@@ -10,7 +10,7 @@
 
         <div class="mt-4 flex md:mt-0 md:ml-4">
             <x-button :href="route('acp.categories.edit', $category)" class="bg-teal-600 hover:bg-teal-500">
-                <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
+                <x-icons.pencil class="w-4 h-4 mr-2"></x-icons.pencil>
                 {{ __('categories.edit_category') }}
             </x-button>
         </div>
