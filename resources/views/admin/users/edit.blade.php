@@ -37,7 +37,7 @@
 
                     <x-input type="email" name="email" :title="__('users.email')" :value="$user->email"></x-input>
 
-                    <x-input name="password" :title="__('users.password')"></x-input>
+                    <x-input type="password" name="password" :title="__('users.password')"></x-input>
 
                     <x-checkbox name="is_admin" :title="__('users.is_admin')" :value="$user->is_admin"></x-checkbox>
                 </div>
