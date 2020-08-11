@@ -1,24 +1,27 @@
 @props(['photos' => []])
 
-<div x-data x-init="new Splide($refs.splide).mount();"
-     x-ref="splide"
-     data-splide='{"type":"loop"}'
-     class="splide w-96">
-    <div class="splide__track">
-        <ul class="splide__list">
-            @foreach($photos as $photo)
-                <li class="splide__slide">
+<div class="p-4">
+    <ul x-data
+        x-init="$($refs.gallery).slick({infinite: true});"
+        x-ref="gallery"
+        class="w-96">
+        @foreach($photos as $photo)
+            <li >
+                <a href="{{ $photo }}" data-fancybox>
                     <img src="{{ $photo }}" alt="Product Photo">
-                </li>
-            @endforeach
-        </ul>
-    </div>
+                </a>
+            </li>
+        @endforeach
+    </ul>
 </div>
 
 @section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/themes/splide-sea-green.min.css" integrity="sha256-5kJhf2RKFj+fcrquSWaAfei30Optj6ZQIZMIAfafc+w=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}"/>
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/js/splide.min.js" integrity="sha256-uAncy13cSynorO5+2C3gp5Mb+azFNu5PnZ9iWgvsGQA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
 @endsection
