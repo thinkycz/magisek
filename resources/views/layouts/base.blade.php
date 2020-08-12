@@ -77,7 +77,7 @@
         <div class="fb-customerchat"
              attribution=setup_tool
              page_id="112907143829486"
-             theme_color="#20cef5"
+             theme_color="#3F92A0"
              logged_in_greeting="Jak ti může Magísek pomoci?"
              logged_out_greeting="Jak ti může Magísek pomoci?">
         </div>
