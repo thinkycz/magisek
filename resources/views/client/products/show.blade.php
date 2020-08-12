@@ -4,7 +4,7 @@
     <div class="space-y-8">
 
         <div class="flex w-full space-x-6 p-6 bg-white rounded border border-gray-200">
-            <x-gallery :photos="$product->photos"></x-gallery>
+            <x-gallery :photos="$product->photos" :thumbnails="$product->thumbnails"></x-gallery>
 
             <div class="flex-1 space-y-6">
                 <h2 class="text-2xl text-gray-700 font-semibold">
@@ -61,7 +61,7 @@
             <div>
                 <div class="sm:hidden">
                     <select aria-label="Selected tab" class="form-select block w-full">
-                        <option selected>Product Details</option>
+                        <option selected>{{ __('products.product_details') }}</option>
                         {{--                        <option>Properties</option>--}}
                         {{--                        <option>Ratings</option>--}}
                         {{--                        <option>Comments</option>--}}
@@ -73,7 +73,7 @@
                             <a href="#"
                                class="w-1/4 py-4 px-1 text-center border-b-2 border-teal-500 font-medium text-sm leading-5 text-teal-600 focus:outline-none focus:text-teal-800 focus:border-teal-700"
                                aria-current="page">
-                                Product Details
+                                {{ __('products.product_details') }}
                             </a>
                             {{--                            <a href="#"--}}
                             {{--                               class="w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">--}}

@@ -27,5 +27,6 @@ return [
     'unit'                 => 'Jednotka',
     'multiply_of_moq_only' => 'Pouze násobky min. obj.',
     'tags'                 => 'Štítky',
+    'product_details'      => 'Detaily produktu',
 
 ];

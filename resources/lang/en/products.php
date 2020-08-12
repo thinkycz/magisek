@@ -27,5 +27,6 @@ return [
     'unit'                 => 'Unit',
     'multiply_of_moq_only' => 'Multiply of MOQ only',
     'tags'                 => 'Tags',
+    'product_details'      => 'Product Details',
 
 ];

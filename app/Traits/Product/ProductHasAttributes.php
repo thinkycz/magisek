@@ -11,6 +11,11 @@ trait ProductHasAttributes
         return $this->hasMedia('photos') ? $this->getMedia('photos')->map(fn(Media $media) => $media->getUrl('optimized')) : iterable(asset('img/no_image.jpg'));
     }
 
+    public function getThumbnailsAttribute()
+    {
+        return $this->hasMedia('photos') ? $this->getMedia('photos')->map(fn(Media $media) => $media->getUrl('thumbnail')) : iterable(asset('img/no_image.jpg'));
+    }
+
     public function getThumbnailAttribute()
     {
         return $this->hasMedia('photos') ? $this->getFirstMediaUrl('photos', 'thumbnail') : asset('img/no_image.jpg');
