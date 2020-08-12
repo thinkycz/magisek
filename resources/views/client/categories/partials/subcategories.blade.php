@@ -12,7 +12,7 @@
                         <p class="text-gray-900 font-medium hover:text-gray-600 transition ease-in-out duration-150">
                             {{ $subcategory->name }}
                         </p>
-                        <p class="text-gray-500">{{ __('global.count_products', ['count' => $subcategory->products()->count()]) }}</p>
+                        <p class="text-gray-500">{{ trans_choice('global.plural_products', $subcategory->products()->count(), ['count' => $subcategory->products()->count()]) }}</p>
                     </div>
                     <div class="flex-shrink-0 pr-2">
                         <button

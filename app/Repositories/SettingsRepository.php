@@ -28,6 +28,11 @@ class SettingsRepository extends InstanceCache
         return $this->get('company_details', 'about');
     }
 
+    public function getCompanyIsVatPayer()
+    {
+        return $this->get('company_details', 'vat_payer');
+    }
+
     public function getCompanyGoogleMap()
     {
         return $this->get('company_details', 'google_map');

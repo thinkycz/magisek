@@ -53,6 +53,16 @@ trait ProductHasAttributes
         return showPriceWithCurrency($this->price, currentCurrency());
     }
 
+    public function getOldPriceAttribute()
+    {
+        return optional($this->getPrice())->old_price;
+    }
+
+    public function getFormattedOldPriceAttribute()
+    {
+        return showPriceWithCurrency($this->old_price, currentCurrency());
+    }
+
     public function getPriceExclVatAttribute()
     {
         return getPriceExclVat($this->price, $this->vatrate, currentCurrency());

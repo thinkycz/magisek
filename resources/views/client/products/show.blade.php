@@ -17,10 +17,15 @@
 
                 <div class="flex justify-between items-center">
                     <div class="w-1/2">
+                        @if($product->old_price)
+                            <p class="text-gray-500 text-xs leading-5 line-through">{{ $product->formatted_old_price }}</p>
+                        @endif
+
                         <p class="text-2xl font-semibold text-teal-700">{{ $product->formatted_price }}</p>
-                        <p class="text-xs font-semibold text-gray-500">
-                            {{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}
-                        </p>
+
+                        @if(settingsRepository()->getCompanyIsVatPayer())
+                            <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}</p>
+                        @endif
                     </div>
 
                     <div class="w-1/2">
@@ -32,19 +37,19 @@
 
                 <ul>
                     <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">Min. obj.</span>
-                        <span class="text-gray-700">{{ $product->moq }}</span>
+                        <span class="text-cool-gray-500">{{ __('products.moq') }}</span>
+                        <span class="text-gray-700">{{ $product->moq }} {{ $product->unit->abbr }}</span>
                     </li>
                     <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">Katalog</span>
+                        <span class="text-cool-gray-500">{{ __('products.catalog') }}</span>
                         <span class="text-gray-700">{{ $product->catalog }}</span>
                     </li>
                     <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">Čárový kód</span>
+                        <span class="text-cool-gray-500">{{ __('products.barcode') }}</span>
                         <span class="text-gray-700">{{ $product->barcode }}</span>
                     </li>
                     <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">Skladem</span>
+                        <span class="text-cool-gray-500">{{ __('products.quantity_in_stock') }}</span>
                         <span
                             class="text-gray-700">{{ $product->public_stock_quantity }} {{ $product->unit->abbr }}</span>
                     </li>

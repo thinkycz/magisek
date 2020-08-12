@@ -32,7 +32,8 @@
                                                  alt="{{ $item->name }}">
                                         </div>
                                         <div class="ml-4">
-                                            <a href="{{ route('products.show', $item->model) }}" class="text-sm leading-5 font-medium text-gray-900 hover:underline">
+                                            <a href="{{ route('products.show', $item->model) }}"
+                                               class="text-sm leading-5 font-medium text-gray-900 hover:underline">
                                                 {{ $item->name }}
                                             </a>
                                             <div class="text-xs leading-5 text-gray-500">
@@ -45,20 +46,25 @@
                                     <div class="text-sm leading-5 text-gray-900">
                                         {{ showPriceWithCurrency($item->price) }}
                                     </div>
-                                    <div class="text-xs leading-5 text-gray-500">
-                                        {{ showPriceWithCurrency($item->priceNet) }} {{ __('global.excl_vat') }}
-                                    </div>
+                                    @if(settingsRepository()->getCompanyIsVatPayer())
+                                        <div class="text-xs leading-5 text-gray-500">
+                                            {{ showPriceWithCurrency($item->priceNet) }} {{ __('global.excl_vat') }}
+                                        </div>
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
-                                    <livewire:update-quantity :item-id="$item->rowId" :key="$item->rowId"></livewire:update-quantity>
+                                    <livewire:update-quantity :item-id="$item->rowId"
+                                                              :key="$item->rowId"></livewire:update-quantity>
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm leading-5 text-gray-900">
                                         {{ showPriceWithCurrency($item->total) }}
                                     </div>
-                                    <div class="text-xs leading-5 text-gray-500">
-                                        {{ showPriceWithCurrency($item->subtotal) }} {{ __('global.excl_vat') }}
-                                    </div>
+                                    @if(settingsRepository()->getCompanyIsVatPayer())
+                                        <div class="text-xs leading-5 text-gray-500">
+                                            {{ showPriceWithCurrency($item->subtotal) }} {{ __('global.excl_vat') }}
+                                        </div>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -79,10 +85,12 @@
                         <span class="text-cool-gray-500">{{ __('global.total') }}</span>
                         <span class="text-gray-700">{{ $total }}</span>
                     </li>
-                    <li class="flex justify-between text-sm font-semibold">
-                        <span class="text-cool-gray-500">{{ __('global.total') }} {{ __('global.excl_vat') }}</span>
-                        <span class="text-gray-700">{{ $totalNet }}</span>
-                    </li>
+                    @if(settingsRepository()->getCompanyIsVatPayer())
+                        <li class="flex justify-between text-sm font-semibold">
+                            <span class="text-cool-gray-500">{{ __('global.total') }} {{ __('global.excl_vat') }}</span>
+                            <span class="text-gray-700">{{ $totalNet }}</span>
+                        </li>
+                    @endif
                 </ul>
 
                 <div class="flex justify-end">
