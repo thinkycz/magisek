@@ -103,7 +103,7 @@ return [
     'please_enter_details'          => 'Zadejte prosím detaily',
     'showing_from_results'          => 'Zobrazuji záznamy <span class="font-medium">:from</span> až <span class="font-medium">:to</span> z celkem <span class="font-medium">:total</span> výsledků',
     'subcategories'                 => 'Podkategorie',
-    'count_products'                => ':count produktů',
+    'system_settings'               => 'Systémová nastavení',
     'newest_products'               => 'Nejnovější produkty',
 
 ];

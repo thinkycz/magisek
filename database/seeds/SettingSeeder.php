@@ -12,7 +12,7 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-        Setting::updateOrCreate(['code' => 'store_settings'], [
+        Setting::updateOrCreate(['code' => 'store_settings', 'system_field' => false], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => ['name', 'description', 'keywords'],
@@ -33,7 +33,7 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
-        Setting::updateOrCreate(['code' => 'company_details'], [
+        Setting::updateOrCreate(['code' => 'company_details', 'system_field' => false], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => ['name'],
@@ -66,7 +66,7 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
-        Setting::updateOrCreate(['code' => 'business_hours'], [
+        Setting::updateOrCreate(['code' => 'business_hours', 'system_field' => false], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => [],
@@ -91,7 +91,7 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
-        Setting::updateOrCreate(['code' => 'shopping_policy'], [
+        Setting::updateOrCreate(['code' => 'shopping_policy', 'system_field' => false], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => [],
@@ -110,7 +110,7 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
-        Setting::updateOrCreate(['code' => 'footer_links'], [
+        Setting::updateOrCreate(['code' => 'footer_links', 'system_field' => false], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => [],
@@ -134,31 +134,6 @@ class SettingSeeder extends Seeder
                 'link_3_url'  => null,
                 'link_4_title' => 'Link 4',
                 'link_4_url'  => null,
-            ],
-        ]);
-
-        Setting::updateOrCreate(['code' => 'mail_configuration'], [
-            'schema' => [
-                'type'       => 'object',
-                'required'   => [],
-                'properties' => [
-                    'host'         => ['type' => 'string'],
-                    'port'         => ['type' => 'string'],
-                    'from_address' => ['type' => 'string'],
-                    'from_name'    => ['type' => 'string'],
-                    'username'     => ['type' => 'string'],
-                    'password'     => ['type' => 'string'],
-                    'encryption'   => ['type' => 'string'],
-                ],
-            ],
-            'data'   => [
-                'host'         => 'smtp.mailtrap.io',
-                'port'         => '2525',
-                'from_address' => 'email@pluli.com',
-                'from_name'    => 'Pluli',
-                'username'     => null,
-                'password'     => null,
-                'encryption'   => null,
             ],
         ]);
 

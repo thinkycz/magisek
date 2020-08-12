@@ -103,7 +103,7 @@ return [
     'please_enter_details'          => 'Please enter details',
     'showing_from_results'          => 'Showing <span class="font-medium">:from</span> to <span class="font-medium">:to</span> of <span class="font-medium">:total</span> results',
     'subcategories'                 => 'Subcategories',
-    'count_products'                => ':count products',
+    'system_settings'               => 'System Settings',
     'newest_products'               => 'Newest Products',
 
 ];

@@ -11,7 +11,8 @@ class SettingController extends Controller
     public function index()
     {
         return view('admin.settings.index', [
-            'settings' => Setting::paginate()
+            'settings'       => Setting::where('system_field', false)->get(),
+            'systemSettings' => Setting::where('system_field', true)->get(),
         ]);
     }
 
