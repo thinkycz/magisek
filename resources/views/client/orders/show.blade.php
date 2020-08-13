@@ -5,14 +5,21 @@
         @include('client.partials.profile-menu')
 
         <div class="bg-white shadow overflow-hidden sm:rounded-lg mt-8">
-            <div class="px-4 py-5 border-b border-gray-200 sm:px-6 space-y-2">
-                <h3 class="text-xl leading-6 font-medium text-gray-900">
-                    {{ __('global.order_detail') }}
-                </h3>
-                <p class="max-w-2xl text-sm leading-5 text-gray-500">
-                    {{ __('global.order_number') }}
-                    <span class="font-semibold">{{ $order->order_number }}</span>
-                </p>
+            <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+                <div class="flex justify-between">
+                    <div class="space-y-2">
+                        <h3 class="text-xl leading-6 font-medium text-gray-900">
+                            {{ __('global.order_detail') }}
+                        </h3>
+                        <p class="max-w-2xl text-sm leading-5 text-gray-500">
+                            {{ __('global.order_number') }}
+                            <span class="font-semibold">{{ $order->order_number }}</span>
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <x-badge :color="$order->status->color">{{ $order->status->name }}</x-badge>
+                    </div>
+                </div>
             </div>
             <div class="px-4 py-5 sm:px-6 border-b">
                 <dl class="grid grid-cols-1 col-gap-4 row-gap-8 sm:grid-cols-2">

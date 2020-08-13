@@ -22,5 +22,9 @@ return [
     'quantity'         => 'Quantity',
     'price'            => 'Price',
     'total'            => 'Total',
+    'order_status'     => 'Order Status',
+    'delivery_payment' => 'Delivery and Payment',
+    'notes'            => 'Notes',
+    'print_export'     => 'Printing and Exporting',
 
 ];

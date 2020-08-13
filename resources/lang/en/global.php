@@ -105,5 +105,9 @@ return [
     'subcategories'                 => 'Subcategories',
     'system_settings'               => 'System Settings',
     'newest_products'               => 'Newest Products',
+    'thank_you_for_your_order'      => 'Thank you for your order!',
+    'order_has_been_placed'         => 'Your order has been placed successfully. We are processing your order and we will deliver it to you as soon as possible.',
+    'your_order_number_is'          => 'Your order number is :orderNumber.',
+    'show_order'                    => 'Show order details',
 
 ];

@@ -22,5 +22,9 @@ return [
     'quantity'         => 'Množství',
     'price'            => 'Cena',
     'total'            => 'Celkem',
+    'order_status'     => 'Stav objednávky',
+    'delivery_payment' => 'Doručení a platba',
+    'notes'            => 'Poznámky',
+    'print_export'     => 'Tisk a export',
 
 ];

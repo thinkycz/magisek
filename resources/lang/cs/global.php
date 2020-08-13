@@ -105,5 +105,9 @@ return [
     'subcategories'                 => 'Podkategorie',
     'system_settings'               => 'Systémová nastavení',
     'newest_products'               => 'Nejnovější produkty',
+    'thank_you_for_your_order'      => 'Děkujeme za tvoji objednávku!',
+    'order_has_been_placed'         => 'Naši skřítci v Magísku tvoji objednávku již přijali a dělají vše pro to, aby Ti ji poslali domů co nejdříve!',
+    'your_order_number_is'          => 'Tvoje objednávka má číslo :orderNumber.',
+    'show_order'                    => 'Zobrazit detaily objednávky',
 
 ];
