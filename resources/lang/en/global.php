@@ -27,6 +27,7 @@ return [
     'total'                         => 'Total',
     'checkout'                      => 'Checkout',
     'your_basket_is_empty'          => 'Your basket is empty',
+    'basket_empty_sub'              => 'Add something to your basket first :)',
     'contact_and_notes'             => 'Contact and Notes',
     'email'                         => 'Email',
     'phone'                         => 'Phone',
