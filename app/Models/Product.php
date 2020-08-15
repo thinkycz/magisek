@@ -8,6 +8,7 @@ use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -52,6 +53,10 @@ class Product extends Model implements Buyable, HasMedia
         $this->addMediaConversion('thumbnail')
             ->width(500)
             ->height(300)
+            ->watermark(public_path('img/logo.png'))
+            ->watermarkOpacity(50)
+            ->watermarkFit(Manipulations::FIT_CONTAIN)
+            ->watermarkPosition(Manipulations::POSITION_CENTER)
             ->optimize()
             ->keepOriginalImageFormat()
             ->nonQueued();
@@ -59,6 +64,10 @@ class Product extends Model implements Buyable, HasMedia
         $this->addMediaConversion('optimized')
             ->width(800)
             ->height(800)
+            ->watermark(public_path('img/logo.png'))
+            ->watermarkOpacity(50)
+            ->watermarkFit(Manipulations::FIT_CONTAIN)
+            ->watermarkPosition(Manipulations::POSITION_CENTER)
             ->optimize()
             ->keepOriginalImageFormat()
             ->nonQueued();
