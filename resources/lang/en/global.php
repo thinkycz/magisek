@@ -110,5 +110,6 @@ return [
     'order_has_been_placed'         => 'Your order has been placed successfully. We are processing your order and we will deliver it to you as soon as possible.',
     'your_order_number_is'          => 'Your order number is :orderNumber.',
     'show_order'                    => 'Show order details',
+    'updated'                       => 'Updated',
 
 ];

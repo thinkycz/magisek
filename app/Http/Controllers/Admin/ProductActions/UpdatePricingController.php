@@ -11,6 +11,6 @@ class UpdatePricingController
     {
         $product->update($request->only('prices'));
 
-        return redirect()->back()->with('message', 'Updated');
+        return redirect()->back()->with('message', __('global.updated'));
     }
 }

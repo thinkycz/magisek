@@ -110,5 +110,6 @@ return [
     'order_has_been_placed'         => 'Tvoji objednávku skřítci v Magísku v pořádku přijali a potvrzení Ti během chvilky doručí na tvůj e-mail.',
     'your_order_number_is'          => 'Objednávce jsme přiřadili číslo :orderNumber.',
     'show_order'                    => 'Zobrazit detaily objednávky',
+    'updated'                       => 'Aktualizováno',
 
 ];

@@ -12,7 +12,7 @@ class UpdateAccountSettingsController
 
         currentUser()->update($data->toArray());
 
-        return redirect()->back()->with('message', 'Updated');
+        return redirect()->back()->with('message', __('global.updated'));
     }
 
     protected function data(Request $request)

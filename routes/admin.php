@@ -8,8 +8,10 @@ Route::get('dashboard', \App\Http\Controllers\Admin\DashboardController::class)-
 
 Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->except('show');
 Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
-Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->only('index', 'show', 'destroy');
 Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)->except('show');
+
+Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->only('index', 'show', 'destroy');
+Route::post('orders/{order}/update-status', \App\Http\Controllers\Admin\OrderActions\UpdateStatusController::class)->name('orders.update-status');
 
 Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 Route::post('products/{product}/upload-photo', \App\Http\Controllers\Admin\ProductActions\UploadPhotoController::class)->name('products.upload-photo');
