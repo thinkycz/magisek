@@ -26,5 +26,7 @@ return [
     'delivery_payment' => 'Doručení a platba',
     'notes'            => 'Poznámky',
     'print_export'     => 'Tisk a export',
+    'company_id'       => 'IČO',
+    'vat_id'           => 'DIČ',
 
 ];

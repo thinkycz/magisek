@@ -14,6 +14,7 @@ Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class)->o
 Route::post('orders/{order}/update-status', \App\Http\Controllers\Admin\OrderActions\UpdateStatusController::class)->name('orders.update-status');
 Route::post('orders/{order}/update-delivery-payment', \App\Http\Controllers\Admin\OrderActions\UpdateDeliveryPaymentController::class)->name('orders.update-delivery-payment');
 Route::post('orders/{order}/update-shipping', \App\Http\Controllers\Admin\OrderActions\UpdateShippingController::class)->name('orders.update-shipping');
+Route::post('orders/{order}/update-billing', \App\Http\Controllers\Admin\OrderActions\UpdateBillingController::class)->name('orders.update-billing');
 
 Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 Route::post('products/{product}/upload-photo', \App\Http\Controllers\Admin\ProductActions\UploadPhotoController::class)->name('products.upload-photo');

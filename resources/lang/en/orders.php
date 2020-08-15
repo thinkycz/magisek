@@ -26,5 +26,7 @@ return [
     'delivery_payment' => 'Delivery and Payment',
     'notes'            => 'Notes',
     'print_export'     => 'Printing and Exporting',
+    'company_id'       => 'Company ID',
+    'vat_id'           => 'VAT ID',
 
 ];
