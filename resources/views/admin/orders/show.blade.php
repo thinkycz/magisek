@@ -56,7 +56,7 @@
                                     {{ __('orders.company_id') }}
                                 </dt>
                                 <dd class="mt-1 text-sm leading-5 text-gray-900">
-                                    {{$order->billingDetail->company_id}}
+                                    {{ $order->billingDetail->company_id }}
                                 </dd>
                             </div>
                         @endif
@@ -66,7 +66,7 @@
                                     {{ __('orders.vat_id') }}
                                 </dt>
                                 <dd class="mt-1 text-sm leading-5 text-gray-900">
-                                    {{$order->billingDetail->vat_id}}
+                                    {{ $order->billingDetail->vat_id }}
                                 </dd>
                             </div>
                         @endif
@@ -75,7 +75,7 @@
                                 {{ __('orders.delivery_method') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
-                                {{$order->deliveryMethod->name}}
+                                {{$order->deliveryMethod->name }}
                             </dd>
                         </div>
                         <div class="sm:col-span-1">
@@ -83,7 +83,7 @@
                                 {{ __('orders.payment_method') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
-                                {{$order->paymentMethod->name}}
+                                {{$order->paymentMethod->name }}
                             </dd>
                         </div>
                         <div class="sm:col-span-1">
@@ -99,9 +99,19 @@
                                 {{ __('orders.phone') }}
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
-                                {{ $order->phone}}
+                                {{ $order->phone }}
                             </dd>
                         </div>
+                        @if($order->customer_note)
+                            <div class="col-span-2">
+                                <dt class="text-sm leading-5 font-medium text-gray-500">
+                                    {{ __('orders.customer_note') }}
+                                </dt>
+                                <dd class="mt-1 text-sm leading-5 text-gray-900">
+                                    {{ $order->customer_note }}
+                                </dd>
+                            </div>
+                        @endif
                     </dl>
                 </div>
                 <div class="px-4 py-5 sm:p-0">

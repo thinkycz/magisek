@@ -28,5 +28,6 @@ return [
     'print_export'     => 'Tisk a export',
     'company_id'       => 'IČO',
     'vat_id'           => 'DIČ',
+    'customer_note'    => 'Poznámka zákazníka',
 
 ];

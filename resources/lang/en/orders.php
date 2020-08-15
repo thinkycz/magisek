@@ -28,5 +28,6 @@ return [
     'print_export'     => 'Printing and Exporting',
     'company_id'       => 'Company ID',
     'vat_id'           => 'VAT ID',
+    'customer_note'    => 'Customer Note',
 
 ];
