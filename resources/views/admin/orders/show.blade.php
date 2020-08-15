@@ -44,11 +44,11 @@
                             </dt>
                             <dd class="mt-1 text-sm leading-5 text-gray-900">
                                 <p class="text-lg">
-                                    {{$order->shippingDetail->full_name}}
+                                    {{ $order->shippingDetail->full_name }}
                                 </p>
-                                <p>{{$order->shippingDetail->street}}</p>
-                                <p>{{ $order->billingDetail->zipcode }} {{ $order->billingDetail->city }}</p>
-                                <p>{{ $order->billingDetail->country->name }}</p></dd>
+                                <p>{{ $order->shippingDetail->street }}</p>
+                                <p>{{ $order->shippingDetail->zipcode }} {{ $order->shippingDetail->city }}</p>
+                                <p>{{ $order->shippingDetail->country->name }}</p></dd>
                         </div>
                         @if($order->billingDetail->company_id)
                             <div class="sm:col-span-1">
