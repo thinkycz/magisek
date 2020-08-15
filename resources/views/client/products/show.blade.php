@@ -3,57 +3,69 @@
 @section('content')
     <div class="space-y-8">
 
-        <div class="flex w-full space-x-6 p-6 bg-white rounded border border-gray-200">
-            <x-gallery :photos="$product->photos" :thumbnails="$product->thumbnails"></x-gallery>
-
-            <div class="flex-1 space-y-6">
-                <h2 class="text-2xl text-gray-700 font-semibold">
-                    {{ $product->name }}
-                </h2>
-
-                <p class="text-gray-700 text-sm">
-                    {{ $product->description }}
-                </p>
-
-                <div class="flex justify-between items-center">
-                    <div class="w-1/2">
-                        @if($product->old_price)
-                            <p class="text-gray-500 text-xs leading-5 line-through">{{ $product->formatted_old_price }}</p>
-                        @endif
-
-                        <p class="text-2xl font-semibold text-teal-700">{{ $product->formatted_price }}</p>
-
-                        @if(settingsRepository()->getCompanyIsVatPayer())
-                            <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}</p>
-                        @endif
-                    </div>
-
-                    <div class="w-1/2">
-                        <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
-                    </div>
+        <div class="bg-white rounded border border-gray-200 relative">
+            @if($product->tags->isNotEmpty())
+                <div class="absolute z-10">
+                    @foreach($product->tags->take(3) as $tag)
+                        <p class="text-xs font-semibold text-white uppercase py-1 px-2 rounded-r my-2 bg-red-600">
+                            {{ $tag->value }}
+                        </p>
+                    @endforeach
                 </div>
+            @endif
 
-                <hr>
+            <div class="flex w-full space-x-6 p-6">
+                <x-gallery :photos="$product->photos" :thumbnails="$product->thumbnails"></x-gallery>
 
-                <ul>
-                    <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">{{ __('products.moq') }}</span>
-                        <span class="text-gray-700">{{ $product->moq }} {{ $product->unit->abbr }}</span>
-                    </li>
-                    <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">{{ __('products.catalog') }}</span>
-                        <span class="text-gray-700">{{ $product->catalog }}</span>
-                    </li>
-                    <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">{{ __('products.barcode') }}</span>
-                        <span class="text-gray-700">{{ $product->barcode }}</span>
-                    </li>
-                    <li class="py-2 flex justify-between text-xs font-semibold">
-                        <span class="text-cool-gray-500">{{ __('products.quantity_in_stock') }}</span>
-                        <span
-                            class="text-gray-700">{{ $product->public_stock_quantity }} {{ $product->unit->abbr }}</span>
-                    </li>
-                </ul>
+                <div class="flex-1 space-y-6">
+                    <h2 class="text-2xl text-gray-700 font-semibold">
+                        {{ $product->name }}
+                    </h2>
+
+                    <p class="text-gray-700 text-sm">
+                        {{ $product->description }}
+                    </p>
+
+                    <div class="flex justify-between items-center">
+                        <div class="w-1/2">
+                            @if($product->old_price)
+                                <p class="text-gray-500 text-xs leading-5 line-through">{{ $product->formatted_old_price }}</p>
+                            @endif
+
+                            <p class="text-2xl font-semibold text-teal-700">{{ $product->formatted_price }}</p>
+
+                            @if(settingsRepository()->getCompanyIsVatPayer())
+                                <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}</p>
+                            @endif
+                        </div>
+
+                        <div class="w-1/2">
+                            <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <ul>
+                        <li class="py-2 flex justify-between text-xs font-semibold">
+                            <span class="text-cool-gray-500">{{ __('products.moq') }}</span>
+                            <span class="text-gray-700">{{ $product->moq }} {{ $product->unit->abbr }}</span>
+                        </li>
+                        <li class="py-2 flex justify-between text-xs font-semibold">
+                            <span class="text-cool-gray-500">{{ __('products.catalog') }}</span>
+                            <span class="text-gray-700">{{ $product->catalog }}</span>
+                        </li>
+                        <li class="py-2 flex justify-between text-xs font-semibold">
+                            <span class="text-cool-gray-500">{{ __('products.barcode') }}</span>
+                            <span class="text-gray-700">{{ $product->barcode }}</span>
+                        </li>
+                        <li class="py-2 flex justify-between text-xs font-semibold">
+                            <span class="text-cool-gray-500">{{ __('products.quantity_in_stock') }}</span>
+                            <span
+                                class="text-gray-700">{{ $product->public_stock_quantity }} {{ $product->unit->abbr }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 

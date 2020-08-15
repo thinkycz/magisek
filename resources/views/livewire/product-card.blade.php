@@ -1,4 +1,14 @@
-<div class="col-span-1 flex flex-col bg-white rounded-lg shadow">
+<div class="col-span-1 flex flex-col bg-white rounded-lg shadow relative">
+    @if($product->tags->isNotEmpty())
+        <div class="absolute z-10">
+            @foreach($product->tags->take(3) as $tag)
+                <p class="text-xs font-semibold text-white uppercase py-1 px-2 rounded-r my-2 bg-red-600">
+                    {{ $tag->value }}
+                </p>
+            @endforeach
+        </div>
+    @endif
+
     <div class="flex-1 flex flex-col p-4">
         <a href="{{ route('products.show', $product) }}">
             <img class="w-full h-40 flex-shrink-0 mx-auto object-contain" src="{{ $product->thumbnail }}"
