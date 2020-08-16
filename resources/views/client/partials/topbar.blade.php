@@ -1,6 +1,6 @@
 <div class="bg-cool-gray-100 border-t-2 border-teal-500 py-2">
     <div class="container mx-auto">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-center sm:justify-between items-center">
             <div class="space-x-4">
                 <div class="inline text-xs text-gray-700 font-semibold">
                     {{ settingsRepository()->getCompanyPhoneNumber() }}
@@ -10,7 +10,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center space-x-4">
+            <div class="hidden sm:flex items-center space-x-4">
                 <x-lang-switcher></x-lang-switcher>
 
                 @auth

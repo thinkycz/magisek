@@ -14,7 +14,7 @@
                 </div>
             @endif
 
-            <div class="flex w-full space-x-6 p-6">
+            <div class="md:flex w-full space-x-6 p-6">
                 <x-gallery :photos="$product->photos" :thumbnails="$product->thumbnails"></x-gallery>
 
                 <div class="flex-1 space-y-6">
