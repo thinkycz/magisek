@@ -82,8 +82,8 @@
              logged_out_greeting="Jak ti může Magísek pomoci?">
         </div>
 
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v8.0&appId=3409606382447808&autoLogAppEvents=1" nonce="MudHVDKa"></script>
+{{--        <div id="fb-root"></div>--}}
+{{--        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v8.0&appId=3409606382447808&autoLogAppEvents=1" nonce="MudHVDKa"></script>--}}
 
         @yield('body')
 

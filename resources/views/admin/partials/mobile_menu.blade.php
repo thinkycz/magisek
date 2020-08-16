@@ -27,7 +27,9 @@
             </div>
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div class="flex-shrink-0 flex items-center px-4">
-                    <x-logo class="w-auto h-8 text-teal-600" />
+                    <a href="{{ route('home') }}" class="flex items-center flex-shrink-0 px-4">
+                        <x-logo class="w-auto h-8 mx-auto text-teal-600"/>
+                    </a>
                 </div>
                 <nav class="mt-5 px-2">
                     <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
