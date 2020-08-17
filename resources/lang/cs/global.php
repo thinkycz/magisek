@@ -111,5 +111,7 @@ return [
     'your_order_number_is'          => 'Objednávce jsme přiřadili číslo :orderNumber.',
     'show_order'                    => 'Zobrazit detaily objednávky',
     'updated'                       => 'Aktualizováno',
+    'personal_information'          => 'Osobní informace',
+    'use_valid_email'               => 'Zadej prosím platný email na který ti budeme posílat notifikace.',
 
 ];

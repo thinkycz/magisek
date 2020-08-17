@@ -111,5 +111,7 @@ return [
     'your_order_number_is'          => 'Your order number is :orderNumber.',
     'show_order'                    => 'Show order details',
     'updated'                       => 'Updated',
+    'personal_information'          => 'Personal Information',
+    'use_valid_email'               => 'Please enter a valid email address where you can receive our notifications.',
 
 ];
