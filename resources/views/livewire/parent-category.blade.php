@@ -11,7 +11,7 @@
                         @if(!$parent->isSelfOrDescendantOf($category) && !$parent->isSelfOrAncestorOf($category))
                             <x-button wire:click="associate({{ $parent->id }})"
                                       class="bg-teal-600 hover:bg-teal-500">{{ __('global.attach') }}</x-button>
-                        @elseif($category->parent->is($parent))
+                        @elseif($parent->is($category->parent))
                             <x-button wire:click="dissociate"
                                       class="bg-red-600 hover:bg-red-500">{{ __('global.detach') }}</x-button>
                         @else
