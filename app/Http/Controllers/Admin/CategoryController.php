@@ -13,7 +13,7 @@ class CategoryController extends Controller
         return view('admin.categories.index', [
             'categories' => Category::withCount('products')
                 ->orderBy('position')
-                ->paginate()
+                ->get()
         ]);
     }
 
