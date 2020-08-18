@@ -7,7 +7,14 @@ use Livewire\Component;
 
 class OrderNotes extends Component
 {
-    public $note;
+    /**
+     * @var string
+     */
+    public $newnote;
+
+    /**
+     * @var Order
+     */
     public $order;
 
     public function mount(Order $order)
@@ -17,11 +24,15 @@ class OrderNotes extends Component
 
     public function render()
     {
-        return view('livewire.order-notes');
+        return view('livewire.order-notes', [
+            'notes' => $this->order->notes()->latest()->get()
+        ]);
     }
 
     public function addNote()
     {
-        dd($this->order);
+        $this->order->addNote($this->newnote);
+
+        $this->reset(['newnote']);
     }
 }

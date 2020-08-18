@@ -108,12 +108,11 @@ return [
     'newest_products'               => 'Nejnovější produkty',
     'thank_you_for_your_order'      => 'Z celého srdce Ti děkujeme, teď už je to v rukou našich skřítků!',
     'order_has_been_placed'         => 'Tvoji objednávku skřítci v Magísku v pořádku přijali a potvrzení Ti během chvilky doručí na tvůj e-mail.',
-    'your_order_number_is'          => 'Objednávce jsme přiřadili číslo :orderNumber.',
+    'your_order_number_is'          => 'Objednávce jsme přidělili číslo :orderNumber.',
     'show_order'                    => 'Zobrazit detaily objednávky',
     'updated'                       => 'Aktualizováno',
     'personal_information'          => 'Osobní informace',
     'use_valid_email'               => 'Zadej prosím platný email na který ti budeme posílat notifikace.',
     'free'                          => 'Zdarma',
-    'price_will_be_calculated'      => 'Cena bude dopočítána',
 
 ];
