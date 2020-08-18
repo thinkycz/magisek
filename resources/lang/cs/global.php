@@ -114,5 +114,6 @@ return [
     'personal_information'          => 'Osobní informace',
     'use_valid_email'               => 'Zadej prosím platný email na který ti budeme posílat notifikace.',
     'free'                          => 'Zdarma',
+    'cancel'                        => 'Storno',
 
 ];

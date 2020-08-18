@@ -29,5 +29,9 @@ return [
     'company_id'       => 'IČO',
     'vat_id'           => 'DIČ',
     'customer_note'    => 'Poznámka zákazníka',
+    'add_item'         => 'Přidat položku',
+    'update_item'      => 'Upravit položku',
+    'catalog'          => 'Katalogové číslo',
+    'barcode'          => 'Čárový kód',
 
 ];

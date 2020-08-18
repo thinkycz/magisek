@@ -29,5 +29,9 @@ return [
     'company_id'       => 'Company ID',
     'vat_id'           => 'VAT ID',
     'customer_note'    => 'Customer Note',
+    'add_item'         => 'Add Item',
+    'update_item'      => 'Update Item',
+    'catalog'          => 'Catalog',
+    'barcode'          => 'Barcode',
 
 ];
