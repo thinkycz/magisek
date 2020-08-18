@@ -17,6 +17,10 @@
                 </div>
 
                 <x-button class="bg-teal-600 hover:bg-teal-500">Update Item</x-button>
+
+                <x-button wire:click.prevent="$toggle('editing')" class="bg-gray-600 hover:bg-gray-500">
+                    Cancel
+                </x-button>
             </form>
         </td>
     @else
@@ -41,10 +45,11 @@
             {{ $orderedItem->formatted_total_price }}
         </td>
         <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-            <x-button wire:click="editItem">
+            <x-button wire:click.prevent="$toggle('editing')">
                 <x-icons.pencil class="w-4 h-4 text-blue-600 hover:text-blue-500"></x-icons.pencil>
             </x-button>
-            <x-button wire:click="removeItem">
+
+            <x-button wire:click.prevent="removeItem">
                 <x-icons.trash class="w-4 h-4 text-red-600 hover:text-red-500"></x-icons.trash>
             </x-button>
         </td>

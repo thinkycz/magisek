@@ -21,30 +21,44 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-cool-gray-200">
                 @foreach($orderedItems as $orderedItem)
-                    <livewire:ordered-items-row :orderedItem="$orderedItem" :key="$orderedItem->id"></livewire:ordered-items-row>
+                    <livewire:ordered-items-row :orderedItem="$orderedItem"
+                                                :key="$orderedItem->id"></livewire:ordered-items-row>
                 @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="p-4">
-        <form wire:submit.prevent="addItem" class="space-y-4">
-            <x-input title="Product Name" wire:model="productName"></x-input>
+    @if($adding)
+        <div class="p-4">
+            <form wire:submit.prevent="storeItem" class="space-y-4">
+                <x-input title="Product Name" wire:model="productName"></x-input>
 
-            <div class="flex space-x-4">
-                <x-input title="Catalog" wire:model="catalog" class="flex-1"></x-input>
+                <div class="flex space-x-4">
+                    <x-input title="Catalog" wire:model="catalog" class="flex-1"></x-input>
 
-                <x-input title="Barcode" wire:model="barcode" class="flex-1"></x-input>
-            </div>
+                    <x-input title="Barcode" wire:model="barcode" class="flex-1"></x-input>
+                </div>
 
-            <div class="flex space-x-4">
-                <x-input type="number" title="Quantity" wire:model="quantity" class="flex-1"></x-input>
+                <div class="flex space-x-4">
+                    <x-input type="number" title="Quantity" wire:model="quantity" class="flex-1"></x-input>
 
-                <x-input type="number" title="Price" wire:model="price" class="flex-1"></x-input>
-            </div>
+                    <x-input type="number" title="Price" wire:model="price" class="flex-1"></x-input>
+                </div>
 
-            <x-button class="bg-teal-600 hover:bg-teal-500">Add Item</x-button>
-        </form>
-    </div>
+                <x-button class="bg-teal-600 hover:bg-teal-500">Add Item</x-button>
+
+                <x-button wire:click.prevent="$toggle('adding')" class="bg-gray-600 hover:bg-gray-500">
+                    Cancel
+                </x-button>
+            </form>
+        </div>
+    @else
+        <div class="p-4">
+            <x-button wire:click="$toggle('adding')" class="bg-teal-600 hover:bg-teal-500">
+                <x-icons.plus class="w-4 h-4 mr-2"></x-icons.plus>
+                Add Item
+            </x-button>
+        </div>
+    @endif
 </div>

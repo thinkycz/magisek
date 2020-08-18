@@ -37,11 +37,6 @@ class OrderedItemsRow extends Component
         return view('livewire.ordered-items-row');
     }
 
-    public function editItem()
-    {
-        $this->editing = true;
-    }
-
     public function updateItem()
     {
         $this->orderedItem->update([

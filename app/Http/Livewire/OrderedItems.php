@@ -12,6 +12,8 @@ class OrderedItems extends Component
      */
     public $order;
 
+    public $adding;
+
     public $productName;
     public $catalog;
     public $barcode;
@@ -23,6 +25,7 @@ class OrderedItems extends Component
     public function mount(Order $order)
     {
         $this->order = $order;
+        $this->adding = false;
     }
 
     public function render()
@@ -32,7 +35,7 @@ class OrderedItems extends Component
         ]);
     }
 
-    public function addItem()
+    public function storeItem()
     {
         $this->order->orderedItems()->create([
             'name'     => $this->productName,
@@ -43,5 +46,9 @@ class OrderedItems extends Component
         ]);
 
         $this->emit('orderedItemsChanged');
+
+        $this->adding = false;
+
+        $this->reset(['productName', 'catalog', 'barcode', 'quantity', 'price']);
     }
 }

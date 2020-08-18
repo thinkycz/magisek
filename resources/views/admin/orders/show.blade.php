@@ -153,16 +153,7 @@
                                 {{ $order->due_date->format('j.n.Y')  }}
                             </dd>
                         </div>
-                        <div
-                            class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
-                            <dt class="text-sm leading-5 font-medium text-gray-500">
-                                {{ __('orders.total_value') }}
-                            </dt>
-                            <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                                <p class="text-lg">{{ $order->formatted_total_value }}</p>
-                                <p class="text-gray-600">{{ $order->formatted_total_value_excl_vat }} {{ __('global.excl_vat') }}</p>
-                            </dd>
-                        </div>
+                        <livewire:order-total-value :order="$order"></livewire:order-total-value>
                     </dl>
                 </div>
             </div>
