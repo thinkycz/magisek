@@ -22,4 +22,17 @@ class PaymentMethod extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function getFormattedPriceAttribute()
+    {
+        if ($this->price_will_be_calculated) {
+            return __('global.price_will_be_calculated');
+        }
+
+        if ($this->price <= 0) {
+            return __('global.free');
+        }
+
+        return showPriceWithCurrency($this->price);
+    }
 }

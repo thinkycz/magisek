@@ -113,5 +113,7 @@ return [
     'updated'                       => 'Aktualizováno',
     'personal_information'          => 'Osobní informace',
     'use_valid_email'               => 'Zadej prosím platný email na který ti budeme posílat notifikace.',
+    'free'                          => 'Zdarma',
+    'price_will_be_calculated'      => 'Cena bude dopočítána',
 
 ];

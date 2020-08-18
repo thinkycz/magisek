@@ -11,6 +11,9 @@
                                  :title="$deliveryMethod->name"
                                  :value="$deliveryMethod->id"
                                  wire:model="selectedDelivery">
+                            <p class="text-xs text-gray-600">
+                                {{ $deliveryMethod->formatted_price }}
+                            </p>
                         </x-radio>
                     @endforeach
                 </fieldset>
@@ -34,6 +37,9 @@
                                  :title="$paymentMethod->name"
                                  :value="$paymentMethod->id"
                                  wire:model="selectedPayment">
+                            <p class="text-xs text-gray-600">
+                                {{ $paymentMethod->formatted_price }}
+                            </p>
                         </x-radio>
                     @empty
                         <p class="text-center py-2 font-semibold text-sm text-orange-600">

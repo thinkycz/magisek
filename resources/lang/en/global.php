@@ -113,5 +113,7 @@ return [
     'updated'                       => 'Updated',
     'personal_information'          => 'Personal Information',
     'use_valid_email'               => 'Please enter a valid email address where you can receive our notifications.',
+    'free'                          => 'Free',
+    'price_will_be_calculated'      => 'Price will be calculated',
 
 ];
