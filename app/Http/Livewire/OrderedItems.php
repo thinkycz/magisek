@@ -18,6 +18,7 @@ class OrderedItems extends Component
     public $quantity;
     public $price;
 
+    protected $listeners = ['orderedItemsChanged' => 'render'];
 
     public function mount(Order $order)
     {
@@ -27,7 +28,7 @@ class OrderedItems extends Component
     public function render()
     {
         return view('livewire.ordered-items', [
-            'orderedItems' => $this->order->orderedItems()->get()
+            'orderedItems' => $this->order->orderedItems->fresh()
         ]);
     }
 
@@ -40,10 +41,7 @@ class OrderedItems extends Component
             'quantity' => $this->quantity,
             'price'    => $this->price
         ]);
-    }
 
-    public function removeItem($orderedItemId)
-    {
-        $this->order->orderedItems()->find($orderedItemId)->delete();
+        $this->emit('orderedItemsChanged');
     }
 }

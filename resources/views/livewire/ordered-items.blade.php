@@ -21,33 +21,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-cool-gray-200">
                 @foreach($orderedItems as $orderedItem)
-                    <tr>
-                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                            <a href="{{ $orderedItem->product ? route('products.show', $orderedItem->product) : '#' }}"
-                               class="font-medium text-teal-700 hover:underline">
-                                {{ $orderedItem->name }}
-                            </a>
-                            @if($orderedItem->barcode)
-                                <p class="text-xs text-gray-600">EAN {{ $orderedItem->barcode }}</p>
-                            @elseif($orderedItem->catalog)
-                                <p class="text-xs text-gray-600">CAT {{ $orderedItem->catalog }}</p>
-                            @endif
-                        </td>
-                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
-                            {{ $orderedItem->quantity }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
-                            {{ $orderedItem->formatted_price }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
-                            {{ $orderedItem->formatted_total_price }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                            <x-button wire:click="removeItem({{ $orderedItem->id }})">
-                                <x-icons.trash class="w-4 h-4 text-red-600 hover:text-red-500"></x-icons.trash>
-                            </x-button>
-                        </td>
-                    </tr>
+                    <livewire:ordered-items-row :orderedItem="$orderedItem" :key="$orderedItem->id"></livewire:ordered-items-row>
                 @endforeach
                 </tbody>
             </table>

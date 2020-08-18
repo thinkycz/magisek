@@ -1,6 +1,6 @@
 @props(['name' => '', 'title' => '', 'value' => '', 'type' => 'text', 'required' => false])
 
-<div {{ $attributes }}>
+<div {{ $attributes->except('wire:model') }}>
     <label for="{{ $name }}" class="block text-sm font-medium leading-5 text-gray-700">
         {{ $title }}
         @if($required)
@@ -13,6 +13,7 @@
                id="{{ $name }}"
                name="{{ $name }}"
                {{ $required ? 'required' : '' }}
+               {{ $attributes->only('wire:model') }}
                value="{{ old($name, $value) }}"
                class="form-input block w-full sm:text-sm sm:leading-5"/>
     </div>
