@@ -1,12 +1,13 @@
 @props(['name' => '', 'title' => '', 'value' => '', 'help' => ''])
 
-<div {{ $attributes }}>
+<div {{ $attributes->except('wire:model') }}>
     <label for="{{ $name }}" class="block text-sm font-medium leading-5 text-gray-700">
         {{ $title }}
     </label>
 
     <div class="mt-1 relative rounded-md shadow-sm">
         <textarea id="{{ $name }}" name="{{ $name }}"
+                  {{ $attributes->only('wire:model') }}
                   class="form-input block w-full sm:text-sm sm:leading-5">{{ old($name, $value) }}</textarea>
     </div>
 

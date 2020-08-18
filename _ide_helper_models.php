@@ -102,6 +102,8 @@ namespace App\Models{
  * @property int $_lft
  * @property int $_rgt
  * @property int|null $parent_id
+ * @property int $is_featured
+ * @property int $show_in_menu
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $children
  * @property-read int|null $children_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
@@ -118,6 +120,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereEnabled($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereIsFeatured($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLft($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLike($column, $keyword)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereLikeQuery($column, $keyword)
@@ -125,10 +128,36 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereParentId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category wherePosition($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereRgt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereShowInMenu($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereUpdatedAt($value)
  */
 	class Category extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Note
+ *
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $content
+ * @property int|null $user_id
+ * @property int $notable_id
+ * @property string $notable_type
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereNotableId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereNotableType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Note whereUserId($value)
+ */
+	class Note extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -183,17 +212,22 @@ namespace App\Models{
  * @property-read \App\Models\Availability|null $availability
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Category[] $categories
  * @property-read int|null $categories_count
+ * @property-read mixed $formatted_old_price
  * @property-read mixed $formatted_price
  * @property-read mixed $formatted_price_excl_vat
  * @property-read mixed $formatted_vatrate
+ * @property-read mixed $old_price
  * @property-read mixed $photos
  * @property-read mixed $price
  * @property-read mixed $price_excl_vat
  * @property-read mixed $public_stock_quantity
  * @property-read mixed $purchasable
  * @property-read mixed $thumbnail
+ * @property-read mixed $thumbnails
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @property-read int|null $notes_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
  * @property-read int|null $ordered_items_count
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Price[] $prices
@@ -244,7 +278,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon $due_date
  * @property string|null $email
  * @property string|null $phone
- * @property string|null $notes
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
  * @property string|null $customer_note
  * @property int|null $user_id
  * @property int|null $status_id
@@ -259,6 +293,7 @@ namespace App\Models{
  * @property-read mixed $formatted_total_value_excl_vat
  * @property-read mixed $total_value
  * @property-read mixed $total_value_excl_vat
+ * @property-read int|null $notes_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\OrderedItem[] $orderedItems
  * @property-read int|null $ordered_items_count
  * @property-read \App\Models\PaymentMethod|null $paymentMethod
@@ -415,7 +450,7 @@ namespace App\Models{
  * @property string|null $locale
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
- * @property string|null $notes
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
  * @property int $is_admin
  * @property int $receive_newsletter
  * @property string|null $remember_token
@@ -427,6 +462,7 @@ namespace App\Models{
  * @property-read int|null $billing_details_count
  * @property-read mixed $avatar
  * @property-read mixed $name
+ * @property-read int|null $notes_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Order[] $orders
@@ -803,6 +839,7 @@ namespace App\Models{
  * @property string $code
  * @property array $schema
  * @property array $data
+ * @property int $system_field
  * @property-read mixed $name
  * @property-read mixed $value
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
@@ -816,6 +853,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting whereNamespace($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting whereSchema($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting whereSystemField($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Setting whereUpdatedAt($value)
  */
 	class Setting extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}

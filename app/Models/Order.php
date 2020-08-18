@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasNotes;
 use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,8 @@ use Illuminate\Support\Collection;
 
 class Order extends Model
 {
+    use HasNotes;
+
     protected $guarded = [];
 
     protected $dates = [

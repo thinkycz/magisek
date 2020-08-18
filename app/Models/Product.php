@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasNotes;
 use App\Traits\Product\ProductHasAttributes;
 use App\Traits\Product\ProductHasEligibilities;
 use Gloudemans\Shoppingcart\CanBeBought;
@@ -19,6 +20,7 @@ class Product extends Model implements Buyable, HasMedia
 {
     use Searchable;
     use HasSlug;
+    use HasNotes;
     use CanBeBought;
     use InteractsWithMedia;
     use ProductHasEligibilities;
