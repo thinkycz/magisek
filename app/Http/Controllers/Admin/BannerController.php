@@ -55,6 +55,7 @@ class BannerController extends Controller
         return $request->validate([
             'name'    => 'required',
             'enabled' => 'boolean',
+            'image'   => 'sometimes|nullable'
         ]);
     }
 }

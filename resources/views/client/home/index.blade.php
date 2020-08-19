@@ -1,7 +1,11 @@
 @extends('client.layout')
 
 @section('content')
-    <x-featured-products></x-featured-products>
+    <div class="flex flex-col">
+        <x-banners></x-banners>
+
+        <x-featured-products></x-featured-products>
+    </div>
 @endsection
 
 @section('subcontent')
