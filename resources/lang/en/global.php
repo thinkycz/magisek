@@ -116,5 +116,7 @@ return [
     'free'                          => 'Free',
     'price_will_be_calculated'      => 'Price will be calculated',
     'cancel'                        => 'Cancel',
+    'coupons'                       => 'Coupons',
+    'banners'                       => 'Banners',
 
 ];

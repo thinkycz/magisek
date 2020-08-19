@@ -53,6 +53,18 @@
                                 class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.document>
                             {{ __('global.pages') }}
                         </a>
+                        <a href="{{ route('acp.banners.index') }}"
+                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.banners.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                            <x-icons.collection
+                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.collection>
+                            {{ __('global.banners') }}
+                        </a>
+                        <a href="{{ route('acp.coupons.index') }}"
+                           class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:bg-gray-700 transition ease-in-out duration-150 {{ request()->routeIs('acp.coupons.*') ? 'text-white bg-gray-900' : 'text-gray-300' }}">
+                            <x-icons.tag
+                                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></x-icons.tag>
+                            {{ __('global.coupons') }}
+                        </a>
 
                         <h2 class="ml-2 mt-8 mb-4 text-xs text-gray-200 font-semibold uppercase tracking-wide">
                             {{ __('global.product_import') }}
