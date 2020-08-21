@@ -1,5 +1,7 @@
 @extends('client.layout')
 
+@section('title', $product->name)
+
 @section('content')
     <div class="space-y-8">
 
