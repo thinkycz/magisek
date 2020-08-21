@@ -38,7 +38,7 @@
                     <x-input type="number" name="price" title="{{ __('delivery_methods.price') }}" :value="$deliveryMethod->price"
                              class="mt-6"></x-input>
 
-                    <x-input name="mov" title="{{ __('delivery_methods.minimum_order') }}" :value="$deliveryMethod->mov" class="mt-6"></x-input>
+                    <x-input type="number" name="mov" title="{{ __('delivery_methods.minimum_order') }}" :value="$deliveryMethod->mov" class="mt-6"></x-input>
 
                     <x-checkbox name="needs_shipping_address" title="{{ __('delivery_methods.needs_shipping_address') }}"
                                 :value="$deliveryMethod->needs_shipping_address" class="mt-6"></x-checkbox>

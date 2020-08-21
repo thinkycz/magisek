@@ -42,9 +42,9 @@
                     </div>
 
                     <div class="flex space-x-6">
-                        <x-input type="date" name="valid_from" :title=" __('coupons.valid_from')" :value="$coupon->valid_from->format('Y-m-d')" class="flex-1"></x-input>
+                        <x-input type="date" name="valid_from" :title=" __('coupons.valid_from')" :value="$coupon->valid_from ? $coupon->valid_from->format('Y-m-d') : null" class="flex-1"></x-input>
 
-                        <x-input type="date" name="valid_to" :title=" __('coupons.valid_to')" :value="$coupon->valid_to->format('Y-m-d')" class="flex-1"></x-input>
+                        <x-input type="date" name="valid_to" :title=" __('coupons.valid_to')" :value="$coupon->valid_to ? $coupon->valid_to->format('Y-m-d') : null" class="flex-1"></x-input>
                     </div>
 
                     <x-checkbox name="is_percentage" :title="__('coupons.is_percentage')" :value="$coupon->is_percentage"></x-checkbox>

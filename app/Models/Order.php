@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\OrderedItemType;
 use App\Traits\HasNotes;
 use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -143,6 +144,32 @@ class Order extends Model
                 'product_id' => $cartItem->id
             ]);
         });
+
+        return $this;
+    }
+
+    public function processDeliveryMethod()
+    {
+        $this->orderedItems()->create([
+            'name'     => $this->deliveryMethod->name,
+            'price'    => $this->deliveryMethod->price,
+            'vatrate'  => 21,
+            'quantity' => 1,
+            'type'     => OrderedItemType::DELIVERY_METHOD
+        ]);
+
+        return $this;
+    }
+
+    public function processPaymentMethod()
+    {
+        $this->orderedItems()->create([
+            'name'     => $this->paymentMethod->name,
+            'price'    => $this->paymentMethod->price,
+            'vatrate'  => 21,
+            'quantity' => 1,
+            'type'     => OrderedItemType::PAYMENT_METHOD
+        ]);
 
         return $this;
     }

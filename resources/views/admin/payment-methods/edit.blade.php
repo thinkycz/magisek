@@ -35,7 +35,7 @@
 
                     <x-input type="number" name="price" :title="__('payment_methods.price')" :value="$paymentMethod->price" class="mt-6"></x-input>
 
-                    <x-input name="mov" :title="__('payment_methods.minimum_order')" :value="$paymentMethod->mov" class="mt-6"></x-input>
+                    <x-input type="number" name="mov" :title="__('payment_methods.minimum_order')" :value="$paymentMethod->mov" class="mt-6"></x-input>
 
                     <x-checkbox name="price_will_be_calculated" :title="__('payment_methods.price_will_be_calculated')" :value="$paymentMethod->price_will_be_calculated" class="mt-6"></x-checkbox>
 

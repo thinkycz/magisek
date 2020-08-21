@@ -179,7 +179,7 @@
                             @foreach($order->orderedItems as $orderedItem)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-teal-700 hover:underline">
-                                        <a href="{{ route('products.show', $orderedItem->product) }}">{{ $orderedItem->name }}</a>
+                                        <a href="{{ $orderedItem->product ? route('products.show', $orderedItem->product) : null }}">{{ $orderedItem->name }}</a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
                                         {{ $orderedItem->quantity }}

@@ -26,6 +26,8 @@ class ProcessOrderController
         $order
             ->processShippingDetails($data)
             ->processBillingDetails($data)
+            ->processDeliveryMethod()
+            ->processPaymentMethod()
             ->processBasketItems();
 
         Cart::destroy();
