@@ -7,7 +7,7 @@
         </h2>
 
         <x-form :action="route('checkout.process-order')">
-            <div class="md:flex md:space-x-4">
+            <div class="md:flex md:space-x-4 space-y-4 md:space-y-0">
                 <div class="md:w-1/2">
                     <livewire:checkout-shipping-billing></livewire:checkout-shipping-billing>
                 </div>
@@ -19,8 +19,8 @@
                 </div>
             </div>
 
-            <div class="lg:flex justify-between items-center mt-4">
-                <div class="my-6 lg:mb-0">
+            <div class="flex justify-between lg:items-center mt-8 flex-col flex-col-reverse lg:flex-row">
+                <div class="my-8 lg:my-0">
                     <a href="{{ route('basket.index') }}"
                        class="text-gray-600 text-sm font-semibold flex items-center space-x-2 hover:underline">
                         <x-icons.chevron-left class="w-5 h-5"></x-icons.chevron-left>

@@ -39,7 +39,7 @@ class AddToBasket extends Component
 
         $this->purchased = $this->cartItem ? true : false;
 
-        $this->dispatchBrowserEvent('notify', 'Basket was updated');
+        $this->dispatchBrowserEvent('notify', __('global.basket_was_updated'));
     }
 
     public function render()

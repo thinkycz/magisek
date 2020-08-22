@@ -40,11 +40,9 @@
                                 <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}</p>
                             @endif
                         </div>
-
-                        <div class="w-1/2">
-                            <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
-                        </div>
                     </div>
+
+                    <livewire:add-to-basket :product="$product"></livewire:add-to-basket>
 
                     <hr>
 

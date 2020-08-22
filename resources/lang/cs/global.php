@@ -119,5 +119,6 @@ return [
     'coupons'                       => 'Kupony',
     'banners'                       => 'Bannery',
     'show_categories'               => 'Zobrazit kategorie',
+    'basket_was_updated'            => 'Košík byl aktualizován',
 
 ];
