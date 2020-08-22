@@ -6,3 +6,9 @@
                 href="https://www.facebook.com/magisekcz/">Magísek</a></blockquote>
     </div>
 </div>
+
+@once
+@push('scripts')
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v8.0&appId=3409606382447808&autoLogAppEvents=1" nonce="MudHVDKa"></script>
+@endpush
+@endonce
