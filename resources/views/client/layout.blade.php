@@ -8,8 +8,8 @@
     <div class="px-4 sm:px-0 bg-cool-gray-50">
         @section('container')
             <div class="container mx-auto py-6">
-                <div class="flex md:space-x-8">
-                    <div class="w-64 flex-shrink-0 hidden md:block">
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
+                    <div class="w-full md:w-64 flex-shrink-0">
                         @include('client.partials.sidebar')
                     </div>
 

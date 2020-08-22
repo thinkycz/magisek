@@ -118,5 +118,6 @@ return [
     'cancel'                        => 'Storno',
     'coupons'                       => 'Kupony',
     'banners'                       => 'Bannery',
+    'show_categories'               => 'Zobrazit kategorie',
 
 ];

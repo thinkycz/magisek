@@ -118,5 +118,6 @@ return [
     'cancel'                        => 'Cancel',
     'coupons'                       => 'Coupons',
     'banners'                       => 'Banners',
+    'show_categories'               => 'Show Categories',
 
 ];
