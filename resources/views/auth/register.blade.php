@@ -5,7 +5,7 @@
 @section('content')
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="text-3xl font-semibold text-center text-gray-900 leading-9">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-900 leading-9">
                 {{ __('auth.create_new_account') }}
             </h2>
 

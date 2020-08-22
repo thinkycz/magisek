@@ -5,7 +5,7 @@
 @section('content')
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="text-3xl font-semibold text-center text-gray-900 leading-9">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-900 leading-9">
                 {{ __('auth.sign_in_to_your_account') }}
             </h2>
             <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">

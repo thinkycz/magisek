@@ -7,12 +7,12 @@
         </h2>
 
         <x-form :action="route('checkout.process-order')">
-            <div class="flex space-x-4">
-                <div class="w-1/2">
+            <div class="md:flex md:space-x-4">
+                <div class="md:w-1/2">
                     <livewire:checkout-shipping-billing></livewire:checkout-shipping-billing>
                 </div>
 
-                <div class="w-1/2 space-y-4">
+                <div class="md:w-1/2 space-y-4">
                     <livewire:checkout-contact-notes></livewire:checkout-contact-notes>
 
                     <livewire:checkout-delivery-payment></livewire:checkout-delivery-payment>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="lg:flex justify-between items-center mt-4">
-                <div>
+                <div class="my-6 lg:mb-0">
                     <a href="{{ route('basket.index') }}"
                        class="text-gray-600 text-sm font-semibold flex items-center space-x-2 hover:underline">
                         <x-icons.chevron-left class="w-5 h-5"></x-icons.chevron-left>
