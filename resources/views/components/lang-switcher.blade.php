@@ -4,7 +4,7 @@
         <x-icons.chevron-down class="w-4 h-4"></x-icons.chevron-down>
     </a>
 
-    <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-30"
+    <div class="origin-top-right absolute mt-2 w-56 rounded-md shadow-lg z-30"
          @click.away="langopen = false"
          x-show="langopen"
          style="display: none"
