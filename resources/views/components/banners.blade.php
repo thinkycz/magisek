@@ -11,10 +11,12 @@
     </div>
 @endif
 
-@section('styles')
+@once
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/flickity.min.css') }}">
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
     <script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
-@endsection
+@endpush
+@endonce

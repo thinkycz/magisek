@@ -26,13 +26,15 @@
     </ul>
 </div>
 
-@section('styles')
+@once
+@push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}"/>
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
-@endsection
+@endpush
+@endonce

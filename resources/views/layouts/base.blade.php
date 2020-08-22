@@ -34,7 +34,7 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-        @yield('styles')
+        @stack('styles')
 
         <!-- Google Tag Manager -->
         <script>
@@ -82,14 +82,11 @@
              logged_out_greeting="Jak ti může Magísek pomoci?">
         </div>
 
-{{--        <div id="fb-root"></div>--}}
-{{--        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v8.0&appId=3409606382447808&autoLogAppEvents=1" nonce="MudHVDKa"></script>--}}
-
         @yield('body')
 
         @include('layouts.partials.notifications')
 
-        @yield('scripts')
+        @stack('scripts')
         <script src="{{ mix('js/app.js') }}"></script>
         <livewire:scripts/>
     </body>

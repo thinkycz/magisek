@@ -19,10 +19,12 @@
     <input type="file" x-ref="{{ $name }}">
 </div>
 
-@section('styles')
+@once
+@push('styles')
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-@endsection
+@endpush
+@endonce
