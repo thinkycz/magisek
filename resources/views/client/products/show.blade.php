@@ -34,7 +34,7 @@
                                 <p class="text-gray-500 text-xs leading-5 line-through">{{ $product->formatted_old_price }}</p>
                             @endif
 
-                            <p class="text-2xl font-semibold text-teal-700">{{ $product->formatted_price }}</p>
+                            <p class="text-2xl font-semibold {{ $product->old_price ? 'text-red-500' : 'text-teal-500' }}">{{ $product->formatted_price }}</p>
 
                             @if(settingsRepository()->getCompanyIsVatPayer())
                                 <p class="text-xs font-semibold text-gray-500">{{ $product->formatted_price_excl_vat }} {{ __('global.excl_vat') }}</p>
