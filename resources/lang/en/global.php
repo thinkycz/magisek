@@ -120,5 +120,9 @@ return [
     'banners'                       => 'Banners',
     'show_categories'               => 'Show Categories',
     'basket_was_updated'            => 'Basket was updated',
+    'coupon_code'                   => 'Coupon Code',
+    'use_a_coupon'                  => 'Use a coupon',
+    'apply_coupon'                  => 'Apply Coupon',
+    'discount'                      => 'Discount',
 
 ];

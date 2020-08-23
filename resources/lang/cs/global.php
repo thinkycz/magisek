@@ -120,5 +120,9 @@ return [
     'banners'                       => 'Bannery',
     'show_categories'               => 'Zobrazit kategorie',
     'basket_was_updated'            => 'Košík byl aktualizován',
+    'coupon_code'                   => 'Kód kuponu',
+    'use_a_coupon'                  => 'Mám slevový kupon',
+    'apply_coupon'                  => 'Použít kupon',
+    'discount'                      => 'Sleva',
 
 ];
