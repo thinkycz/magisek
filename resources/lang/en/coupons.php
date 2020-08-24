@@ -15,4 +15,6 @@ return [
     'is_percentage'   => 'Is Percantage',
     'once_per_user'   => 'Once Per User',
     'can_be_combined' => 'Can Be Combined',
+    'mov'             => 'Minimum Order',
+    'times_used'      => 'Times Used',
 ];

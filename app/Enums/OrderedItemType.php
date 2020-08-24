@@ -30,8 +30,8 @@ abstract class OrderedItemType
             ->toArray();
     }
 
-    public static function translation($locale)
+    public static function translation($type)
     {
-        return trans("global.ordered_item_type.$locale");
+        return trans("global.ordered_item_type.$type");
     }
 }

@@ -39,6 +39,8 @@
                         <x-input type="number" name="value" :title=" __('coupons.value')" :value="$coupon->value" class="flex-1"></x-input>
 
                         <x-input type="number" name="max_usage" :title=" __('coupons.max_usage')" :value="$coupon->max_usage" class="flex-1"></x-input>
+
+                        <x-input type="number" name="mov" :title=" __('coupons.mov')" :value="$coupon->mov" class="flex-1"></x-input>
                     </div>
 
                     <div class="flex space-x-6">

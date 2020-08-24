@@ -58,14 +58,14 @@
                         </div>
                     @endif
                     @if($order->billingDetail->vat_id)
-                    <div class="sm:col-span-1">
-                        <dt class="text-sm leading-5 font-medium text-gray-500">
-                            {{ __('global.vat_id') }}
-                        </dt>
-                        <dd class="mt-1 text-sm leading-5 text-gray-900">
-                            {{$order->billingDetail->vat_id}}
-                        </dd>
-                    </div>
+                        <div class="sm:col-span-1">
+                            <dt class="text-sm leading-5 font-medium text-gray-500">
+                                {{ __('global.vat_id') }}
+                            </dt>
+                            <dd class="mt-1 text-sm leading-5 text-gray-900">
+                                {{$order->billingDetail->vat_id}}
+                            </dd>
+                        </div>
                     @endif
                     <div class="sm:col-span-1">
                         <dt class="text-sm leading-5 font-medium text-gray-500">
@@ -178,17 +178,34 @@
                             <tbody class="bg-white divide-y divide-cool-gray-200">
                             @foreach($order->orderedItems as $orderedItem)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-teal-700 hover:underline">
-                                        <a href="{{ $orderedItem->product ? route('products.show', $orderedItem->product) : null }}">{{ $orderedItem->name }}</a>
+                                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                        <a href="{{ $orderedItem->product ? route('products.show', $orderedItem->product) : null }}"
+                                           class="text-teal-700 font-medium hover:underline">{{ $orderedItem->name }}</a>
+
+                                        <div class="text-xs text-gray-600">
+                                            @if($orderedItem->type === \App\Enums\OrderedItemType::PRODUCT && ($orderedItem->barcode || $orderedItem->catalog))
+                                                {{ $orderedItem->barcode ? 'EAN ' . $orderedItem->barcode : 'CAT ' . $orderedItem->catalog }}
+                                            @else
+                                                {{ \App\Enums\OrderedItemType::translation($orderedItem->type) }}
+                                            @endif
+                                        </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
                                         {{ $orderedItem->quantity }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
-                                        {{$orderedItem->formatted_price}}
+                                        <div>
+                                            {{ $orderedItem->formatted_price }}
+                                        </div>
+
+                                        @if($orderedItem->discount > 0)
+                                            <div class="text-xs text-red-600">
+                                                {{ __('global.discount') }} {{ $orderedItem->formatted_discount }}
+                                            </div>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
-                                        {{$orderedItem->formatted_total_price}}
+                                        {{ $orderedItem->formatted_total_price }}
                                     </td>
                                 </tr>
                             @endforeach

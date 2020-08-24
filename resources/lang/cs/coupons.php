@@ -15,4 +15,6 @@ return [
     'is_percentage'   => 'Procentuální kupon',
     'once_per_user'   => 'Jedno použití na zákazníka',
     'can_be_combined' => 'Povolit kombinování s jinými kupony',
+    'mov'             => 'Minimální objednávka',
+    'times_used'      => 'Počet použití',
 ];

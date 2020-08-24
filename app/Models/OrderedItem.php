@@ -30,7 +30,7 @@ class OrderedItem extends Model
 
     public function getFormattedPriceExclVatAttribute()
     {
-        return showPriceWithCurrency($this->price_excl_vat, currentCurrency());
+        return showPriceWithCurrency($this->price_excl_vat, currentCurrency(), __('global.free'));
     }
 
     public function getTotalPriceExclVatAttribute()
@@ -40,7 +40,7 @@ class OrderedItem extends Model
 
     public function getFormattedTotalPriceExclVatAttribute()
     {
-        return showPriceWithCurrency($this->total_price_excl_vat, currentCurrency());
+        return showPriceWithCurrency($this->total_price_excl_vat, currentCurrency(), __('global.free'));
     }
 
     public function getTotalPriceAttribute()
@@ -50,11 +50,16 @@ class OrderedItem extends Model
 
     public function getFormattedTotalPriceAttribute()
     {
-        return showPriceWithCurrency($this->total_price, currentCurrency());
+        return showPriceWithCurrency($this->total_price, currentCurrency(), __('global.free'));
     }
 
     public function getFormattedPriceAttribute()
     {
-        return showPriceWithCurrency($this->price, currentCurrency());
+        return showPriceWithCurrency($this->price, currentCurrency(), __('global.free'));
+    }
+
+    public function getFormattedDiscountAttribute()
+    {
+        return showPriceWithCurrency($this->discount, currentCurrency(), __('global.free'));
     }
 }

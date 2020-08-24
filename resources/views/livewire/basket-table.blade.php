@@ -51,6 +51,11 @@
                                             {{ showPriceWithCurrency($item->priceNet) }} {{ __('global.excl_vat') }}
                                         </div>
                                     @endif
+                                    @if($item->discountRate)
+                                        <div class="text-xs leading-5 text-red-600 font-semibold">
+                                           {{ __('global.discount') }} {{ showPriceWithCurrency($item->price * ($item->discountRate / 100 * -1)) }}
+                                        </div>
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <livewire:update-quantity :item-id="$item->rowId"

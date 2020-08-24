@@ -138,10 +138,12 @@ class Order extends Model
         Cart::content()->each(function (CartItem $cartItem) {
             $this->orderedItems()->create([
                 'name'       => $cartItem->name,
-                'price'      => $cartItem->priceTax,
+                'price'      => $cartItem->options->has('coupon') && $cartItem->model->is_percentage ? 0 : $cartItem->priceTax,
+                'discount'   => $cartItem->discountRate ? $cartItem->price * ($cartItem->discountRate / 100) : 0,
                 'vatrate'    => $cartItem->taxRate,
                 'quantity'   => $cartItem->qty,
-                'product_id' => $cartItem->id
+                'product_id' => $cartItem->id,
+                'type'       => $cartItem->options->has('coupon') ? OrderedItemType::COUPON : OrderedItemType::PRODUCT
             ]);
         });
 

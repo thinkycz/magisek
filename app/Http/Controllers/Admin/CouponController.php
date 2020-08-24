@@ -59,6 +59,7 @@ class CouponController extends Controller
             'value'           => 'required',
             'times_used'      => 'sometimes|nullable',
             'max_usage'       => 'numeric|min:0',
+            'mov'             => 'numeric|min:0',
             'valid_from'      => 'required|date|before:2038-01-01|before_or_equal:valid_to',
             'valid_to'        => 'required|date|before:2038-01-01|after_or_equal:valid_from',
             'enabled'         => 'boolean',

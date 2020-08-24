@@ -27,6 +27,12 @@
                             {{ __('coupons.code') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                            {{ __('coupons.value') }}
+                        </th>
+                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                            {{ __('coupons.times_used') }}
+                        </th>
+                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             {{ __('coupons.enabled') }}
                         </th>
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
@@ -37,6 +43,12 @@
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <span class="text-sm leading-5 text-gray-900">{{ $coupon->code }}</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <span class="text-sm leading-5 text-gray-900">{{ $coupon->discount }}</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <span class="text-sm leading-5 text-gray-900">{{ $coupon->times_used }}</span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <x-boolean :checked="$coupon->enabled"></x-boolean>
