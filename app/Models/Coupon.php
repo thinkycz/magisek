@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Coupon\CouponHasEligibilities;
 use Gloudemans\Shoppingcart\CanBeBought;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
@@ -10,10 +11,16 @@ use Illuminate\Support\Str;
 class Coupon extends Model implements Buyable
 {
     use CanBeBought;
+    use CouponHasEligibilities;
 
     protected $guarded = [];
 
     protected $dates = ['valid_from', 'valid_to'];
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 
     public function setCodeAttribute($value)
     {

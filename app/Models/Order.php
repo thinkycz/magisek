@@ -55,6 +55,11 @@ class Order extends Model
         return $this->hasMany(OrderedItem::class);
     }
 
+    public function coupons()
+    {
+        return $this->belongsToMany(Coupon::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'order_number';
@@ -145,6 +150,15 @@ class Order extends Model
                 'product_id' => $cartItem->id,
                 'type'       => $cartItem->options->has('coupon') ? OrderedItemType::COUPON : OrderedItemType::PRODUCT
             ]);
+
+            if ($cartItem->options->has('coupon')) {
+                /** @var Coupon $coupon */
+                $coupon = $cartItem->model;
+
+                $coupon->increment('times_used');
+
+                $this->coupons()->attach($coupon);
+            }
         });
 
         return $this;
