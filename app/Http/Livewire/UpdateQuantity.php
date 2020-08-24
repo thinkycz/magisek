@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
@@ -29,6 +30,10 @@ class UpdateQuantity extends Component
     public function basketUpdated()
     {
         $this->quantity = $this->cartItem ? $this->cartItem->qty : 1;
+
+        Cart::search(fn(CartItem $cartItem) => $cartItem->options->has('coupon'))
+            ->filter(fn(CartItem $cartItem) => $cartItem->model->mov > Cart::totalFloat())
+            ->each(fn(CartItem $cartItem) => Cart::remove($cartItem->rowId));
     }
 
     public function render()
