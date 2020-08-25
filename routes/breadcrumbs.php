@@ -13,7 +13,12 @@ Breadcrumbs::for('categories', function ($trail) {
 
 // Home > Categories > [Category]
 Breadcrumbs::for('category', function ($trail, $category) {
-    $trail->parent('categories');
+    if ($category->parent) {
+        $trail->parent('category', $category->parent);
+    } else {
+        $trail->parent('categories');
+    }
+
     $trail->push($category->name, route('categories.show', $category));
 });
 
