@@ -13,4 +13,6 @@ return [
     'parent_category' => 'Nadřazená kategorie',
     'show_in_menu'    => 'Zobrazit v menu',
     'is_featured'     => 'Představit na hlavní stránce',
+    'color'           => 'Barva',
+
 ];

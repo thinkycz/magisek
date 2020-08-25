@@ -10,6 +10,7 @@
             <li x-data="{ open: false }" class="space-y-2">
                 <div class="flex items-center justify-between">
                     <a href="{{ route('categories.show', $category) }}"
+                       style="background-color: {{ $category->color }}"
                        class="flex-1 px-4 py-2 h-8 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold text-xs uppercase truncate hover:bg-cool-gray-300 {{ $category->children->isNotEmpty() ? 'rounded-l' : 'rounded' }}">
                         {{ $category->name }}
                     </a>
@@ -26,6 +27,7 @@
                     @foreach($category->children as $subcategory)
                         <li class="flex items-center justify-between">
                             <a href="{{ route('categories.show', $subcategory) }}"
+                               style="background-color: {{ $subcategory->color }}"
                                class="flex-1 px-4 py-2 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold rounded text-xs uppercase truncate hover:bg-cool-gray-300">
                                 {{ $subcategory->name }}
                             </a>

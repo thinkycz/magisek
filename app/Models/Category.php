@@ -39,4 +39,9 @@ class Category extends Model implements HasMedia
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function setColorAttribute($value)
+    {
+        $this->attributes['color'] = $value === '#000000' ? null : $value;
+    }
 }

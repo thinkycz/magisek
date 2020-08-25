@@ -15,7 +15,7 @@
                {{ $required ? 'required' : '' }}
                {{ $attributes->only('wire:model') }}
                value="{{ old($name, $value) }}"
-               class="form-input block w-full sm:text-sm sm:leading-5"/>
+               class="form-input block w-full sm:text-sm sm:leading-5 {{ $type == 'color' ? 'h-10' : '' }}"/>
     </div>
 
     @error($name)

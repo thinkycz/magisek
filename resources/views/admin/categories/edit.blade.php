@@ -35,6 +35,8 @@
 
                     <x-input type="number" name="position" :title="__('categories.position')" :value="$category->position" class="mt-6"></x-input>
 
+                    <x-input type="color" name="color" :title="__('categories.color')" :value="$category->color" class="mt-6"></x-input>
+
                     <x-checkbox name="show_in_menu" :title="__('categories.show_in_menu')" :value="$category->show_in_menu" class="mt-6"></x-checkbox>
 
                     <x-checkbox name="is_featured" :title="__('categories.is_featured')" :value="$category->is_featured" class="mt-6"></x-checkbox>

@@ -65,6 +65,7 @@ class CategoryController extends Controller
         return $request->validate([
             'name'         => 'required',
             'position'     => 'required|numeric',
+            'color'        => 'sometimes|nullable',
             'show_in_menu' => 'boolean',
             'is_featured'  => 'boolean',
             'enabled'      => 'boolean'

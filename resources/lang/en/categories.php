@@ -13,4 +13,6 @@ return [
     'parent_category' => 'Parent Category',
     'show_in_menu'    => 'Show in menu',
     'is_featured'     => 'Is Featured On Homepage',
+    'color'           => 'Color',
+    
 ];
