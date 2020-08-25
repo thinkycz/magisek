@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="space-y-8">
+        {{ Breadcrumbs::render('product', $product) }}
 
         <div class="bg-white rounded border border-gray-200 relative">
             @if($product->tags->isNotEmpty())

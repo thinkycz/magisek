@@ -129,5 +129,6 @@ return [
     'use_a_coupon'                      => 'Use a coupon',
     'apply_coupon'                      => 'Apply Coupon',
     'discount'                          => 'Discount',
+    'home'                              => 'Home',
 
 ];

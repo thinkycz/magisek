@@ -33,7 +33,13 @@ class UpdateQuantity extends Component
 
         Cart::search(fn(CartItem $cartItem) => $cartItem->options->has('coupon'))
             ->filter(fn(CartItem $cartItem) => $cartItem->model->mov > Cart::totalFloat())
-            ->each(fn(CartItem $cartItem) => Cart::remove($cartItem->rowId));
+            ->each(function (CartItem $cartItem) {
+                Cart::remove($cartItem->rowId);
+
+                if ($cartItem->model->is_percentage) {
+                    Cart::setGlobalDiscount(0);
+                }
+            });
     }
 
     public function render()

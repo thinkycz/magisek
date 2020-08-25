@@ -4,6 +4,8 @@
 
 @section('content')
     <div class="space-y-4 flex-1">
+        {{ Breadcrumbs::render('category', $category) }}
+
         <h2 class="text-2xl text-gray-700 font-semibold">
             {{ $category->name }}
         </h2>

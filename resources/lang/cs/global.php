@@ -129,5 +129,6 @@ return [
     'use_a_coupon'                      => 'Mám slevový kupon',
     'apply_coupon'                      => 'Použít kupon',
     'discount'                          => 'Sleva',
+    'home'                              => 'Domů',
 
 ];
