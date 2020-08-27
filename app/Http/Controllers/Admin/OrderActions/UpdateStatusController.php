@@ -6,6 +6,7 @@ use App\Enums\Locale;
 use App\Models\Order;
 use App\Notifications\OrderStatusChanged;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class UpdateStatusController
 {
@@ -15,7 +16,7 @@ class UpdateStatusController
 
         $order->status()->associate($data['status_id'])->save();
 
-        $order->user->notify((new OrderStatusChanged($order))->locale(Locale::current()));
+        Notification::route('mail', $order->email)->notify((new OrderStatusChanged($order))->locale(Locale::current()));
 
         return redirect()->back()->with('message', __('global.updated'));
     }

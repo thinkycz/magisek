@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Client\CheckoutActions;
 
+use App\Enums\Locale;
 use App\Models\Order;
+use App\Notifications\OrderPlaced;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class ProcessOrderController
 {
@@ -31,6 +34,8 @@ class ProcessOrderController
             ->processBasketItems();
 
         Cart::destroy();
+
+        Notification::route('mail', $order->email)->notify((new OrderPlaced($order))->locale(Locale::current()));
 
         return redirect()->route('thank-you.index', [
             'order' => $order

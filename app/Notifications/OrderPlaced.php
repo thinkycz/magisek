@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class OrderStatusChanged extends Notification implements ShouldQueue
+class OrderPlaced extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -30,9 +30,9 @@ class OrderStatusChanged extends Notification implements ShouldQueue
     public function toMail()
     {
         return (new MailMessage)
-            ->subject(__('email.order_status_has_changed'))
-            ->line(__('email.order_status_has_changed_to', ['number' => $this->order->order_number, 'status' => $this->order->status->name]))
-            ->line($this->order->status->description)
+            ->subject(__('email.thank_you_for_your_order'))
+            ->line(__('email.thank_you_for_your_order_sub'))
+            ->line(__('email.we_have_received_your_order', ['orderNumber' => $this->order->order_number]))
             ->action(__('global.show_order'), route('orders.show', $this->order));
     }
 }
