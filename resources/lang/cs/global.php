@@ -130,5 +130,12 @@ return [
     'apply_coupon'                      => 'Použít kupon',
     'discount'                          => 'Sleva',
     'home'                              => 'Domů',
+    'invoice'                           => 'Faktura',
+    'issuer'                            => 'Dodavatel',
+    'billed_to'                         => 'Odběratel',
+    'invoice_date'                      => 'Datum vystavení',
+    'catalog'                           => 'Katalog',
+    'barcode'                           => 'Čárový kód',
+    'generate'                          => 'Generovat',
 
 ];

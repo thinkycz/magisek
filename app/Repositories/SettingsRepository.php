@@ -53,6 +53,21 @@ class SettingsRepository extends InstanceCache
         return $this->get('company_details', 'street') . ' ' . $this->get('company_details', 'city');
     }
 
+    public function getCompanyStreet()
+    {
+        return $this->get('company_details', 'street');
+    }
+
+    public function getCompanyCity()
+    {
+        return $this->get('company_details', 'city');
+    }
+
+    public function getCompanyZipcode()
+    {
+        return $this->get('company_details', 'zipcode');
+    }
+
     public function getStoreLogo()
     {
         return $this->get('store_settings', 'logo') ?: asset('img/logo.png');

@@ -130,5 +130,12 @@ return [
     'apply_coupon'                      => 'Apply Coupon',
     'discount'                          => 'Discount',
     'home'                              => 'Home',
+    'invoice'                           => 'Invoice',
+    'issuer'                            => 'Issuer',
+    'billed_to'                         => 'Billed To',
+    'invoice_date'                      => 'Invoice Date',
+    'catalog'                           => 'Catalog',
+    'barcode'                           => 'Barcode',
+    'generate'                          => 'Generate',
 
 ];
