@@ -126,7 +126,7 @@
             @endif
         </div>
 
-        <div class="lg:flex justify-between">
+        <div class="lg:flex justify-between space-y-6 lg:space-y-0">
             <div class="flex-1">
                 <livewire:apply-coupon></livewire:apply-coupon>
             </div>

@@ -14,7 +14,7 @@
                            x-model="value"
                            id="query"
                            name="query"
-                           class="bg-white border rounded block w-full p-4 pl-10 sm:text-md sm:leading-5 focus:outline-none"
+                           class="bg-white border rounded block w-full px-4 py-2 md:py-3 lg:py-4 pl-10 sm:text-md sm:leading-5 focus:outline-none"
                            placeholder="{{ __('global.search') }}..."/>
                 </div>
             </x-form>

@@ -9,7 +9,10 @@ class CategoryController
     public function index()
     {
         return view('client.categories.index', [
-            'categories' => Category::withCount('products')->paginate()
+            'categories' => Category::query()
+                ->whereHas('products')
+                ->withCount('products')
+                ->paginate()
         ]);
     }
 
