@@ -7,7 +7,7 @@
         <meta name="keywords" content="{{ settingsRepository()->getStoreKeywords() }}">
         <meta property="og:title" content="{{ settingsRepository()->getStoreDescription() }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="{{ settingsRepository()->getStoreLogo() }}" />
+        <meta property="og:image" content="{{ settingsRepository()->getStoreOgLogo() }}" />
 
         @hasSection('title')
             <title>@yield('title') - {{ settingsRepository()->getStoreName() . ' - ' . settingsRepository()->getStoreDescription() }}</title>
