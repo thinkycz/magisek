@@ -75,7 +75,7 @@ class SettingsRepository extends InstanceCache
 
     public function getStoreOgLogo()
     {
-        return $this->get('store_settings', 'logo') ?: asset('img/og_logo.jpg');
+        return asset('img/og_logo.jpg');
     }
 
     public function getStoreName()
