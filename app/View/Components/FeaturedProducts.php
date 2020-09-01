@@ -14,6 +14,7 @@ class FeaturedProducts extends Component
         $this->categories = Category::query()
             ->where('is_featured', true)
             ->where('enabled', true)
+            ->orderBy('position')
             ->get();
     }
 
