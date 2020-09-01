@@ -137,5 +137,6 @@ return [
     'catalog'                           => 'Catalog',
     'barcode'                           => 'Barcode',
     'generate'                          => 'Generate',
+    'unknown'                           => 'Unknown',
 
 ];

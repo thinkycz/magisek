@@ -15,7 +15,7 @@ class Preference extends Model
 
     public function getValueAttribute()
     {
-        return $this->preferable->name;
+        return $this->preferable->name ?? __('global.unknown');
     }
 
     public function setValueAttribute($value)

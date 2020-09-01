@@ -137,5 +137,6 @@ return [
     'catalog'                           => 'Katalog',
     'barcode'                           => 'Čárový kód',
     'generate'                          => 'Generovat',
+    'unknown'                           => 'Neznámý',
 
 ];
