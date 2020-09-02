@@ -1,7 +1,9 @@
 @if($banners->isNotEmpty())
     <div class="mb-8">
         <div x-data
-             x-init="$($refs.banners).flickity({autoPlay: true, wrapAround: true});"
+             x-init="$(document).ready(function(){
+                $($refs.banners).flickity({autoPlay: true, wrapAround: true});
+             });"
              x-ref="banners"
              class="banners">
             @foreach($banners as $banner)
