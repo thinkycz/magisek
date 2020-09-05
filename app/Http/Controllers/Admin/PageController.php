@@ -54,7 +54,7 @@ class PageController extends Controller
     {
         return $request->validate([
             'title'          => 'required',
-            'content'        => 'nullable',
+            'content'        => 'required',
             'hide_from_blog' => 'boolean',
             'image'          => 'sometimes|nullable'
         ]);

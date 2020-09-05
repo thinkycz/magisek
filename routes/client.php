@@ -6,7 +6,8 @@ Route::get('/', \App\Http\Controllers\Client\HomeController::class)->name('home'
 Route::get('categories', [\App\Http\Controllers\Client\CategoryController::class, 'index'])->name('categories.index');
 Route::get('categories/{category}', [\App\Http\Controllers\Client\CategoryController::class, 'show'])->name('categories.show');
 Route::get('products/{product}', \App\Http\Controllers\Client\ProductController::class)->name('products.show');
-Route::get('pages/{page}', \App\Http\Controllers\Client\PageController::class)->name('pages.show');
+Route::get('pages', [\App\Http\Controllers\Client\PageController::class, 'index'])->name('pages.index');
+Route::get('pages/{page}', [\App\Http\Controllers\Client\PageController::class, 'show'])->name('pages.show');
 Route::get('basket', \App\Http\Controllers\Client\BasketController::class)->name('basket.index');
 Route::get('checkout', \App\Http\Controllers\Client\CheckoutController::class)->name('checkout.index');
 Route::get('search', \App\Http\Controllers\Client\SearchController::class)->name('search.index');

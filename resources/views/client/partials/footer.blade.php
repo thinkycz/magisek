@@ -31,6 +31,11 @@
                                     {{ __('global.basket') }}
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('pages.index') }}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                    {{ __('global.pages') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
