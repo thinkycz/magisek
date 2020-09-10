@@ -140,5 +140,6 @@ return [
     'unknown'                           => 'Unknown',
     'from_our_blog'                     => 'From Our Blog',
     'from_our_blog_sub'                 => 'Our latest news, special offers, discounts and more',
+    'new_received_order'                => 'New Received Order',
 
 ];

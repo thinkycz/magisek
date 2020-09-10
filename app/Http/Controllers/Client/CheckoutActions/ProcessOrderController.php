@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client\CheckoutActions;
 use App\Enums\Locale;
 use App\Models\Order;
 use App\Notifications\OrderPlaced;
+use App\Notifications\OrderReceivedAdmins;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -36,6 +37,10 @@ class ProcessOrderController
         Cart::destroy();
 
         Notification::route('mail', $order->email)->notify((new OrderPlaced($order))->locale(Locale::current()));
+
+        Notification::route('mail', settingsRepository()->getCompanyEmail())->notify((new OrderReceivedAdmins($order)));
+
+        Notification::route('slack', config('services.slack.webhook'))->notify((new OrderReceivedAdmins($order)));
 
         return redirect()->route('thank-you.index', [
             'order' => $order

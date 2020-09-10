@@ -67,7 +67,7 @@ class Order extends Model
 
     public function getCustomerNameAttribute()
     {
-        return $this->user->name ?? 'Guest';
+        return $this->user->name ?? $this->shippingDetail->full_name;
     }
 
     public function getTotalValueAttribute()

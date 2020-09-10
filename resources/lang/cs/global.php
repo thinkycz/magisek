@@ -140,5 +140,6 @@ return [
     'unknown'                           => 'Neznámý',
     'from_our_blog'                     => 'Magískův blogísek',
     'from_our_blog_sub'                 => 'Z pera našich skřítků',
+    'new_received_order'                => 'Nová přijatá objednávka',
 
 ];
