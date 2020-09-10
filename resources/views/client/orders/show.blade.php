@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="container mx-auto py-6">
-        @include('client.partials.profile-menu')
+        @includeWhen(auth()->check(), 'client.partials.profile-menu')
 
         <div class="bg-white shadow overflow-hidden sm:rounded-lg mt-8">
             <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
