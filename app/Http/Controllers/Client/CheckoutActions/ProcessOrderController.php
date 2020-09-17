@@ -38,9 +38,9 @@ class ProcessOrderController
 
         Notification::route('mail', $order->email)->notify((new OrderPlaced($order))->locale(Locale::current()));
 
-        Notification::route('mail', settingsRepository()->getCompanyEmail())->notify((new OrderReceivedAdmins($order)));
+        Notification::route('mail', settingsRepository()->getCompanyEmail())->notify((new OrderReceivedAdmins($order))->locale(Locale::CZECH));
 
-        Notification::route('slack', config('services.slack.webhook'))->notify((new OrderReceivedAdmins($order)));
+        Notification::route('slack', config('services.slack.webhook'))->notify((new OrderReceivedAdmins($order))->locale(Locale::CZECH));
 
         return redirect()->route('thank-you.index', [
             'order' => $order
