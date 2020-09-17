@@ -13,7 +13,7 @@ class SidebarCategories extends Component
             'categories' => Category::query()
                 ->where('enabled', true)
                 ->where('show_in_menu', true)
-                ->orderBy('position')
+                ->orderByDesc('position')
                 ->get()
                 ->toTree()
         ]);

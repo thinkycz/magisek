@@ -71,6 +71,7 @@ class DeliveryMethodController extends Controller
             'name'                     => 'required',
             'price'                    => 'required|numeric',
             'mov'                      => 'required|numeric',
+            'position'                 => 'required|numeric',
             'needs_shipping_address'   => 'boolean',
             'price_will_be_calculated' => 'boolean',
             'enabled'                  => 'boolean',

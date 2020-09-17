@@ -11,5 +11,6 @@ return [
     'price'                    => 'Cena',
     'price_will_be_calculated' => 'Cena bude dopočítána',
     'delivery_methods'         => 'Způsoby doručení',
+    'position'                 => 'Pozice',
 
 ];

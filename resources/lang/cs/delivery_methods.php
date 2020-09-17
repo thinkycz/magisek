@@ -12,5 +12,6 @@ return [
     'needs_shipping_address'   => 'Nutná dodací adresa',
     'price_will_be_calculated' => 'Cena bude dopočítána',
     'payment_methods'          => 'Způsoby platby',
+    'position'                 => 'Pozice',
 
 ];

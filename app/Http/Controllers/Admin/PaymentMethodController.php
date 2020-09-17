@@ -71,6 +71,7 @@ class PaymentMethodController extends Controller
             'name'                     => 'required',
             'price'                    => 'required|numeric',
             'mov'                      => 'required|numeric',
+            'position'                 => 'required|numeric',
             'price_will_be_calculated' => 'boolean',
             'enabled'                  => 'boolean',
             'delivery_methods'         => 'sometimes|nullable|array'

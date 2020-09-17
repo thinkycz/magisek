@@ -11,5 +11,6 @@ return [
     'price'                    => 'Price',
     'price_will_be_calculated' => 'Price Will Be Calculated',
     'delivery_methods'         => 'Delivery Methods',
+    'position'                 => 'Position',
 
 ];

@@ -12,5 +12,6 @@ return [
     'needs_shipping_address'   => 'Needs Shipping Address',
     'price_will_be_calculated' => 'Price Will Be Calculated',
     'payment_methods'          => 'Payment Methods',
+    'position'                 => 'Position',
 
 ];
