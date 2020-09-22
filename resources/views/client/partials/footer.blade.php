@@ -12,6 +12,17 @@
                 <p class="mt-8 text-gray-500 text-base leading-6">
                     {{ settingsRepository()->getStoreDescription() }}
                 </p>
+
+                <div class="mt-8 flex">
+                    <a href="https://www.facebook.com/magisekcz" class="text-gray-400 hover:text-gray-500" target="_blank">
+                        <span class="sr-only">Facebook</span>
+                        <x-icons.facebook class="h-6 w-6"></x-icons.facebook>
+                    </a>
+                    <a href="https://www.instagram.com/magisek_cz" class="ml-6 text-gray-400 hover:text-gray-500" target="_blank">
+                        <span class="sr-only">Instagram</span>
+                        <x-icons.instagram class="h-6 w-6"></x-icons.instagram>
+                    </a>
+                </div>
             </div>
             <div class="mt-12 grid grid-cols-2 gap-8 lg:mt-0 lg:col-span-2">
                 <div class="md:grid md:grid-cols-3 md:gap-8 md:col-span-2 space-y-12 md:space-y-0">
@@ -27,12 +38,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('basket.index') }}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                <a href="{{ route('basket.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
                                     {{ __('global.basket') }}
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('pages.index') }}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                                <a href="{{ route('pages.index') }}"
+                                   class="text-base leading-6 text-gray-500 hover:text-gray-900">
                                     {{ __('global.pages') }}
                                 </a>
                             </li>
