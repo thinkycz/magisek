@@ -26,7 +26,7 @@ class NavbarBasket extends Component
 
     public function basketUpdated()
     {
-        $this->total = showPriceWithCurrency(Cart::totalFloat());
+        $this->total = showPriceWithCurrency(Cart::totalFloat(), null, __('global.basket'));
         $this->count = Cart::count();
     }
 
