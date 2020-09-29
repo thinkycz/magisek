@@ -72,7 +72,7 @@ class SyncStatus
 
     public function eligibleToRun()
     {
-        return $this->succeeded() ? Carbon::createFromTimestamp($this->job->reserved_at)->diffInHours() >= config('config.sync_limit_every_hrs') : true;
+        return !$this->running();
     }
 
     public static function log(string $type, string $jobId)

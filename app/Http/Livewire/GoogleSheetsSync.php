@@ -29,6 +29,8 @@ class GoogleSheetsSync extends Component
             'identifier' => 'required',
         ])->validate();
 
-        $this->dispatch(new SyncCsvFromGoogleSheets());
+        if (SyncStatus::get('google_sheets_status')->eligibleToRun()) {
+            $this->dispatch(new SyncCsvFromGoogleSheets());
+        }
     }
 }

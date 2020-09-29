@@ -1,4 +1,4 @@
-<div wire:poll class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6 mt-16">
+<div wire:poll x-data="{syncing: {{ $status->running() ? 'true' : 'false' }} }" class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6 mt-16">
     <div class="lg:flex justify-between space-y-4 lg:space-y-0 mb-8">
         <div>
             <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -9,9 +9,13 @@
             </p>
         </div>
 
-        <x-button wire:click="sync" class="{{ $status->running() ? 'bg-gray-500' : 'bg-teal-600 hover:bg-teal-500 ' }}">
+        <x-button wire:click="sync" x-on:click="syncing = true" x-show="!syncing" class="{{ $status->running() ? 'bg-gray-500' : 'bg-teal-600 hover:bg-teal-500 ' }}">
             <x-icons.refresh class="w-4 h-4 mr-2"></x-icons.refresh>
             {{ __('google_sheets.sync_now') }}
+        </x-button>
+
+        <x-button x-show="syncing" class="bg-gray-500">
+            {{ __('google_sheets.pending') }}
         </x-button>
     </div>
 
