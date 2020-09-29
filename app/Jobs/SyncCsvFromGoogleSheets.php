@@ -163,16 +163,16 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
 
     protected function handleProductStock(Product $product)
     {
-        if ($quantity = $this->getFromData('quantity_in_stock')) {
-            $availability = $quantity > 0 ?
-                preferenceRepository()->getDefaultInStockAvailability() :
-                preferenceRepository()->getDefaultOutOfStockAvailability();
+        $quantity = $this->getFromData('quantity_in_stock');
 
-            $product->update([
-                'quantity_in_stock' => $quantity,
-                'availability_id'   => $availability->id
-            ]);
-        }
+        $availability = $quantity > 0 ?
+            preferenceRepository()->getDefaultInStockAvailability() :
+            preferenceRepository()->getDefaultOutOfStockAvailability();
+
+        $product->update([
+            'quantity_in_stock' => $quantity,
+            'availability_id'   => $availability->id
+        ]);
 
         return $this;
     }
