@@ -165,14 +165,16 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     {
         $quantity = $this->getFromData('quantity_in_stock');
 
-        $availability = $quantity > 0 ?
-            preferenceRepository()->getDefaultInStockAvailability() :
-            preferenceRepository()->getDefaultOutOfStockAvailability();
+        if (!is_null($quantity)) {
+            $availability = $quantity > 0 ?
+                preferenceRepository()->getDefaultInStockAvailability() :
+                preferenceRepository()->getDefaultOutOfStockAvailability();
 
-        $product->update([
-            'quantity_in_stock' => $quantity,
-            'availability_id'   => $availability->id
-        ]);
+            $product->update([
+                'quantity_in_stock' => $quantity,
+                'availability_id'   => $availability->id
+            ]);
+        }
 
         return $this;
     }
