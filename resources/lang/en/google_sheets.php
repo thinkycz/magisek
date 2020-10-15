@@ -16,6 +16,7 @@ return [
     'pending'                     => 'Pending',
     'reserved'                    => 'Processing',
     'completed'                   => 'Completed',
+    'failed'                      => 'Failed',
     'google_sheets_configuration' => 'Google Sheets Configuration',
     'google_sheets_link'          => 'Google Sheets Link',
     'identify_by_catalog'         => 'Identify by Catalog Number',

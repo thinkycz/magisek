@@ -88,7 +88,7 @@ return [
     'products'                          => 'Products',
     'orders'                            => 'Orders',
     'pages'                             => 'Pages',
-    'product_import'                    => 'Product Import',
+    'product_import'                    => 'Product Import and Export',
     'google_sheets'                     => 'Google Sheets',
     'configuration'                     => 'Configuration',
     'delivery_methods'                  => 'Delivery Methods',
@@ -141,5 +141,6 @@ return [
     'from_our_blog'                     => 'From Our Blog',
     'from_our_blog_sub'                 => 'Our latest news, special offers, discounts and more',
     'new_received_order'                => 'New Received Order',
+    'heureka_xml_feed'                  => 'Heureka XML Feed',
 
 ];

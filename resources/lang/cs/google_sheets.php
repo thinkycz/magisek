@@ -16,6 +16,7 @@ return [
     'pending'                     => 'Čeká',
     'reserved'                    => 'Probíhá',
     'completed'                   => 'Dokončeno',
+    'failed'                      => 'Neúspěch',
     'google_sheets_configuration' => 'Konfigurace tabulek Google',
     'google_sheets_link'          => 'Odkaz URL na tabulky Google',
     'identify_by_catalog'         => 'Identififovat pomocí katalogového čísla',

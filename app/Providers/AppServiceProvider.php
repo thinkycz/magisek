@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\Order;
 use App\Observers\OrderObserver;
+use App\Tools\HeurekaGenerator;
+use App\Tools\XmlWriter;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(HeurekaGenerator::class, function () {
+            return new HeurekaGenerator(new XmlWriter());
+        });
     }
 
     /**

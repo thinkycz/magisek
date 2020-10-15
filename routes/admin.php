@@ -28,6 +28,8 @@ Route::get('google-sheets', \App\Http\Controllers\Admin\GoogleSheetsController::
 Route::get('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'index'])->name('google-sheets.configure');
 Route::post('google-sheets/configure', [\App\Http\Controllers\Admin\GoogleSheetsActions\ConfigureController::class, 'store'])->name('google-sheets.store-configuration');
 
+Route::get('heureka', \App\Http\Controllers\Admin\HeurekaController::class)->name('heureka.index');
+
 Route::resource('delivery-methods', \App\Http\Controllers\Admin\DeliveryMethodController::class)->except('show');
 Route::resource('payment-methods', \App\Http\Controllers\Admin\PaymentMethodController::class)->except('show');
 Route::resource('price-levels', \App\Http\Controllers\Admin\PriceLevelController::class)->except('show');
