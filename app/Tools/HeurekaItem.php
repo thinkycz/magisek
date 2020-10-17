@@ -29,9 +29,9 @@ class HeurekaItem extends BaseItem implements ItemInterface
             $item->setImage(url($product->thumbnail));
             $item->setPrice($product->price);
 
-            foreach ($product->properties as $property) {
-                $item->addParam($property->propertyType->getTranslation('name', $language), $property->getTranslation('value', $language));
-            }
+//            foreach ($product->properties as $property) {
+//                $item->addParam($property->propertyType->getTranslation('name', $language), $property->getTranslation('value', $language));
+//            }
         });
     }
 
@@ -46,7 +46,7 @@ class HeurekaItem extends BaseItem implements ItemInterface
 
 	public function setName($name)
 	{
-		$this->row['PRODUCTNAME'] = $name;
+		$this->row['PRODUCTNAME'] = '<![CDATA[' . $name . ']]>';
 	}
 
 	public function getName()
@@ -70,7 +70,7 @@ class HeurekaItem extends BaseItem implements ItemInterface
 
 	public function setDescription($desc)
 	{
-		$this->row['DESCRIPTION'] = strip_tags($desc);
+		$this->row['DESCRIPTION'] = '<![CDATA[' . strip_tags($desc) . ']]>';
 	}
 
 	public function setPrice($price)
