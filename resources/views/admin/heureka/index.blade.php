@@ -9,4 +9,5 @@
         </div>
     </div>
 
+    <livewire:heureka-xml-generate></livewire:heureka-xml-generate>
 @endsection
