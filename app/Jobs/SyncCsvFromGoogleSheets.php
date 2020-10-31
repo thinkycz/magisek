@@ -91,7 +91,13 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
     {
         $this->prepare();
 
-        (new ProductListCsvImport(Closure::fromCallable([$this, 'handleProduct'])))->import($this->getFile());
+        /** @var Collection $sheet */
+        $sheet = (new ProductListCsvImport(Closure::fromCallable([$this, 'handleProduct'])))->toCollection($this->getFile())->first();
+
+        // Remove products not included in the sheet
+        $identifiers = $sheet->pluck($this->identifier)->filter(fn($value) => !is_null($value))->map(fn($value) => (string) $value)->toArray();
+
+        Product::whereNotIn($this->identifier, $identifiers)->delete();
     }
 
     protected function handleProduct(Collection $data)
