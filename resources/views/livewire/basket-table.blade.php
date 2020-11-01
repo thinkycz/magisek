@@ -155,8 +155,8 @@
             </div>
         </div>
     @else
-        <div class="px-4 py-8 space-y-6 bg-white rounded border border-gray-200">
-            <x-icons.emoji-sad class="w-12 h-12 mx-auto text-gray-700"></x-icons.emoji-sad>
+        <div class="px-4 py-8 space-y-6 bg-white rounded border border-gray-200 flex flex-col items-center">
+            <img class="w-24" src="{{ asset('img/monkey.png') }}" alt="Monkey">
 
             <h3 class="text-center font-semibold text-xl text-gray-700">{{ __('global.your_basket_is_empty') }}</h3>
 
