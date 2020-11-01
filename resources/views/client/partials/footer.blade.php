@@ -1,7 +1,7 @@
 <div class="bg-white border-t border-gray-100">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="lg:grid lg:grid-cols-3 lg:gap-8">
-            <div class="lg:col-span-1">
+            <div class="lg:col-span-1 space-y-4">
                 @if(settingsRepository()->getStoreLogo())
                     <img class="h-10" src="{{ settingsRepository()->getStoreLogo() }}"
                          alt="{{ settingsRepository()->getStoreName() }}">
@@ -9,16 +9,21 @@
                     <x-logo class="w-8 h-8"></x-logo>
                 @endif
 
-                <p class="mt-8 text-gray-500 text-base leading-6">
+                <img class="w-80" src="{{ asset('img/magisek_rodinka.png') }}"
+                     alt="{{ settingsRepository()->getStoreName() }}">
+
+                <p class="text-gray-500 text-xs font-semibold leading-6">
                     {{ settingsRepository()->getStoreDescription() }}
                 </p>
 
                 <div class="mt-8 flex">
-                    <a href="https://www.facebook.com/magisekcz" class="text-gray-400 hover:text-gray-500" target="_blank">
+                    <a href="https://www.facebook.com/magisekcz" class="text-gray-400 hover:text-gray-500"
+                       target="_blank">
                         <span class="sr-only">Facebook</span>
                         <x-icons.facebook class="h-6 w-6"></x-icons.facebook>
                     </a>
-                    <a href="https://www.instagram.com/magisek_cz" class="ml-6 text-gray-400 hover:text-gray-500" target="_blank">
+                    <a href="https://www.instagram.com/magisek_cz" class="ml-6 text-gray-400 hover:text-gray-500"
+                       target="_blank">
                         <span class="sr-only">Instagram</span>
                         <x-icons.instagram class="h-6 w-6"></x-icons.instagram>
                     </a>

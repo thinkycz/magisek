@@ -9,6 +9,6 @@
         <span class="sr-only">Instagram</span>
         <img src="{{ asset('img/follow_ig.png') }}" alt="Instagram">
     </a>
-</div>
 
-{{--<x-facebook-widget></x-facebook-widget>--}}
+    <img class="w-48 pt-8" src="{{ asset('img/princess.png') }}" alt="Princess">
+</div>
