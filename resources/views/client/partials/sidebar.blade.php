@@ -1,6 +1,10 @@
+<div class="mb-2 px-2 flex flex-col space-y-4 items-center">
+    <img class="w-48" src="{{ asset('img/elfove.png') }}" alt="Elfove">
+</div>
+
 <x-sidebar-categories></x-sidebar-categories>
 
-<div class="mt-8 px-2 flex flex-col space-y-4 items-center">
+<div class="mt-8 px-2 flex-col space-y-4 items-center hidden md:flex">
     <a href="https://www.facebook.com/magisekcz" class="w-64" target="_blank">
         <span class="sr-only">Facebook</span>
         <img src="{{ asset('img/follow_fb.png') }}" alt="Facebook">
