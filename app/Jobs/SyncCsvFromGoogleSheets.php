@@ -92,10 +92,11 @@ class SyncCsvFromGoogleSheets implements ShouldQueue
         $this->prepare();
 
         $importer = (new ProductListCsvImport(Closure::fromCallable([$this, 'handleProduct'])));
+        $file = $this->getFile();
 
         /** @var Collection $sheet */
-        $sheet = $importer->toCollection($this->getFile())->first();
-        $importer->import();
+        $sheet = $importer->toCollection($file)->first();
+        $importer->import($file);
 
         // Remove products not included in the sheet
         $identifiers = $sheet->pluck($this->identifier)->filter(fn($value) => !is_null($value))->map(fn($value) => (string) $value)->toArray();
