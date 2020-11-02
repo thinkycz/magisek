@@ -11,7 +11,7 @@
                 <div class="flex items-center justify-between">
                     <a href="{{ route('categories.show', $category) }}"
                        style="background-color: {{ $category->color }}"
-                       class="flex-1 px-4 py-2 h-8 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold text-xs uppercase truncate hover:bg-cool-gray-300 {{ $category->children->isNotEmpty() ? 'rounded-l' : 'rounded' }}">
+                       class="flex-1 px-4 py-2 h-8 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold text-xs uppercase truncate hover:bg-cool-gray-300 hover:opacity-75 {{ $category->children->isNotEmpty() ? 'rounded-l' : 'rounded' }}">
                         {{ $category->name }}
                     </a>
 
@@ -28,7 +28,7 @@
                         <li class="flex items-center justify-between">
                             <a href="{{ route('categories.show', $subcategory) }}"
                                style="background-color: {{ $subcategory->color }}"
-                               class="flex-1 px-4 py-2 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold rounded text-xs uppercase truncate hover:bg-cool-gray-300">
+                               class="flex-1 px-4 py-2 bg-cool-gray-200 shadow-sm text-gray-800 font-semibold rounded text-xs uppercase truncate hover:bg-cool-gray-300 hover:opacity-75">
                                 {{ $subcategory->name }}
                             </a>
                         </li>
