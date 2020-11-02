@@ -5,7 +5,7 @@
 
     @include('client.partials.header')
 
-    <div class="px-4 sm:px-0 bg-cool-gray-50">
+    <div class="px-4 bg-cool-gray-50">
         @section('container')
             <div class="container mx-auto py-6">
                 <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
