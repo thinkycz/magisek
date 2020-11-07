@@ -20,4 +20,5 @@ return [
     'coupon_moq_not_reached'         => 'Ahojda, pro použití tohoto kuponu je potřeba do košíku ještě něco málo přidat',
     'mov_for_store_is'               => 'Minimální hodnota objednávky pro obchod :store je :amount',
     'moq_for_store_is'               => 'Minimální množství na objednávku pro obchod :store je :moq :unit',
+    'coupon_after_login'             => 'Pro použití tohoto kuponu si prosím vytvoř účet, nebo se přihlaš pokud účet již máš =)',
 ];

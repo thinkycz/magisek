@@ -20,4 +20,5 @@ return [
     'coupon_moq_not_reached'         => 'Your order did not meet minimum order requirement for this coupon',
     'mov_for_store_is'               => 'Minimum order value for store :store is :amount',
     'moq_for_store_is'               => 'Minimum order quantity for store :store is :moq :unit',
+    'coupon_after_login'             => 'Please login to use this coupon code',
 ];

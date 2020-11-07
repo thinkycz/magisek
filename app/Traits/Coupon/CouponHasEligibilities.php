@@ -30,7 +30,7 @@ trait CouponHasEligibilities
         } elseif (!$this->isValidFrom() || !$this->isValidTo()) {
             throw new CouponNotEligibleToBeApplied(trans('eligibilities.coupon_expired'));
         } elseif (!$this->isValidForUser()) {
-            throw new CouponNotEligibleToBeApplied(trans('eligibilities.coupon_already_used'));
+            throw new CouponNotEligibleToBeApplied(auth()->guest() ? trans('eligibilities.coupon_after_login') : trans('eligibilities.coupon_already_used'));
         } elseif (!$this->isValidForCouponCombination()) {
             throw new CouponNotEligibleToBeApplied(trans('eligibilities.coupon_combination_not_allowed'));
         } elseif (!$this->movHasBeenMet()) {
