@@ -15,8 +15,8 @@ class BasketTable extends Component
         return view('livewire.basket-table', [
             'items'    => Cart::content()->filter(fn(CartItem $cartItem) => !$cartItem->options->has('coupon')),
             'coupons'  => Cart::content()->filter(fn(CartItem $cartItem) => $cartItem->options->has('coupon')),
-            'total'    => showPriceWithCurrency(Cart::totalFloat()),
-            'totalNet' => showPriceWithCurrency(Cart::subtotalFloat())
+            'total'    => showPriceWithCurrency(Cart::totalFloat(), null, __('global.free')),
+            'totalNet' => showPriceWithCurrency(Cart::subtotalFloat(), null, __('global.free'))
         ]);
     }
 }
