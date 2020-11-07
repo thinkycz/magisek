@@ -32,7 +32,7 @@ class UpdateQuantity extends Component
         $this->quantity = $this->cartItem ? $this->cartItem->qty : 1;
 
         Cart::search(fn(CartItem $cartItem) => $cartItem->options->has('coupon'))
-            ->filter(fn(CartItem $cartItem) => $cartItem->model->mov > Cart::totalFloat())
+            ->filter(fn(CartItem $cartItem) => $cartItem->model->mov > Cart::totalFloat() - $cartItem->price)
             ->each(function (CartItem $cartItem) {
                 Cart::remove($cartItem->rowId);
 
