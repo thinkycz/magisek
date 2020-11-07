@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\DeliveryMethod;
 use Livewire\Component;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CheckoutDeliveryPayment extends Component
 {
@@ -15,11 +16,11 @@ class CheckoutDeliveryPayment extends Component
 
     public function mount()
     {
-        $this->deliveryMethods = DeliveryMethod::where('enabled', true)->orderByDesc('position')->get();
+        $this->deliveryMethods = DeliveryMethod::where('enabled', true)->where('mov', '<=', Cart::totalFloat())->orderByDesc('position')->get();
 
         $this->selectedDelivery = old('delivery_method_id', $this->deliveryMethods ? $this->deliveryMethods->first()->id : null);
 
-        $this->selectedPayment = old('payment_method_id', $this->selectedDelivery ? optional(DeliveryMethod::find($this->selectedDelivery)->paymentMethods()->where('enabled', true)->orderByDesc('position')->first())->id : null);
+        $this->selectedPayment = old('payment_method_id', $this->selectedDelivery ? optional(DeliveryMethod::find($this->selectedDelivery)->paymentMethods()->where('enabled', true)->where('mov', '<=', Cart::totalFloat())->orderByDesc('position')->first())->id : null);
     }
 
     public function render()
