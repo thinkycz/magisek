@@ -79,7 +79,7 @@ class Order extends Model
 
     public function getFormattedTotalValueAttribute()
     {
-        return showPriceWithCurrency($this->total_value, currentCurrency());
+        return showPriceWithCurrency($this->total_value, currentCurrency(), __('global.free'));
     }
 
     public function getTotalValueExclVatAttribute()
@@ -91,7 +91,7 @@ class Order extends Model
 
     public function getFormattedTotalValueExclVatAttribute()
     {
-        return showPriceWithCurrency($this->total_value_excl_vat, currentCurrency());
+        return showPriceWithCurrency($this->total_value_excl_vat, currentCurrency(), __('global.free'));
     }
 
     public function processShippingDetails(Collection $data)
@@ -147,7 +147,7 @@ class Order extends Model
                 'discount'   => $cartItem->discountRate ? $cartItem->price * ($cartItem->discountRate / 100) : 0,
                 'vatrate'    => $cartItem->taxRate,
                 'quantity'   => $cartItem->qty,
-                'product_id' => $cartItem->id,
+                'product_id' => $cartItem->options->has('coupon') ? null : $cartItem->id,
                 'type'       => $cartItem->options->has('coupon') ? OrderedItemType::COUPON : OrderedItemType::PRODUCT
             ]);
 

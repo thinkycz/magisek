@@ -99,6 +99,16 @@
                             {{ $order->phone}}
                         </dd>
                     </div>
+                    @if($order->customer_note)
+                        <div class="col-span-2">
+                            <dt class="text-sm leading-5 font-medium text-gray-500">
+                                {{ __('orders.customer_note') }}
+                            </dt>
+                            <dd class="mt-1 text-sm leading-5 text-gray-900">
+                                {{ $order->customer_note }}
+                            </dd>
+                        </div>
+                    @endif
                 </dl>
             </div>
             <div class="px-4 py-5 sm:p-0">

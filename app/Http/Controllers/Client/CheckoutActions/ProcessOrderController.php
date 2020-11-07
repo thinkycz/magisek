@@ -52,7 +52,7 @@ class ProcessOrderController
         return $request->validate([
             'email'                 => 'required|email',
             'phone'                 => 'required|numeric',
-            'notes'                 => 'sometimes|nullable',
+            'customer_note'         => 'sometimes|nullable',
             'shipping_company_name' => 'sometimes|nullable',
             'shipping_first_name'   => 'required',
             'shipping_last_name'    => 'required',

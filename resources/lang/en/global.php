@@ -142,5 +142,6 @@ return [
     'from_our_blog_sub'                 => 'Our latest news, special offers, discounts and more',
     'new_received_order'                => 'New Received Order',
     'heureka_xml_feed'                  => 'Heureka XML Feed',
+    'customer_note'                     => 'Customer Note',
 
 ];
