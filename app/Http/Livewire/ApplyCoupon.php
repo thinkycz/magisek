@@ -13,6 +13,8 @@ class ApplyCoupon extends Component
 {
     public $code;
 
+    public $errorMessage;
+
     protected $listeners = ['basketUpdated' => 'render'];
 
     public function updatedCode($value)
@@ -43,6 +45,7 @@ class ApplyCoupon extends Component
 
         if (!$result->successful()) {
             $this->dispatchBrowserEvent('notify', $result->message());
+            $this->errorMessage = $result->message();
             return;
         }
 
@@ -54,6 +57,6 @@ class ApplyCoupon extends Component
 
         $this->emit('basketUpdated');
 
-        $this->reset('code');
+        $this->reset('code', 'errorMessage');
     }
 }
