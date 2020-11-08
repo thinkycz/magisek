@@ -9,7 +9,7 @@
 
             <div x-show="open">
                 <x-form wire:submit.prevent="apply" class="space-y-2">
-                    <x-input name="code" :title="__('global.coupon_code')" wire:model="code"></x-input>
+                    <x-input name="code" :title="__('global.coupon_code')" wire:model.defer="code"></x-input>
 
                     @if($errorMessage)
                         <p class="mt-2 text-xs text-red-600">{{ $errorMessage }}</p>
